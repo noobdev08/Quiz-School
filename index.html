@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="nooblogo.png">
+  <title>Noobie's Pre-Exam | CBT</title>
+  <style>
+    :root {
+      --bg: #000000;
+      --card: #1A1A1A;
+      --accent: #FFD700;
+      --muted: #888888;
+      --good: #00c853;
+      --ok: #ffd54f;
+      --bad: #ff5252;
+      --text-light: #F0F0F0;
+      --glass: rgba(255,255,255,0.03);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #151515, #000000);
+      color: var(--text-light);
+      padding: 24px;
+      min-height: 100vh;
+    }
+
+    header { text-align: center; margin-bottom: 20px; }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      color: var(--accent);
+      text-shadow: 0 2px 8px rgba(255, 215, 0, 0.25);
+    }
+    .meta { color: var(--muted); margin-top: 8px; font-size: 14px; }
+
+    main { max-width: 980px; margin: 18px auto; }
+
+    .quiz-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 18px;
+      margin: 14px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255, 215, 0, 0.06);
+    }
+
+    .qrow { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 10px; }
+    .qnum {
+      min-width: 44px; height: 44px; line-height: 44px;
+      text-align: center; border-radius: 10px;
+      background: var(--accent); color: #000; font-weight: 700;
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+      flex-shrink: 0;
+    }
+    .qtext { flex: 1; font-size: 15px; font-weight: 500; line-height: 1.5; }
+
+    .options { margin-top: 12px; padding-left: 8px; }
+    label.opt {
+      display: block;
+      padding: 10px 14px;
+      margin: 8px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f1f1f;
+      border: 1px solid rgba(255,215,0,0.08);
+      transition: transform .12s ease, box-shadow .12s ease;
+      user-select: none;
+    }
+    label.opt:hover { transform: translateY(-4px); box-shadow: 0 8px 22px rgba(0,0,0,0.6); border-color: var(--accent); }
+
+    input[type="radio"] { margin-right: 12px; accent-color: var(--accent); }
+
+    .controls { text-align: center; margin: 26px 0; }
+
+    button.primary {
+      background: var(--accent); color: #000; border: 0;
+      padding: 12px 26px; font-size: 15px; border-radius: 10px;
+      cursor: pointer; box-shadow: 0 10px 30px rgba(255,215,0,0.22);
+      font-weight: 700;
+    }
+    button.primary:hover { transform: translateY(-3px); background: #ffea5a; }
+
+    button.secondary {
+      margin-left: 12px; padding: 10px 18px; border-radius: 10px;
+      cursor: pointer; background: transparent; color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    button.secondary:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ====== RESULT STYLES (ONLY THIS AREA changed) ====== */
+    #result {
+      display: none;                 /* starts hidden; will be inline under controls */
+      max-width: 900px;
+      margin: 18px auto;
+      padding: 20px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+      color: var(--text-light);
+      transition: transform .28s cubic-bezier(.2,.9,.3,1), opacity .28s ease;
+      backdrop-filter: blur(6px);
+    }
+
+    #result.show {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* header row of result */
+    #result .result-top {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    #result .score-badge {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    #result .score {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.6px;
+    }
+
+    #result .percent {
+      font-size: 22px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,215,0,0.08);
+      color: var(--accent);
+    }
+
+    /* progress bar */
+    .result-progress {
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      margin-top: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.02);
+    }
+    .result-progress .bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, rgba(255,215,0,0.95), rgba(255,215,0,0.6));
+      transition: width 900ms cubic-bezier(.2,.9,.3,1);
+      box-shadow: 0 6px 20px rgba(255,215,0,0.08);
+    }
+
+    .result-msg {
+      margin-top: 12px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .result-actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .wrong-list {
+      margin-top: 14px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 14px;
+      color: var(--text-light);
+      border: 1px solid rgba(255,255,255,0.02);
+    }
+    .wrong-item {
+      padding: 8px 6px;
+      border-bottom: 1px dashed rgba(255,255,255,0.03);
+    }
+    .wrong-item:last-child { border-bottom: none; }
+
+    /* colored captions depending on performance */
+    #result.good .percent { background: rgba(0,200,83,0.08); color: var(--good); }
+    #result.ok .percent { background: rgba(255,213,79,0.06); color: var(--ok); }
+    #result.try .percent { background: rgba(255,82,82,0.06); color: var(--bad); }
+
+    @media (max-width: 640px) {
+      .qrow { flex-direction: column; }
+      .qnum { width: 48px; height: 48px; line-height: 48px; }
+      button.primary, button.secondary { width: 100%; margin: 6px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Noobie's Pre-Exam | CBT Test</h1>
+    <div class="meta">Comprehensive Test on Nigerian History, Politics, and Society • <strong>1 mark</strong> per correct answer</div>
+    <div class="meta">Total questions: <span id="totalQs">70</span></div>
+  </header>
+
+  <main id="quizContainer"></main>
+
+  <div class="controls">
+    <button class="primary" id="submitBtn" onclick="submitQuiz()">Submit Test</button>
+    <button class="secondary" id="resetBtn" onclick="resetQuiz()">Reset Answers</button>
+  </div>
+
+  <!-- RESULT (inline below controls) -->
+  <div id="result" aria-live="polite"></div>
+
+  <div class="note" style="text-align:center; color:var(--muted); margin-top:12px;">
+    This quiz covers pre-colonial history, colonial rule, political evolution, social justice, national values, and current developments in Nigeria.
+  </div>
+
+  <footer style="text-align:center; color:var(--muted); font-size:13px; margin-top:28px;">
+    <p>Nigerian Studies Comprehensive Examination — Original Idea by Jafaar</p>
+  </footer>
+
+  <script>
+    // Your exact 70-question array (word-for-word as provided)
+    const questions = [
+      // Pre-colonial Nigeria (5 questions)
+      { q: "Which pre-colonial Nigerian empire was founded by Usman dan Fodio?", options: ["Sokoto Caliphate", "Oyo Empire", "Benin Kingdom", "Kanem-Bornu Empire"], answer: "Sokoto Caliphate" },
+      { q: "What type of political system did the Igbo societies typically have?", options: ["Centralized monarchy", "Acephalous (stateless) system", "Theocratic system", "Military dictatorship"], answer: "Acephalous (stateless) system" },
+      { q: "Which pre-colonial Nigerian kingdom was known for its advanced bronze artwork?", options: ["Benin Kingdom", "Oyo Empire", "Sokoto Caliphate", "Hausa City-States"], answer: "Benin Kingdom" },
+      { q: "What was the primary economic activity in pre-colonial Nigeria?", options: ["Industrial manufacturing", "Agriculture and trade", "Oil extraction", "Service industry"], answer: "Agriculture and trade" },
+      { q: "Which region of Nigeria had widespread Islamic education before colonial rule?", options: ["Northern Nigeria", "Eastern Nigeria", "Western Nigeria", "Niger Delta"], answer: "Northern Nigeria" },
+
+      // Colonial Rule (10 questions)
+      { q: "In what year did the British amalgamate Northern and Southern Nigeria?", options: ["1900", "1914", "1922", "1945"], answer: "1914" },
+      { q: "Who was the British Governor-General responsible for the 1914 amalgamation?", options: ["Lord Frederick Lugard", "Sir Hugh Clifford", "Sir Arthur Richards", "Sir James Robertson"], answer: "Lord Frederick Lugard" },
+      { q: "What was the name of the company used by Britain to control Nigerian territories before colonial rule?", options: ["Royal Niger Company", "British East Africa Company", "United Africa Company", "Niger Delta Company"], answer: "Royal Niger Company" },
+      { q: "Which system of administration did the British use to govern Nigeria?", options: ["Direct Rule", "Indirect Rule", "Assimilation", "Association"], answer: "Indirect Rule" },
+      { q: "Where was Indirect Rule most problematic in colonial Nigeria?", options: ["Northern Region", "Western Region", "Eastern Region", "Lagos Colony"], answer: "Eastern Region" },
+      { q: "What was the primary goal of the colonial economy in Nigeria?", options: ["Industrialize Nigeria", "Develop infrastructure for Nigerians", "Make Nigeria a supplier of raw materials", "Create a unified national economy"], answer: "Make Nigeria a supplier of raw materials" },
+      { q: "Which crop was primarily grown in Western Nigeria during the colonial period?", options: ["Cocoa", "Groundnuts", "Palm produce", "Cotton"], answer: "Cocoa" },
+      { q: "What type of tax did the British introduce to force Nigerians into the cash economy?", options: ["Income tax", "Hut tax", "Land tax", "Trade tax"], answer: "Hut tax" },
+      { q: "Which region received less Western education during colonial rule?", options: ["Northern Region", "Western Region", "Eastern Region", "Mid-Western Region"], answer: "Northern Region" },
+      { q: "The construction of railways during colonial rule was primarily for what purpose?", options: ["Connect different ethnic groups", "Facilitate resource extraction and export", "Enable pilgrimage travel", "Promote tourism"], answer: "Facilitate resource extraction and export" },
+
+      // Political Evolution (10 questions)
+      { q: "Which constitution first introduced regionalism in Nigeria?", options: ["Clifford Constitution", "Richards Constitution", "Macpherson Constitution", "Lyttleton Constitution"], answer: "Richards Constitution" },
+      { q: "Who was the first Prime Minister of independent Nigeria?", options: ["Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello", "Abubakar Tafawa Balewa"], answer: "Abubakar Tafawa Balewa" },
+      { q: "Which political party was founded by Herbert Macaulay?", options: ["Nigerian Youth Movement", "Action Group", "Northern People's Congress", "Nigerian National Democratic Party"], answer: "Nigerian National Democratic Party" },
+      { q: "Which region was most cautious about immediate independence?", options: ["Eastern Region", "Western Region", "Northern Region", "Mid-Western Region"], answer: "Northern Region" },
+      { q: "Who moved the first motion for Nigerian independence in 1953?", options: ["Nnamdi Azikiwe", "Anthony Enahoro", "Obafemi Awolowo", "Ahmadu Bello"], answer: "Anthony Enahoro" },
+      { q: "Which political party emerged from the Egbe Omo Oduduwa cultural organization?", options: ["NCNC", "Action Group", "NPC", "NNDP"], answer: "Action Group" },
+      { q: "In what year did Nigeria gain independence?", options: ["1957", "1960", "1963", "1966"], answer: "1960" },
+      { q: "Which party was founded by Nnamdi Azikiwe?", options: ["NCNC", "Action Group", "NPC", "NNDP"], answer: "NCNC" },
+      { q: "Which party represented Northern interests?", options: ["NCNC", "Action Group", "NPC", "NNDP"], answer: "NPC" },
+      { q: "When did the Eastern and Western Regions achieve self-government?", options: ["1957", "1959", "1960", "1963"], answer: "1957" },
+
+      // Social Justice and Law (10 questions)
+      { q: "What are first-generation rights primarily concerned with?", options: ["Economic rights", "Civil and political rights", "Collective rights", "Social rights"], answer: "Civil and political rights" },
+      { q: "Which branch of law governs relationships between individuals?", options: ["Public Law", "Private Law", "Criminal Law", "Constitutional Law"], answer: "Private Law" },
+      { q: "What is the rule of law?", options: ["Laws made by rulers", "Everyone including government is subject to law", "Laws that rule the people", "Military laws"], answer: "Everyone including government is subject to law" },
+      { q: "Which of these is an example of a second-generation right?", options: ["Right to vote", "Right to education", "Right to clean environment", "Right to free speech"], answer: "Right to education" },
+      { q: "What is the primary role of the judiciary?", options: ["Make laws", "Enforce laws", "Interpret laws and administer justice", "Execute government policies"], answer: "Interpret laws and administer justice" },
+      { q: "Which of these is NOT a fundamental human right?", options: ["Right to life", "Right to dignity", "Right to own property", "Right to be wealthy"], answer: "Right to be wealthy" },
+      { q: "What does social justice aim to achieve?", options: ["Equal access to wealth and opportunities", "Wealth redistribution", "Government control of resources", "Elimination of private property"], answer: "Equal access to wealth and opportunities" },
+      { q: "Which concept means 'no one is above the law'?", options: ["Judicial review", "Rule of law", "Separation of powers", "Constitutional supremacy"], answer: "Rule of law" },
+      { q: "What are third-generation rights also known as?", options: ["Individual rights", "Solidarity rights", "Basic rights", "Natural rights"], answer: "Solidarity rights" },
+      { q: "Which legal area deals with civil wrongs that cause harm?", options: ["Contract Law", "Property Law", "Tort Law", "Administrative Law"], answer: "Tort Law" },
+
+      // Current Developments (10 questions)
+      { q: "Which sector was highlighted as a 'powerhouse' of Nigeria's global influence?", options: ["Oil industry", "Creative economy (Nollywood & Afrobeats)", "Agriculture", "Telecommunications"], answer: "Creative economy (Nollywood & Afrobeats)" },
+      { q: "What was a major challenge in Nigeria's 2023 general elections?", options: ["High voter turnout", "Widespread irregularities", "Cancellation of results", "Foreign interference"], answer: "Widespread irregularities" },
+      { q: "Which of these is a major security challenge in Northwestern Nigeria?", options: ["Piracy", "Banditry and kidnappings", "Cyber crime", "Separatist agitation"], answer: "Banditry and kidnappings" },
+      { q: "What is a significant socioeconomic challenge in Nigeria?", options: ["Low population", "High youth unemployment", "Lack of natural resources", "Oversupply of skilled labor"], answer: "High youth unemployment" },
+      { q: "Which social shift was mentioned regarding Nigerian family structures?", options: ["Return to extended families", "Nuclear families becoming more common", "Elimination of traditional families", "Government-controlled families"], answer: "Nuclear families becoming more common" },
+      { q: "What has profoundly impacted Nigerian culture through communication and matchmaking?", options: ["Traditional festivals", "Social media platforms", "Religious institutions", "Government programs"], answer: "Social media platforms" },
+      { q: "Which constitutional amendment to provide women quotas in parliament was rejected?", options: ["Gender Equality Bill", "Women Representation Act", "Affirmative Action Bill", "Gender and Equal Opportunities Bill"], answer: "Gender and Equal Opportunities Bill" },
+      { q: "What erodes purchasing power for many Nigerians according to the text?", options: ["Low wages", "High inflation rates", "Taxation", "Foreign exchange rates"], answer: "High inflation rates" },
+      { q: "Which region faces a persistent insurgency by terrorist groups?", options: ["Northwest", "Northeast", "Southeast", "Southwest"], answer: "Northeast" },
+      { q: "What continues to undermine public trust and governance in Nigeria?", options: ["Lack of education", "Corruption", "Ethnic diversity", "Religious differences"], answer: "Corruption" },
+
+      // Individuals, Norms and Values (10 questions)
+      { q: "What are norms?", options: ["Laws enforced by government", "Accepted standards of behavior", "Personal preferences", "Religious doctrines"], answer: "Accepted standards of behavior" },
+      { q: "Which of these is an example of a folkway in Nigerian culture?", options: ["Paying taxes", "Greeting elders properly", "Obeying traffic laws", "Not stealing"], answer: "Greeting elders properly" },
+      { q: "What is a taboo in most Nigerian cultures?", options: ["Eating rice", "Wearing traditional clothes", "Incest", "Speaking local languages"], answer: "Incest" },
+      { q: "Which value is demonstrated by returning a lost item instead of keeping it?", options: ["Honesty", "Hard work", "Religious faith", "Hospitality"], answer: "Honesty" },
+      { q: "How can citizenship be acquired in Nigeria?", options: ["By birth, registration, and naturalization", "Only by birth", "By living in Nigeria for 5 years", "By marriage to a Nigerian"], answer: "By birth, registration, and naturalization" },
+      { q: "Which of these is a civic responsibility?", options: ["Right to vote", "Paying taxes", "Freedom of speech", "Right to education"], answer: "Paying taxes" },
+      { q: "Approximately how many indigenous languages are there in Nigeria?", options: ["Over 500", "About 100", "Exactly 250", "Less than 50"], answer: "Over 500" },
+      { q: "What is a major threat to indigenous languages in Nigeria?", options: ["Government promotion", "Preference for English", "Too many speakers", "Lack of writing systems"], answer: "Preference for English" },
+      { q: "Which of these is considered a negative social conduct?", options: ["Hospitality", "Cultism", "Respect for elders", "Hard work"], answer: "Cultism" },
+      { q: "What is kidnapping for ritual purposes often linked to?", options: ["Political campaigns", "Traditional beliefs in money rituals", "Religious ceremonies", "Cultural festivals"], answer: "Traditional beliefs in money rituals" },
+
+      // Re-orientation and National Values (10 questions)
+      { q: "What does re-orientation aim to change?", options: ["Government policies", "People's mindset and behavior", "Economic systems", "International relations"], answer: "People's mindset and behavior" },
+      { q: "Which campaign was launched to promote public discipline in the 1980s?", options: ["MAMSER", "War Against Indiscipline", "Structural Adjustment", "Operation Feed the Nation"], answer: "War Against Indiscipline" },
+      { q: "What does NOA stand for?", options: ["National Orientation Agency", "Nigerian Organization Authority", "National Organization Act", "Nigerian Orientation Association"], answer: "National Orientation Agency" },
+      { q: "What were the 3R's implemented after the Civil War?", options: ["Reconstruction, Rehabilitation, Reconciliation", "Revenue, Resources, Redistribution", "Regions, Rights, Responsibilities", "Rules, Regulations, Rights"], answer: "Reconstruction, Rehabilitation, Reconciliation" },
+      { q: "Which policy declared 'No Victor, No Vanquished' after the Civil War?", options: ["Reconstruction policy", "Rehabilitation policy", "Reconciliation policy", "Revenue allocation policy"], answer: "Reconciliation policy" },
+      { q: "What are austerity measures designed to do?", options: ["Increase government spending", "Reduce national debt and control inflation", "Expand social programs", "Promote economic growth through stimulus"], answer: "Reduce national debt and control inflation" },
+      { q: "When was the Structural Adjustment Programme (SAP) introduced in Nigeria?", options: ["1986", "1979", "1993", "1960"], answer: "1986" },
+      { q: "Which value emphasizes that all types of work deserve respect?", options: ["Patriotism", "Dignity of labour", "Religious tolerance", "Social justice"], answer: "Dignity of labour" },
+      { q: "What does MAMSER stand for?", options: ["Mass Mobilization for Self-Reliance, Social Justice, and Economic Recovery", "Ministry of Agriculture and Social Services Economic Reform", "Movement for African Socialism and Economic Revival", "Management of Social Services and Economic Resources"], answer: "Mass Mobilization for Self-Reliance, Social Justice, and Economic Recovery" },
+      { q: "Which national value involves peaceful coexistence between different religions?", options: ["Patriotism", "Hard work", "Religious tolerance", "Honesty"], answer: "Religious tolerance" },
+
+      // Additional questions to reach 70 (5 questions)
+      { q: "Which pre-colonial Nigerian society was known for its 'Ozo' title system?", options: ["Igbo", "Yoruba", "Hausa", "Kanuri"], answer: "Igbo" },
+      { q: "What was the primary motivation for the 1914 amalgamation?", options: ["Cultural unification", "Administrative convenience and economic efficiency", "Preparing for independence", "Military strategy"], answer: "Administrative convenience and economic efficiency" },
+      { q: "Which document outlines the fundamental rights of Nigerian citizens?", options: ["The Constitution", "The National Pledge", "The National Policy on Education", "The Independence Act"], answer: "The Constitution" },
+      { q: "Which agency is responsible for combating drug trafficking in Nigeria?", options: ["EFCC", "NDLEA", "ICPC", "NOA"], answer: "NDLEA" },
+      { q: "What is a major factor contributing to food shortages in some regions?", options: ["Focus on cash crop production", "Lack of farming knowledge", "Poor soil quality", "Too many farmers"], answer: "Focus on cash crop production" }
+    ];
+
+    // Build UI
+  const container = document.getElementById('quizContainer');
+  document.getElementById('totalQs').textContent = questions.length;
+
+  // render questions
+  questions.forEach((item, idx) => {
+    const card = document.createElement('article');
+    card.className = 'quiz-card';
+
+    const qrow = document.createElement('div');
+    qrow.className = 'qrow';
+
+    const qnum = document.createElement('div');
+    qnum.className = 'qnum';
+    qnum.textContent = idx + 1;
+
+    const qtext = document.createElement('div');
+    qtext.className = 'qtext';
+    qtext.innerHTML = `<strong>Q${idx + 1}:</strong> ${item.q}`;
+
+    qrow.appendChild(qnum);
+    qrow.appendChild(qtext);
+    card.appendChild(qrow);
+
+    const opts = document.createElement('div');
+    opts.className = 'options';
+    item.options.forEach((opt, optIdx) => {
+      const id = `q${idx}_opt${optIdx}`;
+      const label = document.createElement('label');
+      label.className = 'opt';
+      label.innerHTML = `<input type="radio" name="q${idx}" id="${id}" value="${escapeHtml(opt)}"> ${escapeHtml(opt)}`;
+      opts.appendChild(label);
+    });
+
+    card.appendChild(opts);
+    container.appendChild(card);
+  });
+
+  // scoring and result rendering
+  function submitQuiz() {
+    const total = questions.length;
+    let score = 0;
+    let answered = 0;
+    let incorrectList = [];
+
+    questions.forEach((q, i) => {
+      const sel = document.querySelector(`input[name="q${i}"]:checked`);
+      if (sel) answered++;
+      if (sel && sel.value === q.answer) {
+        score++;
+      } else {
+        const given = sel ? sel.value : null;
+        incorrectList.push({
+          qn: i + 1,
+          given: given,
+          correct: q.answer
+        });
+      }
+    });
+
+    const percent = Number(((score / total) * 100).toFixed(2));
+    const box = document.getElementById('result');
+
+    // reset classes
+    box.className = '';
+
+    if (percent >= 80) box.classList.add('good');
+    else if (percent >= 50) box.classList.add('ok');
+    else box.classList.add('try');
+
+    const performanceText =
+      percent >= 80 ? 'Excellent work! You have a strong understanding.' :
+      percent >= 50 ? 'Good effort! Review the topics you missed.' :
+      'Keep studying! Use this as a learning opportunity.';
+
+    const percentLabel = `${percent}%`;
+    const scoreLabel = `${score} / ${total}`;
+
+    let html = `
+      <div class="result-top">
+        <div class="score-badge">
+          <div>
+            <div class="score">${scoreLabel}</div>
+            <div style="font-size:13px; color:var(--muted);">Answered: ${answered} of ${total}</div>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:13px; color:var(--muted);">Performance</div>
+          <div class="percent">${percentLabel}</div>
+        </div>
+      </div>
+
+      <div class="result-progress" aria-hidden="true">
+        <div class="bar" id="resultBar" style="width:0%"></div>
+      </div>
+
+      <div class="result-msg">${escapeHtml(performanceText)}</div>
+
+      <div class="result-actions">
+        <button class="primary" onclick="retakeQuiz()">Retake Quiz</button>
+        <button class="secondary" onclick="scrollToTop()">Review Answers</button>
+      </div>
+    `;
+
+    if (incorrectList.length > 0) {
+      html += `<div class="wrong-list">
+                <div style="font-weight:700; margin-bottom:8px; color:var(--muted);">
+                  Incorrect/Unanswered Questions (${incorrectList.length}):
+                </div>
+                ${incorrectList.map(it => {
+                  const givenText = it.given ? `Your answer: "${escapeHtml(it.given)}"` : 'Not answered';
+                  return `<div class="wrong-item"><strong>Q${it.qn}</strong> — ${givenText} • Correct: "${escapeHtml(it.correct)}"</div>`;
+                }).join('')}
+              </div>`;
+    }
+
+    box.innerHTML = html;
+    box.style.display = 'block';
+
+    requestAnimationFrame(() => {
+      const bar = document.getElementById('resultBar');
+      if (bar) bar.style.width = percent + '%';
+    });
+
+    box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // disable submit until retake
+    const submitBtn = document.getElementById('submit');
+    if (submitBtn) submitBtn.disabled = true;
+  }
+
+  function resetQuiz() {
+    if (!confirm('Reset all selected answers?')) return;
+    document.querySelectorAll('input[type="radio"]').forEach(i => i.checked = false);
+    const r = document.getElementById('result');
+    r.style.display = 'none';
+    r.className = '';
+    r.innerHTML = '';
+  }
+
+  function retakeQuiz() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.querySelectorAll('input[type="radio"]').forEach(i => i.checked = false);
+
+    const r = document.getElementById('result');
+    r.className = '';
+    r.innerHTML = '';
+    r.style.display = 'none';
+
+    // re-enable submit
+    const submitBtn = document.getElementById('submit');
+    if (submitBtn) submitBtn.disabled = false;
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // utility to escape HTML
+  function escapeHtml(s) {
+    if (s === null || s === undefined) return '';
+    return String(s)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;');
+  }
+</script>
+</body>
+</html>
