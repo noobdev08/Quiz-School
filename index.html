@@ -205,7 +205,7 @@
 <body>
   <header>
     <h1>Noobie's Pre-Exam | CBT Test</h1>
-    <div class="meta">Comprehensive Test on Nigerian History, Politics, and Society • <strong>1 mark</strong> per correct answer</div>
+    <div class="meta">Comprehensive Test on Physics covering key concepts and past question topics mainly• <strong>1 mark</strong> per correct answer</div>
     <div class="meta">Total questions: <span id="totalQs">70</span></div>
   </header>
 
@@ -220,11 +220,11 @@
   <div id="result" aria-live="polite"></div>
 
   <div class="note" style="text-align:center; color:var(--muted); margin-top:12px;">
-    This quiz covers pre-colonial history, colonial rule, political evolution, social justice, national values, and current developments in Nigeria.
+    This quiz covers PHY102 - Electricity and Magnetism
   </div>
 
   <footer style="text-align:center; color:var(--muted); font-size:13px; margin-top:28px;">
-    <p>Nigerian Studies Comprehensive Examination — Original Idea by Jafaar</p>
+    <p>Physics | Electricity and Magnetism — Original Idea by Jafaar</p>
     <p style="margin-top:20px; font-size:14px; color:gray; text-align:center;">
   🔄 This quiz will be updated daily with Computer Science courses and general courses (Maths, Physics, GST) useful for everyone.
     </p>
@@ -234,92 +234,79 @@
   <script>
     // Your exact 70-question array (word-for-word as provided)
     const questions = [
-      // Pre-colonial Nigeria (5 questions)
-      { q: "Which pre-colonial Nigerian empire was founded by Usman dan Fodio?", options: ["Sokoto Caliphate", "Oyo Empire", "Benin Kingdom", "Kanem-Bornu Empire"], answer: "Sokoto Caliphate" },
-      { q: "What type of political system did the Igbo societies typically have?", options: ["Centralized monarchy", "Acephalous (stateless) system", "Theocratic system", "Military dictatorship"], answer: "Acephalous (stateless) system" },
-      { q: "Which pre-colonial Nigerian kingdom was known for its advanced bronze artwork?", options: ["Benin Kingdom", "Oyo Empire", "Sokoto Caliphate", "Hausa City-States"], answer: "Benin Kingdom" },
-      { q: "What was the primary economic activity in pre-colonial Nigeria?", options: ["Industrial manufacturing", "Agriculture and trade", "Oil extraction", "Service industry"], answer: "Agriculture and trade" },
-      { q: "Which region of Nigeria had widespread Islamic education before colonial rule?", options: ["Northern Nigeria", "Eastern Nigeria", "Western Nigeria", "Niger Delta"], answer: "Northern Nigeria" },
+  // ---- 30 from yesterday’s topics ----
+  { q: "A conductor of length 0.5 m moves at 6 m/s perpendicular to a magnetic field of 0.25 T. Find the induced emf.", options: ["0.75 V", "1.25 V", "0.5 V", "2.0 V"], answer: "0.75 V" },
+  { q: "A 200-turn coil of area 0.01 m² is placed in a magnetic field of 0.5 T. If the field is reduced to zero in 0.1 s, find the induced emf.", options: ["10 V", "5 V", "1 V", "0.5 V"], answer: "10 V" },
+  { q: "A straight conductor of length 0.4 m is moved with a velocity of 3 m/s at right angles to a magnetic field of 0.2 T. Induced emf is:", options: ["0.12 V", "0.24 V", "0.36 V", "0.48 V"], answer: "0.24 V" },
+  { q: "The SI unit of magnetic flux is:", options: ["Tesla", "Weber", "Henry", "Volt"], answer: "Weber" },
+  { q: "If the flux linked with a coil changes from 0.01 Wb to 0 in 0.05 s, the average induced emf in the 200-turn coil is:", options: ["20 V", "40 V", "80 V", "0.4 V"], answer: "40 V" },
+  { q: "A rectangular coil of 100 turns, area 0.02 m², is rotated at 50 Hz in a field of 0.1 T. The maximum induced emf is:", options: ["62.8 V", "31.4 V", "6.28 V", "12.6 V"], answer: "62.8 V" },
+  { q: "Faraday’s law of induction states that emf induced is proportional to:", options: ["Rate of change of flux", "Flux squared", "Magnetic field strength only", "None"], answer: "Rate of change of flux" },
+  { q: "Which law explains the direction of induced emf?", options: ["Coulomb’s law", "Lenz’s law", "Ohm’s law", "Ampere’s law"], answer: "Lenz’s law" },
+  { q: "A 300-turn solenoid of length 0.5 m carries a current of 2 A. Find magnetic field inside (μ₀ = 4π×10⁻⁷).", options: ["1.5×10⁻³ T", "3.0×10⁻³ T", "7.5×10⁻⁴ T", "9.0×10⁻³ T"], answer: "1.5×10⁻³ T" },
+  { q: "The induced emf in a coil of N turns is E = –N dΦ/dt. This represents:", options: ["Lenz’s law", "Faraday’s law", "Coulomb’s law", "Gauss’s law"], answer: "Faraday’s law" },
+  { q: "A 500-turn coil links a flux of 2×10⁻³ Wb. Find the flux linkage.", options: ["0.5 Wb", "1 Wb", "1.5 Wb", "None"], answer: "1 Wb" },
+  { q: "If a 50 cm conductor is moved at 4 m/s across a magnetic field of 0.6 T, emf induced is:", options: ["1.2 V", "2.4 V", "3.0 V", "4.8 V"], answer: "1.2 V" },
+  { q: "Which of these is NOT a factor affecting induced emf?", options: ["Speed of motion", "Magnetic field strength", "Resistance of circuit", "Flux change"], answer: "Resistance of circuit" },
+  { q: "The dimension of magnetic flux is:", options: ["ML²T⁻²A⁻¹", "MLT⁻²A⁻¹", "ML²T⁻²", "MLT⁻³A⁻¹"], answer: "ML²T⁻²A⁻¹" },
+  { q: "If flux through 1 turn is 5×10⁻⁴ Wb, then flux linkage for 200 turns is:", options: ["0.01 Wb", "0.1 Wb", "0.05 Wb", "1 Wb"], answer: "0.1 Wb" },
+  { q: "When a coil rotates in a uniform magnetic field, induced emf is maximum when plane of coil is:", options: ["Parallel to field", "Perpendicular to field", "At 45°", "None"], answer: "Parallel to field" },
+  { q: "Lenz’s law is a consequence of:", options: ["Law of inertia", "Conservation of charge", "Conservation of energy", "Newton’s third law"], answer: "Conservation of energy" },
+  { q: "If number of turns of a coil is doubled, emf induced for same flux change is:", options: ["Halved", "Doubled", "Unchanged", "Zero"], answer: "Doubled" },
+  { q: "The emf induced in a moving conductor is called:", options: ["Transformer emf", "Motional emf", "Electrostatic emf", "None"], answer: "Motional emf" },
+  { q: "A coil with 1000 turns links a flux of 2×10⁻³ Wb in 0.5 s. Average induced emf is:", options: ["2 V", "4 V", "6 V", "8 V"], answer: "4 V" },
+  { q: "Magnetic flux through a surface is defined as:", options: ["B×A", "B×A cosθ", "E×q", "None"], answer: "B×A cosθ" },
+  { q: "SI unit of self-inductance is:", options: ["Henry", "Weber", "Tesla", "Ampere"], answer: "Henry" },
+  { q: "Which factor does not affect flux linkage?", options: ["Area of coil", "Magnetic field strength", "Current resistance", "Number of turns"], answer: "Current resistance" },
+  { q: "The emf induced in a circuit depends on:", options: ["Rate of change of flux", "Flux squared", "Field direction only", "None"], answer: "Rate of change of flux" },
+  { q: "If B = 0.4 T, l = 0.2 m, v = 10 m/s, emf = ?", options: ["0.8 V", "0.04 V", "0.2 V", "4 V"], answer: "0.8 V" },
+  { q: "The opposition to change of current in a coil is due to:", options: ["Capacitance", "Resistance", "Inductance", "Conductance"], answer: "Inductance" },
+  { q: "Which type of emf is produced in a generator?", options: ["Motional emf", "Transformer emf", "Static emf", "Chemical emf"], answer: "Motional emf" },
+  { q: "Magnetic flux density unit is:", options: ["Weber", "Tesla", "Henry", "Volt"], answer: "Tesla" },
+  { q: "If flux changes by 1 Wb in 1 s in 100 turns, induced emf is:", options: ["1 V", "10 V", "100 V", "1000 V"], answer: "100 V" },
+  { q: "Which law forms the basis of an electric generator?", options: ["Lenz’s law", "Faraday’s law", "Ohm’s law", "Coulomb’s law"], answer: "Faraday’s law" },
 
-      // Colonial Rule (10 questions)
-      { q: "In what year did the British amalgamate Northern and Southern Nigeria?", options: ["1900", "1914", "1922", "1945"], answer: "1914" },
-      { q: "Who was the British Governor-General responsible for the 1914 amalgamation?", options: ["Lord Frederick Lugard", "Sir Hugh Clifford", "Sir Arthur Richards", "Sir James Robertson"], answer: "Lord Frederick Lugard" },
-      { q: "What was the name of the company used by Britain to control Nigerian territories before colonial rule?", options: ["Royal Niger Company", "British East Africa Company", "United Africa Company", "Niger Delta Company"], answer: "Royal Niger Company" },
-      { q: "Which system of administration did the British use to govern Nigeria?", options: ["Direct Rule", "Indirect Rule", "Assimilation", "Association"], answer: "Indirect Rule" },
-      { q: "Where was Indirect Rule most problematic in colonial Nigeria?", options: ["Northern Region", "Western Region", "Eastern Region", "Lagos Colony"], answer: "Eastern Region" },
-      { q: "What was the primary goal of the colonial economy in Nigeria?", options: ["Industrialize Nigeria", "Develop infrastructure for Nigerians", "Make Nigeria a supplier of raw materials", "Create a unified national economy"], answer: "Make Nigeria a supplier of raw materials" },
-      { q: "Which crop was primarily grown in Western Nigeria during the colonial period?", options: ["Cocoa", "Groundnuts", "Palm produce", "Cotton"], answer: "Cocoa" },
-      { q: "What type of tax did the British introduce to force Nigerians into the cash economy?", options: ["Income tax", "Hut tax", "Land tax", "Trade tax"], answer: "Hut tax" },
-      { q: "Which region received less Western education during colonial rule?", options: ["Northern Region", "Western Region", "Eastern Region", "Mid-Western Region"], answer: "Northern Region" },
-      { q: "The construction of railways during colonial rule was primarily for what purpose?", options: ["Connect different ethnic groups", "Facilitate resource extraction and export", "Enable pilgrimage travel", "Promote tourism"], answer: "Facilitate resource extraction and export" },
-
-      // Political Evolution (10 questions)
-      { q: "Which constitution first introduced regionalism in Nigeria?", options: ["Clifford Constitution", "Richards Constitution", "Macpherson Constitution", "Lyttleton Constitution"], answer: "Richards Constitution" },
-      { q: "Who was the first Prime Minister of independent Nigeria?", options: ["Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello", "Abubakar Tafawa Balewa"], answer: "Abubakar Tafawa Balewa" },
-      { q: "Which political party was founded by Herbert Macaulay?", options: ["Nigerian Youth Movement", "Action Group", "Northern People's Congress", "Nigerian National Democratic Party"], answer: "Nigerian National Democratic Party" },
-      { q: "Which region was most cautious about immediate independence?", options: ["Eastern Region", "Western Region", "Northern Region", "Mid-Western Region"], answer: "Northern Region" },
-      { q: "Who moved the first motion for Nigerian independence in 1953?", options: ["Nnamdi Azikiwe", "Anthony Enahoro", "Obafemi Awolowo", "Ahmadu Bello"], answer: "Anthony Enahoro" },
-      { q: "Which political party emerged from the Egbe Omo Oduduwa cultural organization?", options: ["NCNC", "Action Group", "NPC", "NNDP"], answer: "Action Group" },
-      { q: "In what year did Nigeria gain independence?", options: ["1957", "1960", "1963", "1966"], answer: "1960" },
-      { q: "Which party was founded by Nnamdi Azikiwe?", options: ["NCNC", "Action Group", "NPC", "NNDP"], answer: "NCNC" },
-      { q: "Which party represented Northern interests?", options: ["NCNC", "Action Group", "NPC", "NNDP"], answer: "NPC" },
-      { q: "When did the Eastern and Western Regions achieve self-government?", options: ["1957", "1959", "1960", "1963"], answer: "1957" },
-
-      // Social Justice and Law (10 questions)
-      { q: "What are first-generation rights primarily concerned with?", options: ["Economic rights", "Civil and political rights", "Collective rights", "Social rights"], answer: "Civil and political rights" },
-      { q: "Which branch of law governs relationships between individuals?", options: ["Public Law", "Private Law", "Criminal Law", "Constitutional Law"], answer: "Private Law" },
-      { q: "What is the rule of law?", options: ["Laws made by rulers", "Everyone including government is subject to law", "Laws that rule the people", "Military laws"], answer: "Everyone including government is subject to law" },
-      { q: "Which of these is an example of a second-generation right?", options: ["Right to vote", "Right to education", "Right to clean environment", "Right to free speech"], answer: "Right to education" },
-      { q: "What is the primary role of the judiciary?", options: ["Make laws", "Enforce laws", "Interpret laws and administer justice", "Execute government policies"], answer: "Interpret laws and administer justice" },
-      { q: "Which of these is NOT a fundamental human right?", options: ["Right to life", "Right to dignity", "Right to own property", "Right to be wealthy"], answer: "Right to be wealthy" },
-      { q: "What does social justice aim to achieve?", options: ["Equal access to wealth and opportunities", "Wealth redistribution", "Government control of resources", "Elimination of private property"], answer: "Equal access to wealth and opportunities" },
-      { q: "Which concept means 'no one is above the law'?", options: ["Judicial review", "Rule of law", "Separation of powers", "Constitutional supremacy"], answer: "Rule of law" },
-      { q: "What are third-generation rights also known as?", options: ["Individual rights", "Solidarity rights", "Basic rights", "Natural rights"], answer: "Solidarity rights" },
-      { q: "Which legal area deals with civil wrongs that cause harm?", options: ["Contract Law", "Property Law", "Tort Law", "Administrative Law"], answer: "Tort Law" },
-
-      // Current Developments (10 questions)
-      { q: "Which sector was highlighted as a 'powerhouse' of Nigeria's global influence?", options: ["Oil industry", "Creative economy (Nollywood & Afrobeats)", "Agriculture", "Telecommunications"], answer: "Creative economy (Nollywood & Afrobeats)" },
-      { q: "What was a major challenge in Nigeria's 2023 general elections?", options: ["High voter turnout", "Widespread irregularities", "Cancellation of results", "Foreign interference"], answer: "Widespread irregularities" },
-      { q: "Which of these is a major security challenge in Northwestern Nigeria?", options: ["Piracy", "Banditry and kidnappings", "Cyber crime", "Separatist agitation"], answer: "Banditry and kidnappings" },
-      { q: "What is a significant socioeconomic challenge in Nigeria?", options: ["Low population", "High youth unemployment", "Lack of natural resources", "Oversupply of skilled labor"], answer: "High youth unemployment" },
-      { q: "Which social shift was mentioned regarding Nigerian family structures?", options: ["Return to extended families", "Nuclear families becoming more common", "Elimination of traditional families", "Government-controlled families"], answer: "Nuclear families becoming more common" },
-      { q: "What has profoundly impacted Nigerian culture through communication and matchmaking?", options: ["Traditional festivals", "Social media platforms", "Religious institutions", "Government programs"], answer: "Social media platforms" },
-      { q: "Which constitutional amendment to provide women quotas in parliament was rejected?", options: ["Gender Equality Bill", "Women Representation Act", "Affirmative Action Bill", "Gender and Equal Opportunities Bill"], answer: "Gender and Equal Opportunities Bill" },
-      { q: "What erodes purchasing power for many Nigerians according to the text?", options: ["Low wages", "High inflation rates", "Taxation", "Foreign exchange rates"], answer: "High inflation rates" },
-      { q: "Which region faces a persistent insurgency by terrorist groups?", options: ["Northwest", "Northeast", "Southeast", "Southwest"], answer: "Northeast" },
-      { q: "What continues to undermine public trust and governance in Nigeria?", options: ["Lack of education", "Corruption", "Ethnic diversity", "Religious differences"], answer: "Corruption" },
-
-      // Individuals, Norms and Values (10 questions)
-      { q: "What are norms?", options: ["Laws enforced by government", "Accepted standards of behavior", "Personal preferences", "Religious doctrines"], answer: "Accepted standards of behavior" },
-      { q: "Which of these is an example of a folkway in Nigerian culture?", options: ["Paying taxes", "Greeting elders properly", "Obeying traffic laws", "Not stealing"], answer: "Greeting elders properly" },
-      { q: "What is a taboo in most Nigerian cultures?", options: ["Eating rice", "Wearing traditional clothes", "Incest", "Speaking local languages"], answer: "Incest" },
-      { q: "Which value is demonstrated by returning a lost item instead of keeping it?", options: ["Honesty", "Hard work", "Religious faith", "Hospitality"], answer: "Honesty" },
-      { q: "How can citizenship be acquired in Nigeria?", options: ["By birth, registration, and naturalization", "Only by birth", "By living in Nigeria for 5 years", "By marriage to a Nigerian"], answer: "By birth, registration, and naturalization" },
-      { q: "Which of these is a civic responsibility?", options: ["Right to vote", "Paying taxes", "Freedom of speech", "Right to education"], answer: "Paying taxes" },
-      { q: "Approximately how many indigenous languages are there in Nigeria?", options: ["Over 500", "About 100", "Exactly 250", "Less than 50"], answer: "Over 500" },
-      { q: "What is a major threat to indigenous languages in Nigeria?", options: ["Government promotion", "Preference for English", "Too many speakers", "Lack of writing systems"], answer: "Preference for English" },
-      { q: "Which of these is considered a negative social conduct?", options: ["Hospitality", "Cultism", "Respect for elders", "Hard work"], answer: "Cultism" },
-      { q: "What is kidnapping for ritual purposes often linked to?", options: ["Political campaigns", "Traditional beliefs in money rituals", "Religious ceremonies", "Cultural festivals"], answer: "Traditional beliefs in money rituals" },
-
-      // Re-orientation and National Values (10 questions)
-      { q: "What does re-orientation aim to change?", options: ["Government policies", "People's mindset and behavior", "Economic systems", "International relations"], answer: "People's mindset and behavior" },
-      { q: "Which campaign was launched to promote public discipline in the 1980s?", options: ["MAMSER", "War Against Indiscipline", "Structural Adjustment", "Operation Feed the Nation"], answer: "War Against Indiscipline" },
-      { q: "What does NOA stand for?", options: ["National Orientation Agency", "Nigerian Organization Authority", "National Organization Act", "Nigerian Orientation Association"], answer: "National Orientation Agency" },
-      { q: "What were the 3R's implemented after the Civil War?", options: ["Reconstruction, Rehabilitation, Reconciliation", "Revenue, Resources, Redistribution", "Regions, Rights, Responsibilities", "Rules, Regulations, Rights"], answer: "Reconstruction, Rehabilitation, Reconciliation" },
-      { q: "Which policy declared 'No Victor, No Vanquished' after the Civil War?", options: ["Reconstruction policy", "Rehabilitation policy", "Reconciliation policy", "Revenue allocation policy"], answer: "Reconciliation policy" },
-      { q: "What are austerity measures designed to do?", options: ["Increase government spending", "Reduce national debt and control inflation", "Expand social programs", "Promote economic growth through stimulus"], answer: "Reduce national debt and control inflation" },
-      { q: "When was the Structural Adjustment Programme (SAP) introduced in Nigeria?", options: ["1986", "1979", "1993", "1960"], answer: "1986" },
-      { q: "Which value emphasizes that all types of work deserve respect?", options: ["Patriotism", "Dignity of labour", "Religious tolerance", "Social justice"], answer: "Dignity of labour" },
-      { q: "What does MAMSER stand for?", options: ["Mass Mobilization for Self-Reliance, Social Justice, and Economic Recovery", "Ministry of Agriculture and Social Services Economic Reform", "Movement for African Socialism and Economic Revival", "Management of Social Services and Economic Resources"], answer: "Mass Mobilization for Self-Reliance, Social Justice, and Economic Recovery" },
-      { q: "Which national value involves peaceful coexistence between different religions?", options: ["Patriotism", "Hard work", "Religious tolerance", "Honesty"], answer: "Religious tolerance" },
-
-      // Additional questions to reach 70 (5 questions)
-      { q: "Which pre-colonial Nigerian society was known for its 'Ozo' title system?", options: ["Igbo", "Yoruba", "Hausa", "Kanuri"], answer: "Igbo" },
-      { q: "What was the primary motivation for the 1914 amalgamation?", options: ["Cultural unification", "Administrative convenience and economic efficiency", "Preparing for independence", "Military strategy"], answer: "Administrative convenience and economic efficiency" },
-      { q: "Which document outlines the fundamental rights of Nigerian citizens?", options: ["The Constitution", "The National Pledge", "The National Policy on Education", "The Independence Act"], answer: "The Constitution" },
-      { q: "Which agency is responsible for combating drug trafficking in Nigeria?", options: ["EFCC", "NDLEA", "ICPC", "NOA"], answer: "NDLEA" },
-      { q: "What is a major factor contributing to food shortages in some regions?", options: ["Focus on cash crop production", "Lack of farming knowledge", "Poor soil quality", "Too many farmers"], answer: "Focus on cash crop production" }
-    ];
+  // ---- 40 from new topics ----
+  { q: "The force between two charges is inversely proportional to:", options: ["q1q2", "Distance", "Square of distance", "Permittivity"], answer: "Square of distance" },
+  { q: "Unit of electric field is:", options: ["N/C", "J/C", "C/m²", "Nm²/C²"], answer: "N/C" },
+  { q: "An electron in a field of 500 N/C experiences a force of:", options: ["8×10⁻¹⁷ N", "5×10⁻¹⁶ N", "1.6×10⁻¹⁶ N", "None"], answer: "8×10⁻¹⁷ N" },
+  { q: "Work done in moving a 2 C charge through 5 V is:", options: ["2 J", "5 J", "10 J", "0.4 J"], answer: "10 J" },
+  { q: "Power dissipated in a 10 Ω resistor with 2 A current is:", options: ["20 W", "10 W", "40 W", "5 W"], answer: "40 W" },
+  { q: "Magnetic field at distance r from a long straight wire carrying current I is:", options: ["μ₀I/2πr", "μ₀I/4πr²", "μ₀I²/2πr", "μ₀/r"], answer: "μ₀I/2πr" },
+  { q: "Magnetic field inside a solenoid depends on:", options: ["Number of turns per unit length × current", "Only length", "Only radius", "None"], answer: "Number of turns per unit length × current" },
+  { q: "Magnetic flux linkage is:", options: ["NΦ", "NΦ/t", "Φ/N", "None"], answer: "NΦ" },
+  { q: "The force on a charge q moving with velocity v in a field B is:", options: ["qvB", "qvB cosθ", "qvB sinθ", "None"], answer: "qvB sinθ" },
+  { q: "If q=2 C, v=3 m/s, B=0.4 T, θ=90°, force is:", options: ["1.2 N", "2.4 N", "0.6 N", "0"], answer: "2.4 N" },
+  { q: "A wire of length 0.2 m carrying current 5 A in a 0.3 T field at 90° experiences force:", options: ["0.15 N", "0.3 N", "0.6 N", "1.0 N"], answer: "0.3 N" },
+  { q: "Power dissipated in terms of V and R is:", options: ["V²/R", "IR", "VI", "I²R"], answer: "V²/R" },
+  { q: "Which of these is dimensionless?", options: ["Relative permittivity", "Electric field", "Current", "Charge"], answer: "Relative permittivity" },
+  { q: "Phase angle of RLC circuit φ is:", options: ["tan⁻¹((Xl-Xc)/R)", "tan⁻¹(R/(Xl-Xc))", "tan⁻¹(Xc/R)", "tan⁻¹(Xl/R)"], answer: "tan⁻¹((Xl-Xc)/R)" },
+  { q: "At resonance, impedance of RLC is:", options: ["R", "0", "∞", "Xl-Xc"], answer: "R" },
+  { q: "In RLC resonance, current is:", options: ["Maximum", "Minimum", "Zero", "Infinite"], answer: "Maximum" },
+  { q: "The reactance of a capacitor is:", options: ["1/ωC", "ωC", "1/C", "ωL"], answer: "1/ωC" },
+  { q: "The reactance of an inductor is:", options: ["ωL", "1/ωL", "L/ω", "None"], answer: "ωL" },
+  { q: "In AC circuits, average power is:", options: ["VI cosφ", "VI sinφ", "VI", "I²R only"], answer: "VI cosφ" },
+  { q: "The power factor is:", options: ["cosφ", "tanφ", "sinφ", "None"], answer: "cosφ" },
+  { q: "Current density J is:", options: ["σE", "ρE", "V/I", "Q/t"], answer: "σE" },
+  { q: "Ohm’s law states that:", options: ["V∝I", "V=IR", "Both", "None"], answer: "Both" },
+  { q: "A 60 W bulb rated at 120 V has resistance:", options: ["240 Ω", "60 Ω", "120 Ω", "20 Ω"], answer: "240 Ω" },
+  { q: "The energy stored in an inductor is:", options: ["½LI²", "½CV²", "½mv²", "None"], answer: "½LI²" },
+  { q: "Permittivity of free space ε₀ is:", options: ["8.85×10⁻¹² C²/Nm²", "9×10⁹ Nm²/C²", "4π×10⁻⁷ Tm/A", "None"], answer: "8.85×10⁻¹² C²/Nm²" },
+  { q: "Magnetic force on a straight conductor length l in B is:", options: ["BIl sinθ", "BIl cosθ", "qvB", "None"], answer: "BIl sinθ" },
+  { q: "If current is 2 A, length 0.5 m, B=0.2 T, θ=90°, force is:", options: ["0.1 N", "0.2 N", "0.3 N", "0.4 N"], answer: "0.2 N" },
+  { q: "The resistance of a conductor depends on:", options: ["Length, area, resistivity", "Current", "Voltage", "Power"], answer: "Length, area, resistivity" },
+  { q: "If resistance doubles, power at constant V:", options: ["Halves", "Doubles", "Quarter", "None"], answer: "Halves" },
+  { q: "Coulomb’s constant k value is:", options: ["9×10⁹ Nm²/C²", "8.85×10⁻¹²", "1.6×10⁻¹⁹", "None"], answer: "9×10⁹ Nm²/C²" },
+  { q: "Drift velocity is proportional to:", options: ["Current density", "Charge density", "Voltage squared", "Resistance"], answer: "Current density" },
+  { q: "Electric power in terms of I and R is:", options: ["I²R", "V²R", "IR²", "None"], answer: "I²R" },
+  { q: "A capacitor stores energy:", options: ["½CV²", "½LI²", "½mv²", "QV"], answer: "½CV²" },
+  { q: "At resonance, Xl =", options: ["Xc", "0", "∞", "R"], answer: "Xc" },
+  { q: "Magnetic field lines are:", options: ["Closed loops", "Straight", "Radial only", "None"], answer: "Closed loops" },
+  { q: "A charged body attracts a neutral body due to:", options: ["Induction", "Conduction", "Polarization", "Both induction and polarization"], answer: "Both induction and polarization" },
+  { q: "Resistance of a wire is doubled if:", options: ["Length doubled", "Area doubled", "Voltage doubled", "Both length and area doubled"], answer: "Length doubled" },
+  { q: "Unit of capacitance is:", options: ["Farad", "Henry", "Weber", "Coulomb"], answer: "Farad" },
+  { q: "In an AC circuit, current leads voltage by 90° in:", options: ["Pure capacitor", "Pure inductor", "Pure resistor", "None"], answer: "Pure capacitor" },
+];
 
     // Build UI
   const container = document.getElementById('quizContainer');
