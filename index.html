@@ -206,7 +206,7 @@
   <header>
     <h1>Noobie's Pre-Exam | CBT Test</h1>
     <div class="meta">
-  Physics Objective Test — 70 Questions covering EMF, Flux, RLC Circuits, Electrostatics & related topics • <strong>1 mark</strong> per correct answer
+  Calculus Objective Test — 70 Questions covering Differentiation & Integration (basic to advanced) • <strong>1 mark</strong> per correct answer
 </div>
     <div class="meta">Total questions: <span id="totalQs">70</span></div>
   </header>
@@ -235,81 +235,11 @@
 
   <script>
     // Your exact 70-question array (word-for-word as provided)
-    const questions = [
-  // ---- 30 from yesterday’s topics ----
-  { q: "A conductor of length 0.5 m moves at 6 m/s perpendicular to a magnetic field of 0.25 T. Find the induced emf.", options: ["0.75 V", "1.25 V", "0.5 V", "2.0 V"], answer: "0.75 V" },
-  { q: "A 200-turn coil of area 0.01 m² is placed in a magnetic field of 0.5 T. If the field is reduced to zero in 0.1 s, find the induced emf.", options: ["10 V", "5 V", "1 V", "0.5 V"], answer: "10 V" },
-  { q: "A straight conductor of length 0.4 m is moved with a velocity of 3 m/s at right angles to a magnetic field of 0.2 T. Induced emf is:", options: ["0.12 V", "0.24 V", "0.36 V", "0.48 V"], answer: "0.24 V" },
-  { q: "The SI unit of magnetic flux is:", options: ["Tesla", "Weber", "Henry", "Volt"], answer: "Weber" },
-  { q: "If the flux linked with a coil changes from 0.01 Wb to 0 in 0.05 s, the average induced emf in the 200-turn coil is:", options: ["20 V", "40 V", "80 V", "0.4 V"], answer: "40 V" },
-  { q: "A rectangular coil of 100 turns, area 0.02 m², is rotated at 50 Hz in a field of 0.1 T. The maximum induced emf is:", options: ["62.8 V", "31.4 V", "6.28 V", "12.6 V"], answer: "62.8 V" },
-  { q: "Faraday’s law of induction states that emf induced is proportional to:", options: ["Rate of change of flux", "Flux squared", "Magnetic field strength only", "None"], answer: "Rate of change of flux" },
-  { q: "Which law explains the direction of induced emf?", options: ["Coulomb’s law", "Lenz’s law", "Ohm’s law", "Ampere’s law"], answer: "Lenz’s law" },
-  { q: "A 300-turn solenoid of length 0.5 m carries a current of 2 A. Find magnetic field inside (μ₀ = 4π×10⁻⁷).", options: ["1.5×10⁻³ T", "3.0×10⁻³ T", "7.5×10⁻⁴ T", "9.0×10⁻³ T"], answer: "1.5×10⁻³ T" },
-  { q: "The induced emf in a coil of N turns is E = –N dΦ/dt. This represents:", options: ["Lenz’s law", "Faraday’s law", "Coulomb’s law", "Gauss’s law"], answer: "Faraday’s law" },
-  { q: "A 500-turn coil links a flux of 2×10⁻³ Wb. Find the flux linkage.", options: ["0.5 Wb", "1 Wb", "1.5 Wb", "None"], answer: "1 Wb" },
-  { q: "If a 50 cm conductor is moved at 4 m/s across a magnetic field of 0.6 T, emf induced is:", options: ["1.2 V", "2.4 V", "3.0 V", "4.8 V"], answer: "1.2 V" },
-  { q: "Which of these is NOT a factor affecting induced emf?", options: ["Speed of motion", "Magnetic field strength", "Resistance of circuit", "Flux change"], answer: "Resistance of circuit" },
-  { q: "The dimension of magnetic flux is:", options: ["ML²T⁻²A⁻¹", "MLT⁻²A⁻¹", "ML²T⁻²", "MLT⁻³A⁻¹"], answer: "ML²T⁻²A⁻¹" },
-  { q: "If flux through 1 turn is 5×10⁻⁴ Wb, then flux linkage for 200 turns is:", options: ["0.01 Wb", "0.1 Wb", "0.05 Wb", "1 Wb"], answer: "0.1 Wb" },
-  { q: "When a coil rotates in a uniform magnetic field, induced emf is maximum when plane of coil is:", options: ["Parallel to field", "Perpendicular to field", "At 45°", "None"], answer: "Parallel to field" },
-  { q: "Lenz’s law is a consequence of:", options: ["Law of inertia", "Conservation of charge", "Conservation of energy", "Newton’s third law"], answer: "Conservation of energy" },
-  { q: "If number of turns of a coil is doubled, emf induced for same flux change is:", options: ["Halved", "Doubled", "Unchanged", "Zero"], answer: "Doubled" },
-  { q: "The emf induced in a moving conductor is called:", options: ["Transformer emf", "Motional emf", "Electrostatic emf", "None"], answer: "Motional emf" },
-  { q: "A coil with 1000 turns links a flux of 2×10⁻³ Wb in 0.5 s. Average induced emf is:", options: ["2 V", "4 V", "6 V", "8 V"], answer: "4 V" },
-  { q: "Magnetic flux through a surface is defined as:", options: ["B×A", "B×A cosθ", "E×q", "None"], answer: "B×A cosθ" },
-  { q: "SI unit of self-inductance is:", options: ["Henry", "Weber", "Tesla", "Ampere"], answer: "Henry" },
-  { q: "Which factor does not affect flux linkage?", options: ["Area of coil", "Magnetic field strength", "Current resistance", "Number of turns"], answer: "Current resistance" },
-  { q: "The emf induced in a circuit depends on:", options: ["Rate of change of flux", "Flux squared", "Field direction only", "None"], answer: "Rate of change of flux" },
-  { q: "If B = 0.4 T, l = 0.2 m, v = 10 m/s, emf = ?", options: ["0.8 V", "0.04 V", "0.2 V", "4 V"], answer: "0.8 V" },
-  { q: "The opposition to change of current in a coil is due to:", options: ["Capacitance", "Resistance", "Inductance", "Conductance"], answer: "Inductance" },
-  { q: "Which type of emf is produced in a generator?", options: ["Motional emf", "Transformer emf", "Static emf", "Chemical emf"], answer: "Motional emf" },
-  { q: "Magnetic flux density unit is:", options: ["Weber", "Tesla", "Henry", "Volt"], answer: "Tesla" },
-  { q: "If flux changes by 1 Wb in 1 s in 100 turns, induced emf is:", options: ["1 V", "10 V", "100 V", "1000 V"], answer: "100 V" },
-  { q: "Which law forms the basis of an electric generator?", options: ["Lenz’s law", "Faraday’s law", "Ohm’s law", "Coulomb’s law"], answer: "Faraday’s law" },
+    const questions = [ // ===== BASIC (20) ===== { q: "Differentiate y = x²", options: ["2x", "x²", "x", "1"], answer: "2x" }, { q: "Differentiate y = 3x + 5", options: ["3", "5", "3x", "0"], answer: "3" }, { q: "Derivative of y = sin(x)", options: ["cos(x)", "-sin(x)", "-cos(x)", "tan(x)"], answer: "cos(x)" }, { q: "Derivative of y = cos(x)", options: ["-sin(x)", "cos(x)", "sin(x)", "sec²(x)"], answer: "-sin(x)" }, { q: "d/dx (e^x)", options: ["e^x", "1", "ln(x)", "0"], answer: "e^x" }, { q: "d/dx (ln x)", options: ["1/x", "ln(x)", "x", "0"], answer: "1/x" }, { q: "∫ 1 dx", options: ["x + C", "1 + C", "0", "C"], answer: "x + C" }, { q: "∫ x dx", options: ["x²/2 + C", "2x + C", "x + C", "ln x + C"], answer: "x²/2 + C" }, { q: "∫ e^x dx", options: ["e^x + C", "ln(x) + C", "x e^x", "1/e^x"], answer: "e^x + C" }, { q: "∫ cos(x) dx", options: ["sin(x) + C", "-cos(x) + C", "-sin(x) + C", "tan(x) + C"], answer: "sin(x) + C" }, { q: "∫ sin(x) dx", options: ["-cos(x) + C", "cos(x) + C", "tan(x) + C", "sec(x) + C"], answer: "-cos(x) + C" }, { q: "Derivative of y = tan(x)", options: ["sec²(x)", "cos²(x)", "csc²(x)", "cot(x)"], answer: "sec²(x)" }, { q: "∫ 1/x dx", options: ["ln|x| + C", "x²/2 + C", "1/x² + C", "x ln x"], answer: "ln|x| + C" }, { q: "Derivative of constant 7", options: ["0", "1", "7", "None"], answer: "0" }, { q: "∫ 0 dx", options: ["C", "0", "x", "1"], answer: "C" }, { q: "Differentiate y = 5x³", options: ["15x²", "5x²", "3x²", "x³"], answer: "15x²" }, { q: "∫ 3 dx", options: ["3x + C", "x³ + C", "ln 3 + C", "C"], answer: "3x + C" }, { q: "Differentiate y = √x", options: ["1/(2√x)", "2√x", "√x", "1/x"], answer: "1/(2√x)" }, { q: "∫ √x dx", options: ["2/3 x^(3/2) + C", "√x + C", "ln x + C", "1/(2√x) + C"], answer: "2/3 x^(3/2) + C" }, { q: "Derivative of y = x^5", options: ["5x^4", "x^4", "x^5", "6x^5"], answer: "5x^4" },
 
-  // ---- 40 from new topics ----
-  { q: "The force between two charges is inversely proportional to:", options: ["q1q2", "Distance", "Square of distance", "Permittivity"], answer: "Square of distance" },
-  { q: "Unit of electric field is:", options: ["N/C", "J/C", "C/m²", "Nm²/C²"], answer: "N/C" },
-  { q: "An electron in a field of 500 N/C experiences a force of:", options: ["8×10⁻¹⁷ N", "5×10⁻¹⁶ N", "1.6×10⁻¹⁶ N", "None"], answer: "8×10⁻¹⁷ N" },
-  { q: "Work done in moving a 2 C charge through 5 V is:", options: ["2 J", "5 J", "10 J", "0.4 J"], answer: "10 J" },
-  { q: "Power dissipated in a 10 Ω resistor with 2 A current is:", options: ["20 W", "10 W", "40 W", "5 W"], answer: "40 W" },
-  { q: "Magnetic field at distance r from a long straight wire carrying current I is:", options: ["μ₀I/2πr", "μ₀I/4πr²", "μ₀I²/2πr", "μ₀/r"], answer: "μ₀I/2πr" },
-  { q: "Magnetic field inside a solenoid depends on:", options: ["Number of turns per unit length × current", "Only length", "Only radius", "None"], answer: "Number of turns per unit length × current" },
-  { q: "Magnetic flux linkage is:", options: ["NΦ", "NΦ/t", "Φ/N", "None"], answer: "NΦ" },
-  { q: "The force on a charge q moving with velocity v in a field B is:", options: ["qvB", "qvB cosθ", "qvB sinθ", "None"], answer: "qvB sinθ" },
-  { q: "If q=2 C, v=3 m/s, B=0.4 T, θ=90°, force is:", options: ["1.2 N", "2.4 N", "0.6 N", "0"], answer: "2.4 N" },
-  { q: "A wire of length 0.2 m carrying current 5 A in a 0.3 T field at 90° experiences force:", options: ["0.15 N", "0.3 N", "0.6 N", "1.0 N"], answer: "0.3 N" },
-  { q: "Power dissipated in terms of V and R is:", options: ["V²/R", "IR", "VI", "I²R"], answer: "V²/R" },
-  { q: "Which of these is dimensionless?", options: ["Relative permittivity", "Electric field", "Current", "Charge"], answer: "Relative permittivity" },
-  { q: "Phase angle of RLC circuit φ is:", options: ["tan⁻¹((Xl-Xc)/R)", "tan⁻¹(R/(Xl-Xc))", "tan⁻¹(Xc/R)", "tan⁻¹(Xl/R)"], answer: "tan⁻¹((Xl-Xc)/R)" },
-  { q: "At resonance, impedance of RLC is:", options: ["R", "0", "∞", "Xl-Xc"], answer: "R" },
-  { q: "In RLC resonance, current is:", options: ["Maximum", "Minimum", "Zero", "Infinite"], answer: "Maximum" },
-  { q: "The reactance of a capacitor is:", options: ["1/ωC", "ωC", "1/C", "ωL"], answer: "1/ωC" },
-  { q: "The reactance of an inductor is:", options: ["ωL", "1/ωL", "L/ω", "None"], answer: "ωL" },
-  { q: "In AC circuits, average power is:", options: ["VI cosφ", "VI sinφ", "VI", "I²R only"], answer: "VI cosφ" },
-  { q: "The power factor is:", options: ["cosφ", "tanφ", "sinφ", "None"], answer: "cosφ" },
-  { q: "Current density J is:", options: ["σE", "ρE", "V/I", "Q/t"], answer: "σE" },
-  { q: "Ohm’s law states that:", options: ["V∝I", "V=IR", "Both", "None"], answer: "Both" },
-  { q: "A 60 W bulb rated at 120 V has resistance:", options: ["240 Ω", "60 Ω", "120 Ω", "20 Ω"], answer: "240 Ω" },
-  { q: "The energy stored in an inductor is:", options: ["½LI²", "½CV²", "½mv²", "None"], answer: "½LI²" },
-  { q: "Permittivity of free space ε₀ is:", options: ["8.85×10⁻¹² C²/Nm²", "9×10⁹ Nm²/C²", "4π×10⁻⁷ Tm/A", "None"], answer: "8.85×10⁻¹² C²/Nm²" },
-  { q: "Magnetic force on a straight conductor length l in B is:", options: ["BIl sinθ", "BIl cosθ", "qvB", "None"], answer: "BIl sinθ" },
-  { q: "If current is 2 A, length 0.5 m, B=0.2 T, θ=90°, force is:", options: ["0.1 N", "0.2 N", "0.3 N", "0.4 N"], answer: "0.2 N" },
-  { q: "The resistance of a conductor depends on:", options: ["Length, area, resistivity", "Current", "Voltage", "Power"], answer: "Length, area, resistivity" },
-  { q: "If resistance doubles, power at constant V:", options: ["Halves", "Doubles", "Quarter", "None"], answer: "Halves" },
-  { q: "Coulomb’s constant k value is:", options: ["9×10⁹ Nm²/C²", "8.85×10⁻¹²", "1.6×10⁻¹⁹", "None"], answer: "9×10⁹ Nm²/C²" },
-  { q: "Drift velocity is proportional to:", options: ["Current density", "Charge density", "Voltage squared", "Resistance"], answer: "Current density" },
-  { q: "Electric power in terms of I and R is:", options: ["I²R", "V²R", "IR²", "None"], answer: "I²R" },
-  { q: "A capacitor stores energy:", options: ["½CV²", "½LI²", "½mv²", "QV"], answer: "½CV²" },
-  { q: "At resonance, Xl =", options: ["Xc", "0", "∞", "R"], answer: "Xc" },
-  { q: "Magnetic field lines are:", options: ["Closed loops", "Straight", "Radial only", "None"], answer: "Closed loops" },
-  { q: "A charged body attracts a neutral body due to:", options: ["Induction", "Conduction", "Polarization", "Both induction and polarization"], answer: "Both induction and polarization" },
-  { q: "Resistance of a wire is doubled if:", options: ["Length doubled", "Area doubled", "Voltage doubled", "Both length and area doubled"], answer: "Length doubled" },
-  { q: "Unit of capacitance is:", options: ["Farad", "Henry", "Weber", "Coulomb"], answer: "Farad" },
-  { q: "In an AC circuit, current leads voltage by 90° in:", options: ["Pure capacitor", "Pure inductor", "Pure resistor", "None"], answer: "Pure capacitor" },
-  { q: "If in an AC setup the current is observed to be 90° ahead of the voltage, which element must be in the circuit?", options: ["Capacitor only", "Inductor only", "Resistor only", "All three"], answer: "Capacitor only" },
-];
+// ===== MEDIUM (40) ===== { q: "Using product rule, d/dx [x e^x]", options: ["e^x + x e^x", "x e^x", "e^x", "x"], answer: "e^x + x e^x" }, { q: "Using quotient rule, d/dx [(x²+1)/x]", options: ["1 - 1/x²", "2x/x - (x²+1)/x²", "1 - 1/x", "2 - 1/x²"], answer: "1 - 1/x²" }, { q: "d/dx [arcsin(x)]", options: ["1/√(1-x²)", "-1/√(1-x²)", "√(1-x²)", "None"], answer: "1/√(1-x²)" }, { q: "d/dx [arctan(x)]", options: ["1/(1+x²)", "1/x²", "arctan(x)", "ln(1+x²)"], answer: "1/(1+x²)" }, { q: "∫ sec²(x) dx", options: ["tan(x) + C", "sec(x) + C", "-csc(x) + C", "cot(x) + C"], answer: "tan(x) + C" }, { q: "∫ csc²(x) dx", options: ["-cot(x) + C", "cot(x) + C", "tan(x) + C", "None"], answer: "-cot(x) + C" }, { q: "∫ 1/(1+x²) dx", options: ["arctan(x) + C", "ln|x| + C", "arcsin(x) + C", "√(1+x²) + C"], answer: "arctan(x) + C" }, { q: "d/dx [ln(sin x)]", options: ["cot(x)", "1/sin(x)", "tan(x)", "sec(x)"], answer: "cot(x)" }, { q: "∫ (2x)(cos(x²)) dx", options: ["sin(x²) + C", "cos²(x) + C", "2cos(x²) + C", "tan(x²) + C"], answer: "sin(x²) + C" }, { q: "∫ (3x²)(e^(x³)) dx", options: ["e^(x³) + C", "3e^(x³) + C", "x³e^(x³)", "ln(x³) + C"], answer: "e^(x³) + C" }, { q: "d/dx [x³ ln(x)]", options: ["3x² ln(x) + x²", "ln(x³)", "3x²/x", "None"], answer: "3x² ln(x) + x²" }, { q: "∫ x·cos(x²) dx", options: ["½ sin(x²) + C", "sin(x²) + C", "cos²(x) + C", "None"], answer: "½ sin(x²) + C" }, { q: "∫ (2x)/(1+x²) dx", options: ["ln(1+x²) + C", "arctan(x) + C", "x² + C", "e^(x²) + C"], answer: "ln(1+x²) + C" }, { q: "∫ e^(2x) dx", options: ["(1/2)e^(2x) + C", "2e^(2x) + C", "e^(x²) + C", "None"], answer: "(1/2)e^(2x) + C" }, { q: "d/dx [arcsin(2x)]", options: ["2/√(1-4x²)", "1/√(1-2x²)", "2/√(1-x²)", "None"], answer: "2/√(1-4x²)" }, { q: "∫ 1/√(1-x²) dx", options: ["arcsin(x) + C", "arctan(x) + C", "ln(x) + C", "√(1-x²) + C"], answer: "arcsin(x) + C" }, { q: "∫ 2x e^(x²) dx", options: ["e^(x²) + C", "2e^(x²) + C", "ln(x²)", "None"], answer: "e^(x²) + C" }, { q: "∫ cos²(x) dx", options: ["(x/2)+(sin2x)/4 + C", "sin²(x)+C", "tan(x)+C", "None"], answer: "(x/2)+(sin2x)/4 + C" }, { q: "∫ sin²(x) dx", options: ["(x/2)-(sin2x)/4 + C", "cos²(x)+C", "-cos(x)+C", "None"], answer: "(x/2)-(sin2x)/4 + C" }, { q: "d/dx [tan⁻¹(2x)]", options: ["2/(1+4x²)", "1/(1+x²)", "2x/(1+x²)", "None"], answer: "2/(1+4x²)" }, { q: "∫ sinh(x) dx", options: ["cosh(x) + C", "sinh(x) + C", "-cosh(x) + C", "None"], answer: "cosh(x) + C" }, { q: "d/dx [cosh(x)]", options: ["sinh(x)", "cosh(x)", "-sinh(x)", "None"], answer: "sinh(x)" }, { q: "∫ 1/(x²+4) dx", options: ["(1/2)arctan(x/2)+C", "arctan(x)+C", "ln(x²+4)+C", "None"], answer: "(1/2)arctan(x/2)+C" }, { q: "d/dx [x^x]", options: ["x^x(1+ln(x))", "x^(x-1)", "ln(x)", "None"], answer: "x^x(1+ln(x))" }, { q: "∫ 1/√(4-x²) dx", options: ["arcsin(x/2)+C", "arctan(x/2)+C", "ln(x)+C", "None"], answer: "arcsin(x/2)+C" }, { q: "d/dx [e^(sin x)]", options: ["e^(sin x) cos x", "e^(cos x) sin x", "cos x", "None"], answer: "e^(sin x) cos x" }, { q: "∫ xe^(x²) dx", options: ["½e^(x²)+C", "e^(x²)+C", "x²e^(x²)+C", "None"], answer: "½e^(x²)+C" }, { q: "d/dx [ln(x²+1)]", options: ["2x/(x²+1)", "1/(x²+1)", "ln(x²)", "None"], answer: "2x/(x²+1)" }, { q: "∫ dx/(x√(x²-1))", options: ["arcsec(x)+C", "arcsin(x)+C", "arccos(x)+C", "None"], answer: "arcsec(x)+C" }, { q: "d/dx [√(1+x²)]", options: ["x/√(1+x²)", "√(1+x²)", "1/√(1+x²)", "None"], answer: "x/√(1+x²)" }, { q: "∫ sec(x)tan(x) dx", options: ["sec(x)+C", "tan(x)+C", "cot(x)+C", "None"], answer: "sec(x)+C" }, { q: "∫ csc(x)cot(x) dx", options: ["-csc(x)+C", "csc(x)+C", "cot(x)+C", "None"], answer: "-csc(x)+C" }, { q: "d/dx [ln(1+e^x)]", options: ["e^x/(1+e^x)", "ln(e^x)", "1/(1+e^x)", "None"], answer: "e^x/(1+e^x)" }, { q: "∫ dx/(1+cos x)", options: ["tan(x/2)+C", "cot(x/2)+C", "sec(x)+C", "None"], answer: "tan(x/2)+C" }, { q: "∫ dx/(1+sin x)", options: ["(tan(x/2)+C)", "cot(x/2)+C", "csc(x)+C", "None"], answer: "cot(x/2)+C" }, { q: "d/dx [tan⁻¹(√x)]", options: ["1/(2√x(1+x))", "1/(1+x)", "1/√(1+x²)", "None"], answer: "1/(2√x(1+x))" },
+
+// ===== HARD (10) ===== { q: "∫ e^(x) cos(x) dx", options: ["½ e^x(sin x + cos x) + C", "e^x cos(x)+C", "e^x sin(x)+C", "None"], answer: "½ e^x(sin x + cos x) + C" }, { q: "∫ e^(x) sin(x) dx", options: ["½ e^x(sin x - cos x)+C", "e^x sin(x)+C", "e^x cos(x)+C", "None"], answer: "½ e^x(sin x - cos x)+C" }, { q: "∫ ln(x) dx", options: ["x ln(x) - x + C", "ln²(x)/2 + C", "1/x + C", "None"], answer: "x ln(x) - x + C" }, { q: "∫ x² e^(x) dx", options: ["(x²-2x+2)e^x + C", "x² e^x + C", "2xe^x + C", "None"], answer: "(x²-2x+2)e^x + C" }, { q: "∫ sin³(x) dx", options: ["-cos(x)+(1/3)cos³(x)+C", "cos³(x)+C", "-cos³(x)+C", "None"], answer: "-cos(x)+(1/3)cos³(x)+C" }, { q: "∫ cos³(x) dx", options: ["sin(x)-(1/3)sin³(x)+C", "sin³(x)+C", "cos²(x)+C", "None"], answer: "sin(x)-(1/3)sin³(x)+C" }, { q: "∫ x² ln(x) dx", options: ["(x³/3)ln(x)-(x³/9)+C", "ln(x³)+C", "x² ln(x)+C", "None"], answer: "(x³/3)ln(x)-(x³/9)+C" }, { q: "d/dx [x^(sin x)]", options: ["x^(sin x)(cos x ln x + sin x/x)", "x^(sin x) cos x", "x^x ln x", "None"], answer: "x^(sin x)(cos x ln x + sin x/x)" }, { q: "∫ dx/(x²√(x²-1))", options: ["arcsec(x)+C", "arcsin(x)+C", "arctan(x)+C", "None"], answer: "arcsec(x)+C" }, { q: "∫ (tan⁻¹ x)/x² dx", options: ["-tan⁻¹(x)/x + (1/2)ln(1+x²)+C", "tan⁻¹(x)+C", "ln(1+x²)+C", "None"], answer: "-tan⁻¹(x)/x + (1/2)ln(1+x²)+C" } ];
 
     // Build UI
   const container = document.getElementById('quizContainer');
