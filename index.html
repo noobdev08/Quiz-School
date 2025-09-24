@@ -235,12 +235,103 @@
 
   <script>
     // Your exact 70-question array (word-for-word as provided)
-    const questions = [ { q: "Differentiate y = x²", options: ["2x", "x²", "x", "1"], answer: "2x" }, { q: "Differentiate y = 3x + 5", options: ["3", "5", "3x", "0"], answer: "3" }, { q: "Derivative of y = sin(x)", options: ["cos(x)", "-sin(x)", "-cos(x)", "tan(x)"], answer: "cos(x)" }, { q: "Derivative of y = cos(x)", options: ["-sin(x)", "cos(x)", "sin(x)", "sec²(x)"], answer: "-sin(x)" }, { q: "d/dx (e^x)", options: ["e^x", "1", "ln(x)", "0"], answer: "e^x" }, { q: "d/dx (ln x)", options: ["1/x", "ln(x)", "x", "0"], answer: "1/x" }, { q: "∫ 1 dx", options: ["x + C", "1 + C", "0", "C"], answer: "x + C" }, { q: "∫ x dx", options: ["x²/2 + C", "2x + C", "x + C", "ln x + C"], answer: "x²/2 + C" }, { q: "∫ e^x dx", options: ["e^x + C", "ln(x) + C", "x e^x", "1/e^x"], answer: "e^x + C" }, { q: "∫ cos(x) dx", options: ["sin(x) + C", "-cos(x) + C", "-sin(x) + C", "tan(x) + C"], answer: "sin(x) + C" }, { q: "∫ sin(x) dx", options: ["-cos(x) + C", "cos(x) + C", "tan(x) + C", "sec(x) + C"], answer: "-cos(x) + C" }, { q: "Derivative of y = tan(x)", options: ["sec²(x)", "cos²(x)", "csc²(x)", "cot(x)"], answer: "sec²(x)" }, { q: "∫ 1/x dx", options: ["ln|x| + C", "x²/2 + C", "1/x² + C", "x ln x"], answer: "ln|x| + C" }, { q: "Derivative of constant 7", options: ["0", "1", "7", "None"], answer: "0" }, { q: "∫ 0 dx", options: ["C", "0", "x", "1"], answer: "C" }, { q: "Differentiate y = 5x³", options: ["15x²", "5x²", "3x²", "x³"], answer: "15x²" }, { q: "∫ 3 dx", options: ["3x + C", "x³ + C", "ln 3 + C", "C"], answer: "3x + C" }, { q: "Differentiate y = √x", options: ["1/(2√x)", "2√x", "√x", "1/x"], answer: "1/(2√x)" }, { q: "∫ √x dx", options: ["2/3 x^(3/2) + C", "√x + C", "ln x + C", "1/(2√x) + C"], answer: "2/3 x^(3/2) + C" }, { q: "Derivative of y = x^5", options: ["5x^4", "x^4", "x^5", "6x^5"], answer: "5x^4" },
+   const questions = [
+  // Differentiation - Product Rule (5)
+  { q: "Find d/dx [x³ sin(2x)]", options: ["3x² sin(2x) + 2x³ cos(2x)", "3x² cos(2x)", "x³ sin(2x) + 3x² cos(2x)", "6x² cos(2x)"], answer: "3x² sin(2x) + 2x³ cos(2x)" },
+  { q: "Differentiate y = x² e^(3x) cos(2x)", options: ["e^(3x)(2x cos2x + 3x² cos2x - 2x² sin2x)", "e^(3x)(2x cos2x + 3x² cos2x)", "x² e^(3x)(3cos2x - 2sin2x)", "6x e^(3x) cos2x"], answer: "e^(3x)(2x cos2x + 3x² cos2x - 2x² sin2x)" },
+  { q: "Find d/dx [x sinx e^x]", options: ["e^x(sinx + x cosx + x sinx)", "e^x(x cosx + sinx)", "x e^x cosx", "sinx e^x(1 + x)"], answer: "e^x(sinx + x cosx + x sinx)" },
+  { q: "Differentiate y = √x ln(x²)", options: ["ln(x²)/(2√x) + 2√x/x", "2/√x", "ln(x²)/(2√x)", "√x/x + ln(x²)/(2√x)"], answer: "ln(x²)/(2√x) + 2√x/x" },
+  { q: "Differentiate y = x² arctan x", options: ["2x arctan x + x²/(1+x²)", "x²/(1+x²)", "2x arctan x", "arctan x + x/(1+x²)"], answer: "2x arctan x + x²/(1+x²)" },
 
-{ q: "Using product rule, d/dx [x e^x]", options: ["e^x + x e^x", "x e^x", "e^x", "x"], answer: "e^x + x e^x" }, { q: "Using quotient rule, d/dx [(x²+1)/x]", options: ["1 - 1/x²", "2x/x - (x²+1)/x²", "1 - 1/x", "2 - 1/x²"], answer: "1 - 1/x²" }, { q: "d/dx [arcsin(x)]", options: ["1/√(1-x²)", "-1/√(1-x²)", "√(1-x²)", "None"], answer: "1/√(1-x²)" }, { q: "d/dx [arctan(x)]", options: ["1/(1+x²)", "1/x²", "arctan(x)", "ln(1+x²)"], answer: "1/(1+x²)" }, { q: "∫ sec²(x) dx", options: ["tan(x) + C", "sec(x) + C", "-csc(x) + C", "cot(x) + C"], answer: "tan(x) + C" }, { q: "∫ csc²(x) dx", options: ["-cot(x) + C", "cot(x) + C", "tan(x) + C", "None"], answer: "-cot(x) + C" }, { q: "∫ 1/(1+x²) dx", options: ["arctan(x) + C", "ln|x| + C", "arcsin(x) + C", "√(1+x²) + C"], answer: "arctan(x) + C" }, { q: "d/dx [ln(sin x)]", options: ["cot(x)", "1/sin(x)", "tan(x)", "sec(x)"], answer: "cot(x)" }, { q: "∫ (2x)(cos(x²)) dx", options: ["sin(x²) + C", "cos²(x) + C", "2cos(x²) + C", "tan(x²) + C"], answer: "sin(x²) + C" }, { q: "∫ (3x²)(e^(x³)) dx", options: ["e^(x³) + C", "3e^(x³) + C", "x³e^(x³)", "ln(x³) + C"], answer: "e^(x³) + C" }, { q: "d/dx [x³ ln(x)]", options: ["3x² ln(x) + x²", "ln(x³)", "3x²/x", "None"], answer: "3x² ln(x) + x²" }, { q: "∫ x·cos(x²) dx", options: ["½ sin(x²) + C", "sin(x²) + C", "cos²(x) + C", "None"], answer: "½ sin(x²) + C" }, { q: "∫ (2x)/(1+x²) dx", options: ["ln(1+x²) + C", "arctan(x) + C", "x² + C", "e^(x²) + C"], answer: "ln(1+x²) + C" }, { q: "∫ e^(2x) dx", options: ["(1/2)e^(2x) + C", "2e^(2x) + C", "e^(x²) + C", "None"], answer: "(1/2)e^(2x) + C" }, { q: "d/dx [arcsin(2x)]", options: ["2/√(1-4x²)", "1/√(1-2x²)", "2/√(1-x²)", "None"], answer: "2/√(1-4x²)" }, { q: "∫ 1/√(1-x²) dx", options: ["arcsin(x) + C", "arctan(x) + C", "ln(x) + C", "√(1-x²) + C"], answer: "arcsin(x) + C" }, { q: "∫ 2x e^(x²) dx", options: ["e^(x²) + C", "2e^(x²) + C", "ln(x²)", "None"], answer: "e^(x²) + C" }, { q: "∫ cos²(x) dx", options: ["(x/2)+(sin2x)/4 + C", "sin²(x)+C", "tan(x)+C", "None"], answer: "(x/2)+(sin2x)/4 + C" }, { q: "∫ sin²(x) dx", options: ["(x/2)-(sin2x)/4 + C", "cos²(x)+C", "-cos(x)+C", "None"], answer: "(x/2)-(sin2x)/4 + C" }, { q: "d/dx [tan⁻¹(2x)]", options: ["2/(1+4x²)", "1/(1+x²)", "2x/(1+x²)", "None"], answer: "2/(1+4x²)" }, { q: "∫ sinh(x) dx", options: ["cosh(x) + C", "sinh(x) + C", "-cosh(x) + C", "None"], answer: "cosh(x) + C" }, { q: "d/dx [cosh(x)]", options: ["sinh(x)", "cosh(x)", "-sinh(x)", "None"], answer: "sinh(x)" }, { q: "∫ 1/(x²+4) dx", options: ["(1/2)arctan(x/2)+C", "arctan(x)+C", "ln(x²+4)+C", "None"], answer: "(1/2)arctan(x/2)+C" }, { q: "d/dx [x^x]", options: ["x^x(1+ln(x))", "x^(x-1)", "ln(x)", "None"], answer: "x^x(1+ln(x))" }, { q: "∫ 1/√(4-x²) dx", options: ["arcsin(x/2)+C", "arctan(x/2)+C", "ln(x)+C", "None"], answer: "arcsin(x/2)+C" }, { q: "d/dx [e^(sin x)]", options: ["e^(sin x) cos x", "e^(cos x) sin x", "cos x", "None"], answer: "e^(sin x) cos x" }, { q: "∫ xe^(x²) dx", options: ["½e^(x²)+C", "e^(x²)+C", "x²e^(x²)+C", "None"], answer: "½e^(x²)+C" }, { q: "d/dx [ln(x²+1)]", options: ["2x/(x²+1)", "1/(x²+1)", "ln(x²)", "None"], answer: "2x/(x²+1)" }, { q: "∫ dx/(x√(x²-1))", options: ["arcsec(x)+C", "arcsin(x)+C", "arccos(x)+C", "None"], answer: "arcsec(x)+C" }, { q: "d/dx [√(1+x²)]", options: ["x/√(1+x²)", "√(1+x²)", "1/√(1+x²)", "None"], answer: "x/√(1+x²)" }, { q: "∫ sec(x)tan(x) dx", options: ["sec(x)+C", "tan(x)+C", "cot(x)+C", "None"], answer: "sec(x)+C" }, { q: "∫ csc(x)cot(x) dx", options: ["-csc(x)+C", "csc(x)+C", "cot(x)+C", "None"], answer: "-csc(x)+C" }, { q: "d/dx [ln(1+e^x)]", options: ["e^x/(1+e^x)", "ln(e^x)", "1/(1+e^x)", "None"], answer: "e^x/(1+e^x)" }, { q: "∫ dx/(1+cos x)", options: ["tan(x/2)+C", "cot(x/2)+C", "sec(x)+C", "None"], answer: "tan(x/2)+C" }, { q: "∫ dx/(1+sin x)", options: ["(tan(x/2)+C)", "cot(x/2)+C", "csc(x)+C", "None"], answer: "cot(x/2)+C" }, { q: "d/dx [tan⁻¹(√x)]", options: ["1/(2√x(1+x))", "1/(1+x)", "1/√(1+x²)", "None"], answer: "1/(2√x(1+x))" },
+  // Integration - Trigonometric (5)
+  { q: "Evaluate ∫ sin³x cos²x dx", options: ["-cos³x/3 + cos⁵x/5 + C", "sin⁴x/4 - sin⁶x/6 + C", "cos⁵x/5 + C", "sin³x/3 + C"], answer: "-cos³x/3 + cos⁵x/5 + C" },
+  { q: "Evaluate ∫ sin²x cos³x dx", options: ["sin³x/3 - sin⁵x/5 + C", "cos⁴x/4 + C", "sin³x cos²x/6 + C", "-cos⁴x sinx/4 + C"], answer: "sin³x/3 - sin⁵x/5 + C" },
+  { q: "Evaluate ∫ sin(3x) cos(2x) dx", options: ["-cos(5x)/10 - cosx/2 + C", "sin(5x)/10 + sinx/2 + C", "-cos(3x)sin(2x)/6 + C", "cos(5x)/5 + C"], answer: "-cos(5x)/10 - cosx/2 + C" },
+  { q: "Evaluate ∫ tan³x sec x dx", options: ["(sec³x)/3 - sec x + C", "tan⁴x/4 + C", "sec³x/3 + C", "tan²x/2 + C"], answer: "(sec³x)/3 - sec x + C" },
+  { q: "Evaluate ∫ cot²x csc²x dx", options: ["-cot³x/3 + C", "-csc³x/3 + C", "tan³x/3 + C", "cot x + C"], answer: "-cot³x/3 + C" },
 
-{ q: "∫ e^(x) cos(x) dx", options: ["½ e^x(sin x + cos x) + C", "e^x cos(x)+C", "e^x sin(x)+C", "None"], answer: "½ e^x(sin x + cos x) + C" }, { q: "∫ e^(x) sin(x) dx", options: ["½ e^x(sin x - cos x)+C", "e^x sin(x)+C", "e^x cos(x)+C", "None"], answer: "½ e^x(sin x - cos x)+C" }, { q: "∫ ln(x) dx", options: ["x ln(x) - x + C", "ln²(x)/2 + C", "1/x + C", "None"], answer: "x ln(x) - x + C" }, { q: "∫ x² e^(x) dx", options: ["(x²-2x+2)e^x + C", "x² e^x + C", "2xe^x + C", "None"], answer: "(x²-2x+2)e^x + C" }, { q: "∫ sin³(x) dx", options: ["-cos(x)+(1/3)cos³(x)+C", "cos³(x)+C", "-cos³(x)+C", "None"], answer: "-cos(x)+(1/3)cos³(x)+C" }, { q: "∫ cos³(x) dx", options: ["sin(x)-(1/3)sin³(x)+C", "sin³(x)+C", "cos²(x)+C", "None"], answer: "sin(x)-(1/3)sin³(x)+C" }, { q: "∫ x² ln(x) dx", options: ["(x³/3)ln(x)-(x³/9)+C", "ln(x³)+C", "x² ln(x)+C", "None"], answer: "(x³/3)ln(x)-(x³/9)+C" }, { q: "d/dx [x^(sin x)]", options: ["x^(sin x)(cos x ln x + sin x/x)", "x^(sin x) cos x", "x^x ln x", "None"], answer: "x^(sin x)(cos x ln x + sin x/x)" }, { q: "∫ dx/(x²√(x²-1))", options: ["arcsec(x)+C", "arcsin(x)+C", "arctan(x)+C", "None"], answer: "arcsec(x)+C" }, { q: "∫ (tan⁻¹ x)/x² dx", options: ["-tan⁻¹(x)/x + (1/2)ln(1+x²)+C", "tan⁻¹(x)+C", "ln(1+x²)+C", "None"], answer: "-tan⁻¹(x)/x + (1/2)ln(1+x²)+C" } ];
+  // Differentiation - Quotient Rule (5)
+  { q: "Differentiate y = (x² + 1)/(x² - 1)", options: ["-4x/(x² - 1)²", "2x/(x² - 1)", "4x/(x² - 1)²", "(2x(x²-1) - 2x(x²+1))/(x²-1)²"], answer: "-4x/(x² - 1)²" },
+  { q: "Differentiate y = tan x/(x² + 1)", options: ["(sec²x(x²+1) - 2x tanx)/(x²+1)²", "sec²x/(x²+1)", "(tanx - 2x)/(x²+1)²", "sec²x/(2x)"], answer: "(sec²x(x²+1) - 2x tanx)/(x²+1)²" },
+  { q: "Differentiate y = (e^(2x))/(x² + 3)", options: ["[2e^(2x)(x²+3) - 2x e^(2x)]/(x²+3)²", "e^(2x)/(x²+3)", "2e^(2x)/(2x)", "[e^(2x)(2x²-2x+6)]/(x²+3)²"], answer: "[2e^(2x)(x²+3) - 2x e^(2x)]/(x²+3)²" },
+  { q: "Differentiate y = (ln x)/(x² + 1)", options: ["(1/x(x²+1) - 2x lnx)/(x²+1)²", "1/(x(x²+1))", "(1 - 2lnx)/(x²+1)²", "(x - 2x² lnx)/(x²+1)²"], answer: "(1/x(x²+1) - 2x lnx)/(x²+1)²" },
+  { q: "Differentiate y = √x/(x² + 1)", options: ["(1/(2√x)(x²+1) - 2x√x)/(x²+1)²", "1/(2√x(x²+1))", "(x²+1 - 4x²)/(2√x(x²+1)²", "(1 - 3x²)/(2√x(x²+1)²)"], answer: "(1/(2√x)(x²+1) - 2x√x)/(x²+1)²" },
 
+  // Definite Integrals (10)
+  { q: "Evaluate ∫₀¹ x√(1 - x²) dx", options: ["1/3", "1/2", "π/4", "2/3"], answer: "1/3" },
+  { q: "Evaluate ∫₀² √(4 - x²) dx", options: ["π", "2π", "π/2", "4π/3"], answer: "π" },
+  { q: "Evaluate ∫₁ᵉ (ln x)²/x dx", options: ["1/3", "1", "2/3", "e³/3"], answer: "1/3" },
+  { q: "Evaluate ∫₀¹ x e^(x²) dx", options: ["(e - 1)/2", "e - 1", "1/2", "e²/2"], answer: "(e - 1)/2" },
+  { q: "Evaluate ∫₋₂³ |x - 1| dx", options: ["13/2", "6", "5", "11/2"], answer: "13/2" },
+  { q: "Evaluate ∫₀¹ x²/(x³ + 1) dx", options: ["(1/3)ln2", "ln2", "1/2", "2/3"], answer: "(1/3)ln2" },
+  { q: "Evaluate ∫₀^{π/2} sin³x dx", options: ["2/3", "1/3", "1", "π/6"], answer: "2/3" },
+  { q: "Evaluate ∫₀¹ x arctan x dx", options: ["π/4 - 1/2", "π/4", "1/2", "π/2 - 1/2"], answer: "π/4 - 1/2" },
+  { q: "Evaluate ∫₀² dx/√(4 - x²)", options: ["π/2", "π/6", "π/3", "1"], answer: "π/2" },
+  { q: "Evaluate ∫₁ᵉ² (ln x)/x dx", options: ["2", "1", "e²", "4"], answer: "2" },
+
+  // Chain Rule (5)
+  { q: "Find d/dx [sin(√(x² + 1))]", options: ["(x cos(√(x²+1)))/√(x²+1)", "cos(√(x²+1))", "x cos(x²+1)", "cos(√(x²+1))/(2√x)"], answer: "(x cos(√(x²+1)))/√(x²+1)" },
+  { q: "Find d/dx [ln(√(x⁴ + 3x² + 1))]", options: ["(4x³ + 6x)/(2(x⁴+3x²+1))", "1/√(x⁴+3x²+1)", "(2x³+3x)/(x⁴+3x²+1)", "ln(x⁴+3x²+1)/2"], answer: "(4x³ + 6x)/(2(x⁴+3x²+1))" },
+  { q: "Find d/dx [sin(ln(x² + 1))]", options: ["2x cos(ln(x²+1))/(x²+1)", "cos(ln(x²+1))", "2x/(x²+1) cos(x²+1)", "cos(1/(x²+1))"], answer: "2x cos(ln(x²+1))/(x²+1)" },
+  { q: "Find d/dx [sin(cos(x²))]", options: ["-2x sin(x²) cos(cos(x²))", "-sin(x²) cos(cos(x²))", "2x cos(x²) sin(cos(x²))", "-2x cos(x²) sin(x²)"], answer: "-2x sin(x²) cos(cos(x²))" },
+  { q: "Find d/dx [e^(sin(x²))]", options: ["2x cos(x²) e^(sin(x²))", "cos(x²) e^(sin(x²))", "2x e^(sin(x²))", "e^(cos(x²))"], answer: "2x cos(x²) e^(sin(x²))" },
+
+  // Integration by Parts (5)
+  { q: "Evaluate ∫ x² e^x dx", options: ["e^x(x² - 2x + 2) + C", "x² e^x - 2xe^x + C", "e^x(x² + 2x + 2) + C", "x³ e^x/3 + C"], answer: "e^x(x² - 2x + 2) + C" },
+  { q: "Evaluate ∫ x² sinx dx", options: ["-x² cosx + 2x sinx + 2cosx + C", "x² cosx - 2x sinx + C", "-x² cosx + 2x sinx + C", "2x cosx - sinx + C"], answer: "-x² cosx + 2x sinx + 2cosx + C" },
+  { q: "Evaluate ∫ e^x sinx dx", options: ["(e^x/2)(sinx - cosx) + C", "e^x cosx + C", "(e^x/2)(sinx + cosx) + C", "e^x sinx - e^x cosx + C"], answer: "(e^x/2)(sinx - cosx) + C" },
+  { q: "Evaluate ∫ x³ ln x dx", options: ["x⁴(4ln x - 1)/16 + C", "x⁴ ln x/4 + C", "x⁴(ln x - 1)/4 + C", "3x² ln x + C"], answer: "x⁴(4ln x - 1)/16 + C" },
+  { q: "Evaluate ∫ arctan x dx", options: ["x arctan x - (1/2)ln(1+x²) + C", "(1/2)x² arctan x + C", "arctan x/x + C", "ln|1+x²| + C"], answer: "x arctan x - (1/2)ln(1+x²) + C" },
+
+  // Implicit Differentiation (5)
+  { q: "Find dy/dx for x³ + y³ = 6xy", options: ["(2y - x²)/(y² - 2x)", "(x² - 2y)/(2x - y²)", "2y/x²", "3x²/(3y²)"], answer: "(2y - x²)/(y² - 2x)" },
+  { q: "Find dy/dx for sin(xy) = x + y", options: ["(1 - y cos(xy))/(x cos(xy) - 1)", "(1 - cos(xy))/(cos(xy) - 1)", "cos(xy)/(1 - cos(xy))", "(y cos(xy) - 1)/(1 - x cos(xy))"], answer: "(1 - y cos(xy))/(x cos(xy) - 1)" },
+  { q: "Find dy/dx for e^(xy) = x + y", options: ["(1 - y e^(xy))/(x e^(xy) - 1)", "(1 - e^(xy))/(e^(xy) - 1)", "(y e^(xy) - 1)/(1 - x e^(xy))", "e^(xy)/(x+y)"], answer: "(1 - y e^(xy))/(x e^(xy) - 1)" },
+  { q: "Find dy/dx for ln(xy) = x² + y²", options: ["(2x²y - y)/(x - 2xy²)", "(2xy² - x)/(y - 2x²y)", "2x + 2y", "1/(x+y)"], answer: "(2x²y - y)/(x - 2xy²)" },
+  { q: "Find dy/dx for x sin y + y cos x = 1", options: ["(sin y - y sin x)/(x cos y + cos x)", "(y sin x - sin y)/(cos x + x cos y)", "(cos x - sin y)/(x cos y)", "sin y/(cos x)"], answer: "(sin y - y sin x)/(x cos y + cos x)" },
+
+  // Partial Fractions Integration (5)
+  { q: "Evaluate ∫ (3x + 2)/(x² + 3x + 2) dx", options: ["ln|(x+1)²/(x+2)| + C", "3ln|x+1| - ln|x+2| + C", "2ln|x+1| + ln|x+2| + C", "arctan(x+1) + C"], answer: "ln|(x+1)²/(x+2)| + C" },
+  { q: "Evaluate ∫ (x² + 3)/(x(x² + 1)) dx", options: ["3ln|x| + ln|x²+1| - arctanx + C", "ln|x| + 2arctanx + C", "3ln|x| + arctanx + C", "ln|x³+ x| + C"], answer: "3ln|x| + ln|x²+1| - arctanx + C" },
+  { q: "Evaluate ∫ (2x - 1)/(x² - 4) dx", options: ["ln|(x-2)³/(x+2)| + C", "2ln|x-2| + ln|x+2| + C", "ln|x²-4| + C", "arctan(x/2) + C"], answer: "ln|(x-2)³/(x+2)| + C" },
+  { q: "Evaluate ∫ (x³ + 2)/(x² - 1) dx", options: ["x²/2 + ln|(x-1)/(x+1)| + C", "x + ln|x²-1| + C", "x²/2 + 2ln|x-1| + C", "x + arctan x + C"], answer: "x²/2 + ln|(x-1)/(x+1)| + C" },
+  { q: "Evaluate ∫ dx/(x² + 4x + 3)", options: ["(1/2)ln|(x+1)/(x+3)| + C", "ln|x²+4x+3| + C", "arctan(x+2) + C", "1/(x+1)(x+3) + C"], answer: "(1/2)ln|(x+1)/(x+3)| + C" },
+
+  // Higher Order Derivatives (5)
+  { q: "Find d²y/dx² if y = ln(x² + 4)", options: ["2(4 - x²)/(x² + 4)²", "2x/(x²+4)", "2/(x²+4)", "(2x²-8)/(x²+4)²"], answer: "2(4 - x²)/(x² + 4)²" },
+  { q: "Find d³y/dx³ if y = sin(2x)", options: ["-8cos(2x)", "8sin(2x)", "-4cos(2x)", "4sin(2x)"], answer: "-8cos(2x)" },
+  { q: "Find d²y/dx² if x = cos t, y = sin t", options: ["-csc³t", "-sec³t", "cot t", "-tan t"], answer: "-csc³t" },
+  { q: "Find d²y/dx² if y = e^(2x) cos x", options: ["e^(2x)(3cos x - 4sin x)", "e^(2x)(4cos x - 3sin x)", "2e^(2x) cos x", "e^(2x)(cos x - 2sin x)"], answer: "e^(2x)(3cos x - 4sin x)" },
+  { q: "Find d⁴y/dx⁴ if y = x³ e^x", options: ["e^x(x³ + 12x² + 36x + 24)", "e^x(x³ + 9x² + 18x + 6)", "6e^x(x + 2)", "24e^x"], answer: "e^x(x³ + 12x² + 36x + 24)" },
+
+  // Trigonometric Substitution (5)
+  { q: "Evaluate ∫ dx/√(x² + 9)", options: ["ln|x + √(x²+9)| + C", "arcsin(x/3) + C", "(1/3)arctan(x/3) + C", "√(x²+9) + C"], answer: "ln|x + √(x²+9)| + C" },
+  { q: "Evaluate ∫ dx/(9 + x²)", options: ["(1/3)arctan(x/3) + C", "arctan(x/3) + C", "ln|9+x²| + C", "(1/9)arctan(x/9) + C"], answer: "(1/3)arctan(x/3) + C" },
+  { q: "Evaluate ∫ dx/√(4 - 9x²)", options: ["(1/3)arcsin(3x/2) + C", "arcsin(3x/2) + C", "(1/2)arcsin(2x/3) + C", "√(4-9x²) + C"], answer: "(1/3)arcsin(3x/2) + C" },
+  { q: "Evaluate ∫ dx/(x²√(x² - 4))", options: ["√(x²-4)/(4x) + C", "arcsec(x/2) + C", "ln|x + √(x²-4)| + C", "√(x²-4)/x + C"], answer: "√(x²-4)/(4x) + C" },
+  { q: "Evaluate ∫ √(x² - 9)/x dx", options: ["√(x²-9) - 3arcsec(x/3) + C", "x√(x²-9)/2 + C", "ln|x + √(x²-9)| + C", "√(x²-9) + arcsec(x/3) + C"], answer: "√(x²-9) - 3arcsec(x/3) + C" },
+
+  // Logarithmic Differentiation (5)
+  { q: "Find d/dx [x^(sinx)]", options: ["x^(sinx)(cosx lnx + sinx/x)", "x^(sinx) cosx", "sinx x^(sinx-1)", "x^(sinx) lnx"], answer: "x^(sinx)(cosx lnx + sinx/x)" },
+  { q: "Find d/dx [(sin x)^(cos x)]", options: ["(sin x)^(cos x)(-sin x ln(sin x) - cos²x/sin x)", "(sin x)^(cos x) cos x", "-cos x (sin x)^(cos x-1)", "(sin x)^(cos x) ln(sin x)"], answer: "(sin x)^(cos x)(-sin x ln(sin x) - cos²x/sin x)" },
+  { q: "Find d/dx [(x² + 1)^(x)]", options: ["(x²+1)^x(ln(x²+1) + 2x²/(x²+1))", "(x²+1)^x ln(x²+1)", "x(x²+1)^(x-1)", "2x(x²+1)^x"], answer: "(x²+1)^x(ln(x²+1) + 2x²/(x²+1))" },
+  { q: "Find d/dx [x^(1/x)]", options: ["x^(1/x)(1 - ln x)/x²", "x^(1/x)(ln x + 1)/x", "1/x^(1/x)", "ln(x^(1/x))"], answer: "x^(1/x)(1 - ln x)/x²" },
+  { q: "Find d/dx [(ln x)^x]", options: ["(ln x)^x(ln(ln x) + 1/ln x)", "(ln x)^x ln(ln x)", "x(ln x)^(x-1)/x", "(ln x)^x/x"], answer: "(ln x)^x(ln(ln x) + 1/ln x)" },
+
+  // Additional Definite Integrals (5)
+  { q: "Evaluate ∫₀^∞ e^(-3x) dx", options: ["1/3", "3", "∞", "0"], answer: "1/3" },
+  { q: "Evaluate ∫₋π^π x³ cosx dx", options: ["0", "2π³", "π⁴/2", "6π"], answer: "0" },
+  { q: "Evaluate ∫₀¹ (x + 1)/(x² + 3x + 2) dx", options: ["ln(4/3)", "ln(3/2)", "1/2", "ln2"], answer: "ln(4/3)" },
+  { q: "Evaluate ∫₂⁴ (x² - 1)/(x - 1) dx", options: ["14", "12", "10", "8"], answer: "14" },
+  { q: "Evaluate ∫₀^{2π} |sin x| dx", options: ["4", "2", "π", "2π"], answer: "4" },
+
+  // Final 5 to reach exactly 70
+  { q: "Evaluate ∫ sec⁴x dx", options: ["tan x + tan³x/3 + C", "sec³x/3 + C", "tan³x/3 + C", "sec x tan x + C"], answer: "tan x + tan³x/3 + C" },
+  { q: "Differentiate y = ln|sec x + tan x|", options: ["sec x", "tan x", "sec²x", "1/(sec x + tan x)"], answer: "sec x" },
+  { q: "Evaluate ∫ x√(x + 1) dx", options: ["2/5(x+1)^(5/2) - 2/3(x+1)^(3/2) + C", "x²/2√(x+1) + C", "2/3(x+1)^(3/2) + C", "√(x+1) + C"], answer: "2/5(x+1)^(5/2) - 2/3(x+1)^(3/2) + C" },
+  { q: "Find d/dx [x! (Gamma function derivative)", options: ["Γ(x)ψ(x)", "Γ(x)", "ψ(x)", "xΓ(x-1)"], answer: "Γ(x)ψ(x)" },
+  { q: "Evaluate ∫ dx/(1 + e^x)", options: ["x - ln(1 + e^x) + C", "ln(1 + e^x) + C", "arctan(e^x) + C", "e^x/(1+e^x) + C"], answer: "x - ln(1 + e^x) + C" }
+];
     // Build UI
   const container = document.getElementById('quizContainer');
   document.getElementById('totalQs').textContent = questions.length;
