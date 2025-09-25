@@ -236,101 +236,99 @@
   <script>
     // Your exact 70-question array (word-for-word as provided)
    const questions = [
-  // Differentiation - Product Rule (5)
-  { q: "Find d/dx [x³ sin(2x)]", options: ["3x² sin(2x) + 2x³ cos(2x)", "3x² cos(2x)", "x³ sin(2x) + 3x² cos(2x)", "6x² cos(2x)"], answer: "3x² sin(2x) + 2x³ cos(2x)" },
-  { q: "Differentiate y = x² e^(3x) cos(2x)", options: ["e^(3x)(2x cos2x + 3x² cos2x - 2x² sin2x)", "e^(3x)(2x cos2x + 3x² cos2x)", "x² e^(3x)(3cos2x - 2sin2x)", "6x e^(3x) cos2x"], answer: "e^(3x)(2x cos2x + 3x² cos2x - 2x² sin2x)" },
-  { q: "Find d/dx [x sinx e^x]", options: ["e^x(sinx + x cosx + x sinx)", "e^x(x cosx + sinx)", "x e^x cosx", "sinx e^x(1 + x)"], answer: "e^x(sinx + x cosx + x sinx)" },
-  { q: "Differentiate y = √x ln(x²)", options: ["ln(x²)/(2√x) + 2√x/x", "2/√x", "ln(x²)/(2√x)", "√x/x + ln(x²)/(2√x)"], answer: "ln(x²)/(2√x) + 2√x/x" },
-  { q: "Differentiate y = x² arctan x", options: ["2x arctan x + x²/(1+x²)", "x²/(1+x²)", "2x arctan x", "arctan x + x/(1+x²)"], answer: "2x arctan x + x²/(1+x²)" },
+  // Definition and Fundamentals (10 questions)
+  { q: "What is the primary goal of science communication?", options: ["To make scientific knowledge accessible to non-experts", "To publish research in academic journals", "To secure research funding", "To train future scientists"], answer: "To make scientific knowledge accessible to non-experts" },
+  { q: "Which term describes the process of translating complex scientific concepts for public understanding?", options: ["Knowledge translation", "Scientific simplification", "Expert mediation", "Technical dissemination"], answer: "Knowledge translation" },
+  { q: "What distinguishes science communication from scientific writing?", options: ["Focus on audience adaptation", "Use of technical terminology", "Emphasis on data analysis", "Requirement of peer review"], answer: "Focus on audience adaptation" },
+  { q: "Which element is MOST crucial in effective science communication?", options: ["Audience awareness", "Statistical rigor", "Length of presentation", "Number of citations"], answer: "Audience awareness" },
+  { q: "What does the 'deficit model' in science communication assume?", options: ["Public lacks knowledge that experts should provide", "Public has equal understanding as experts", "Science should remain within academic circles", "Communication should be bidirectional"], answer: "Public lacks knowledge that experts should provide" },
+  { q: "Which approach challenges the traditional deficit model?", options: ["Dialogue model", "Lecture model", "Publication model", "Technical model"], answer: "Dialogue model" },
+  { q: "What is a key ethical consideration in science communication?", options: ["Avoiding exaggeration of findings", "Using complex terminology", "Focusing only on positive results", "Limiting audience engagement"], answer: "Avoiding exaggeration of findings" },
+  { q: "Which skill is MOST important for a science communicator?", options: ["Ability to simplify complex ideas", "Expertise in multiple scientific fields", "Advanced statistical knowledge", "Laboratory technical skills"], answer: "Ability to simplify complex ideas" },
+  { q: "What does 'public understanding of science' primarily aim to achieve?", options: ["Scientific literacy among non-experts", "More scientific publications", "Increased research funding", "Technical specialization"], answer: "Scientific literacy among non-experts" },
+  { q: "Which historical event significantly increased public demand for science communication?", options: ["COVID-19 pandemic", "Discovery of DNA structure", "Moon landing", "Industrial Revolution"], answer: "COVID-19 pandemic" },
 
-  // Integration - Trigonometric (5)
-  { q: "Evaluate ∫ sin³x cos²x dx", options: ["-cos³x/3 + cos⁵x/5 + C", "sin⁴x/4 - sin⁶x/6 + C", "cos⁵x/5 + C", "sin³x/3 + C"], answer: "-cos³x/3 + cos⁵x/5 + C" },
-  { q: "Evaluate ∫ sin²x cos³x dx", options: ["sin³x/3 - sin⁵x/5 + C", "cos⁴x/4 + C", "sin³x cos²x/6 + C", "-cos⁴x sinx/4 + C"], answer: "sin³x/3 - sin⁵x/5 + C" },
-  { q: "Evaluate ∫ sin(3x) cos(2x) dx", options: ["-cos(5x)/10 - cosx/2 + C", "sin(5x)/10 + sinx/2 + C", "-cos(3x)sin(2x)/6 + C", "cos(5x)/5 + C"], answer: "-cos(5x)/10 - cosx/2 + C" },
-  { q: "Evaluate ∫ tan³x sec x dx", options: ["(sec³x)/3 - sec x + C", "tan⁴x/4 + C", "sec³x/3 + C", "tan²x/2 + C"], answer: "(sec³x)/3 - sec x + C" },
-  { q: "Evaluate ∫ cot²x csc²x dx", options: ["-cot³x/3 + C", "-csc³x/3 + C", "tan³x/3 + C", "cot x + C"], answer: "-cot³x/3 + C" },
+  // Technology Education vs Educational Technology (10 questions)
+  { q: "What is the primary focus of Technology Education?", options: ["Teaching about technology and its impacts", "Using technology to deliver education", "Developing new educational software", "Training technical specialists"], answer: "Teaching about technology and its impacts" },
+  { q: "Educational Technology primarily concerns:", options: ["Using tools to enhance learning", "Studying technology's social effects", "Engineering new devices", "Technical skill development"], answer: "Using tools to enhance learning" },
+  { q: "Which describes Technology Education?", options: ["Learning ABOUT technology", "Learning WITH technology", "Creating technology", "Selling technology"], answer: "Learning ABOUT technology" },
+  { q: "A course on 'The Impact of AI on Society' represents:", options: ["Technology Education", "Educational Technology", "Computer Science", "Engineering"], answer: "Technology Education" },
+  { q: "Using virtual reality for classroom instruction exemplifies:", options: ["Educational Technology", "Technology Education", "Digital literacy", "Technical training"], answer: "Educational Technology" },
+  { q: "What distinguishes Educational Technology from general technology use?", options: ["Purposeful integration for learning objectives", "Use of expensive equipment", "Focus on entertainment", "Technical complexity"], answer: "Purposeful integration for learning objectives" },
+  { q: "Which is a goal of Technology Education?", options: ["Critical thinking about technological impacts", "Programming proficiency", "Device operation skills", "Software development"], answer: "Critical thinking about technological impacts" },
+  { q: "Learning management systems like Moodle are examples of:", options: ["Educational Technology", "Technology Education", "Digital platforms", "Social media"], answer: "Educational Technology" },
+  { q: "Studying the ethical implications of genetic engineering falls under:", options: ["Technology Education", "Educational Technology", "Biology education", "Philosophy"], answer: "Technology Education" },
+  { q: "What is a common challenge in implementing Educational Technology?", options: ["Teacher training and support", "Student interest in technology", "Availability of devices", "Internet connectivity"], answer: "Teacher training and support" },
 
-  // Differentiation - Quotient Rule (5)
-  { q: "Differentiate y = (x² + 1)/(x² - 1)", options: ["-4x/(x² - 1)²", "2x/(x² - 1)", "4x/(x² - 1)²", "(2x(x²-1) - 2x(x²+1))/(x²-1)²"], answer: "-4x/(x² - 1)²" },
-  { q: "Differentiate y = tan x/(x² + 1)", options: ["(sec²x(x²+1) - 2x tanx)/(x²+1)²", "sec²x/(x²+1)", "(tanx - 2x)/(x²+1)²", "sec²x/(2x)"], answer: "(sec²x(x²+1) - 2x tanx)/(x²+1)²" },
-  { q: "Differentiate y = (e^(2x))/(x² + 3)", options: ["[2e^(2x)(x²+3) - 2x e^(2x)]/(x²+3)²", "e^(2x)/(x²+3)", "2e^(2x)/(2x)", "[e^(2x)(2x²-2x+6)]/(x²+3)²"], answer: "[2e^(2x)(x²+3) - 2x e^(2x)]/(x²+3)²" },
-  { q: "Differentiate y = (ln x)/(x² + 1)", options: ["(1/x(x²+1) - 2x lnx)/(x²+1)²", "1/(x(x²+1))", "(1 - 2lnx)/(x²+1)²", "(x - 2x² lnx)/(x²+1)²"], answer: "(1/x(x²+1) - 2x lnx)/(x²+1)²" },
-  { q: "Differentiate y = √x/(x² + 1)", options: ["(1/(2√x)(x²+1) - 2x√x)/(x²+1)²", "1/(2√x(x²+1))", "(x²+1 - 4x²)/(2√x(x²+1)²", "(1 - 3x²)/(2√x(x²+1)²)"], answer: "(1/(2√x)(x²+1) - 2x√x)/(x²+1)²" },
+  // Constructivism and Types (15 questions)
+  { q: "What is the core principle of constructivism?", options: ["Learners actively construct knowledge", "Knowledge is transmitted directly", "Learning is passive reception", "Information is absorbed automatically"], answer: "Learners actively construct knowledge" },
+  { q: "Which constructivist type emphasizes social interaction?", options: ["Social Constructivism", "Cognitive Constructivism", "Radical Constructivism", "Behavioral Constructivism"], answer: "Social Constructivism" },
+  { q: "Who is most associated with Social Constructivism?", options: ["Vygotsky", "Piaget", "Von Glasersfeld", "Skinner"], answer: "Vygotsky" },
+  { q: "Cognitive Constructivism focuses primarily on:", options: ["Individual mental processes", "Group learning dynamics", "Cultural influences", "Political contexts"], answer: "Individual mental processes" },
+  { q: "What does Radical Constructivism emphasize?", options: ["Personal knowledge construction", "Social validation of knowledge", "Cultural transmission", "Behavioral conditioning"], answer: "Personal knowledge construction" },
+  { q: "The 'Zone of Proximal Development' is key to:", options: ["Social Constructivism", "Cognitive Constructivism", "Radical Constructivism", "Behaviorism"], answer: "Social Constructivism" },
+  { q: "Which constructivist approach questions objective reality?", options: ["Radical Constructivism", "Social Constructivism", "Cognitive Constructivism", "Critical Constructivism"], answer: "Radical Constructivism" },
+  { q: "In science communication, constructivism suggests:", options: ["Audiences interpret based on prior knowledge", "Information transfers directly to audiences", "Communication should be one-directional", "Prior knowledge is irrelevant"], answer: "Audiences interpret based on prior knowledge" },
+  { q: "Scaffolding in learning relates to which constructivist type?", options: ["Social Constructivism", "Radical Constructivism", "Cognitive Constructivism", "Individual Constructivism"], answer: "Social Constructivism" },
+  { q: "Which statement aligns with Cognitive Constructivism?", options: ["Learning builds on existing mental models", "Knowledge is socially negotiated", "Reality is individually constructed", "Behavior determines learning"], answer: "Learning builds on existing mental models" },
+  { q: "What is a key implication of constructivism for science communicators?", options: ["Connect new information to existing knowledge", "Present information exactly as in journals", "Use maximum technical detail", "Avoid audience interaction"], answer: "Connect new information to existing knowledge" },
+  { q: "Which activity exemplifies Social Constructivism?", options: ["Group discussion and collaboration", "Individual reading", "Lecture without interaction", "Multiple-choice testing"], answer: "Group discussion and collaboration" },
+  { q: "Radical Constructivism is most concerned with:", options: ["Individual's experiential world", "Social consensus", "Cultural norms", "Objective truth"], answer: "Individual's experiential world" },
+  { q: "The concept of 'schemas' is central to:", options: ["Cognitive Constructivism", "Social Constructivism", "Radical Constructivism", "Behavioral Constructivism"], answer: "Cognitive Constructivism" },
+  { q: "Which teaching method LEAST aligns with constructivist principles?", options: ["Traditional lecture without interaction", "Problem-based learning", "Collaborative projects", "Inquiry-based activities"], answer: "Traditional lecture without interaction" },
 
-  // Definite Integrals (10)
-  { q: "Evaluate ∫₀¹ x√(1 - x²) dx", options: ["1/3", "1/2", "π/4", "2/3"], answer: "1/3" },
-  { q: "Evaluate ∫₀² √(4 - x²) dx", options: ["π", "2π", "π/2", "4π/3"], answer: "π" },
-  { q: "Evaluate ∫₁ᵉ (ln x)²/x dx", options: ["1/3", "1", "2/3", "e³/3"], answer: "1/3" },
-  { q: "Evaluate ∫₀¹ x e^(x²) dx", options: ["(e - 1)/2", "e - 1", "1/2", "e²/2"], answer: "(e - 1)/2" },
-  { q: "Evaluate ∫₋₂³ |x - 1| dx", options: ["13/2", "6", "5", "11/2"], answer: "13/2" },
-  { q: "Evaluate ∫₀¹ x²/(x³ + 1) dx", options: ["(1/3)ln2", "ln2", "1/2", "2/3"], answer: "(1/3)ln2" },
-  { q: "Evaluate ∫₀^{π/2} sin³x dx", options: ["2/3", "1/3", "1", "π/6"], answer: "2/3" },
-  { q: "Evaluate ∫₀¹ x arctan x dx", options: ["π/4 - 1/2", "π/4", "1/2", "π/2 - 1/2"], answer: "π/4 - 1/2" },
-  { q: "Evaluate ∫₀² dx/√(4 - x²)", options: ["π/2", "π/6", "π/3", "1"], answer: "π/2" },
-  { q: "Evaluate ∫₁ᵉ² (ln x)/x dx", options: ["2", "1", "e²", "4"], answer: "2" },
+  // Understanding Audience (10 questions)
+  { q: "What is the FIRST step in audience analysis?", options: ["Identify audience characteristics", "Prepare technical content", "Create visual aids", "Schedule presentation time"], answer: "Identify audience characteristics" },
+  { q: "Which factor is LEAST important in audience analysis?", options: ["Presenter's favorite color", "Audience's prior knowledge", "Cultural background", "Age range"], answer: "Presenter's favorite color" },
+  { q: "What does 'audience segmentation' involve?", options: ["Grouping audiences by characteristics", "Reducing audience size", "Simplifying message content", "Shortening presentation"], answer: "Grouping audiences by characteristics" },
+  { q: "Which audience type requires the most technical detail?", options: ["Expert peers", "General public", "School children", "Policy makers"], answer: "Expert peers" },
+  { q: "When communicating with policymakers, emphasis should be on:", options: ["Practical implications and recommendations", "Theoretical foundations", "Technical methodologies", "Historical context"], answer: "Practical implications and recommendations" },
+  { q: "What is a key consideration for communicating with children?", options: ["Use concrete examples and analogies", "Include complex statistics", "Use technical terminology", "Focus on abstract concepts"], answer: "Use concrete examples and analogies" },
+  { q: "Which strategy is MOST effective for diverse audiences?", options: ["Use multiple communication approaches", "Standardize one technical approach", "Focus on lowest common denominator", "Ignore audience differences"], answer: "Use multiple communication approaches" },
+  { q: "What does 'cultural competence' in science communication require?", options: ["Understanding audience's cultural background", "Using scientific jargon", "Ignoring cultural differences", "Promoting one cultural perspective"], answer: "Understanding audience's cultural background" },
+  { q: "Which tool is MOST useful for audience analysis?", options: ["Surveys and interviews", "Technical manuals", "Scientific journals", "Statistical software"], answer: "Surveys and interviews" },
+  { q: "What is a common mistake in audience assessment?", options: ["Assuming homogeneous understanding", "Considering educational background", "Accounting for age differences", "Recognizing cultural diversity"], answer: "Assuming homogeneous understanding" },
 
-  // Chain Rule (5)
-  { q: "Find d/dx [sin(√(x² + 1))]", options: ["(x cos(√(x²+1)))/√(x²+1)", "cos(√(x²+1))", "x cos(x²+1)", "cos(√(x²+1))/(2√x)"], answer: "(x cos(√(x²+1)))/√(x²+1)" },
-  { q: "Find d/dx [ln(√(x⁴ + 3x² + 1))]", options: ["(4x³ + 6x)/(2(x⁴+3x²+1))", "1/√(x⁴+3x²+1)", "(2x³+3x)/(x⁴+3x²+1)", "ln(x⁴+3x²+1)/2"], answer: "(4x³ + 6x)/(2(x⁴+3x²+1))" },
-  { q: "Find d/dx [sin(ln(x² + 1))]", options: ["2x cos(ln(x²+1))/(x²+1)", "cos(ln(x²+1))", "2x/(x²+1) cos(x²+1)", "cos(1/(x²+1))"], answer: "2x cos(ln(x²+1))/(x²+1)" },
-  { q: "Find d/dx [sin(cos(x²))]", options: ["-2x sin(x²) cos(cos(x²))", "-sin(x²) cos(cos(x²))", "2x cos(x²) sin(cos(x²))", "-2x cos(x²) sin(x²)"], answer: "-2x sin(x²) cos(cos(x²))" },
-  { q: "Find d/dx [e^(sin(x²))]", options: ["2x cos(x²) e^(sin(x²))", "cos(x²) e^(sin(x²))", "2x e^(sin(x²))", "e^(cos(x²))"], answer: "2x cos(x²) e^(sin(x²))" },
+  // Principles for Communicating Norms (10 questions)
+  { q: "What is the primary purpose of establishing communication norms?", options: ["Ensure clarity and mutual understanding", "Limit audience participation", "Increase technical complexity", "Shorten communication time"], answer: "Ensure clarity and mutual understanding" },
+  { q: "Which principle promotes effective science communication?", options: ["Transparency about limitations", "Exaggeration of results", "Use of exclusive jargon", "Avoiding audience questions"], answer: "Transparency about limitations" },
+  { q: "What does 'respect for audience intelligence' entail?", options: ["Avoiding condescension while simplifying", "Using maximum technical complexity", "Assuming complete ignorance", "Eliminating all technical terms"], answer: "Avoiding condescension while simplifying" },
+  { q: "Which communication norm addresses ethical responsibility?", options: ["Accuracy in representing findings", "Entertainment value", "Presentation length", "Visual appeal"], answer: "Accuracy in representing findings" },
+  { q: "What is the 'trustworthiness' principle in science communication?", options: ["Building credibility through honesty", "Maximizing technical details", "Using persuasive techniques", "Avoiding controversy"], answer: "Building credibility through honesty" },
+  { q: "Which practice violates good communication norms?", options: ["Overstating certainty of results", "Acknowledging uncertainty", "Citing sources properly", "Using appropriate analogies"], answer: "Overstating certainty of results" },
+  { q: "What does the 'accessibility' principle emphasize?", options: ["Making content understandable to target audience", "Using specialized terminology", "Restricting information access", "Focusing on expert audiences only"], answer: "Making content understandable to target audience" },
+  { q: "Which norm promotes inclusive science communication?", options: ["Considering diverse perspectives", "Using technical language exclusively", "Focusing on Western science only", "Ignoring cultural contexts"], answer: "Considering diverse perspectives" },
+  { q: "What is the purpose of 'feedback mechanisms' in communication norms?", options: ["Enable continuous improvement", "Limit audience interaction", "Reduce preparation time", "Standardize messages"], answer: "Enable continuous improvement" },
+  { q: "Which principle addresses power dynamics in science communication?", options: ["Recognizing expert-audience equity", "Maintaining expert authority", "Limiting audience participation", "Emphasizing technical superiority"], answer: "Recognizing expert-audience equity" },
 
-  // Integration by Parts (5)
-  { q: "Evaluate ∫ x² e^x dx", options: ["e^x(x² - 2x + 2) + C", "x² e^x - 2xe^x + C", "e^x(x² + 2x + 2) + C", "x³ e^x/3 + C"], answer: "e^x(x² - 2x + 2) + C" },
-  { q: "Evaluate ∫ x² sinx dx", options: ["-x² cosx + 2x sinx + 2cosx + C", "x² cosx - 2x sinx + C", "-x² cosx + 2x sinx + C", "2x cosx - sinx + C"], answer: "-x² cosx + 2x sinx + 2cosx + C" },
-  { q: "Evaluate ∫ e^x sinx dx", options: ["(e^x/2)(sinx - cosx) + C", "e^x cosx + C", "(e^x/2)(sinx + cosx) + C", "e^x sinx - e^x cosx + C"], answer: "(e^x/2)(sinx - cosx) + C" },
-  { q: "Evaluate ∫ x³ ln x dx", options: ["x⁴(4ln x - 1)/16 + C", "x⁴ ln x/4 + C", "x⁴(ln x - 1)/4 + C", "3x² ln x + C"], answer: "x⁴(4ln x - 1)/16 + C" },
-  { q: "Evaluate ∫ arctan x dx", options: ["x arctan x - (1/2)ln(1+x²) + C", "(1/2)x² arctan x + C", "arctan x/x + C", "ln|1+x²| + C"], answer: "x arctan x - (1/2)ln(1+x²) + C" },
+  // Identifying Audience Types (10 questions)
+  { q: "Which audience type has deep specialized knowledge?", options: ["Expert peers", "General public", "Students", "Policymakers"], answer: "Expert peers" },
+  { q: "What characterizes 'interested public' as an audience?", options: ["Some background knowledge and curiosity", "Technical expertise", "Complete unfamiliarity", "Decision-making authority"], answer: "Some background knowledge and curiosity" },
+  { q: "Which audience type needs practical applications emphasized?", options: ["Policymakers and practitioners", "Research scientists", "Young children", "Technical specialists"], answer: "Policymakers and practitioners" },
+  { q: "What is key when communicating with 'skeptical audiences'?", options: ["Address concerns with evidence", "Avoid controversial topics", "Use emotional appeals only", "Ignore opposing views"], answer: "Address concerns with evidence" },
+  { q: "Which describes a 'lay audience'?", options: ["Minimal technical background", "Expert knowledge", "Decision-making power", "Scientific training"], answer: "Minimal technical background" },
+  { q: "What is important when addressing 'international audiences'?", options: ["Cultural sensitivity and context", "Technical complexity", "Local references only", "Specialized jargon"], answer: "Cultural sensitivity and context" },
+  { q: "Which audience type requires the most context and background?", options: ["Complete novices", "Expert peers", "Technical staff", "Professional colleagues"], answer: "Complete novices" },
+  { q: "What characterizes 'hostile audiences'?", options: ["Pre-existing opposition to topic", "Neutral curiosity", "Expert knowledge", "Decision-making authority"], answer: "Pre-existing opposition to topic" },
+  { q: "Which strategy works BEST with 'time-pressed audiences'?", options: ["Key points first, details available later", "Comprehensive technical explanation", "Theoretical foundations", "Historical background"], answer: "Key points first, details available later" },
+  { q: "What is crucial for 'multi-generational audiences'?", options: ["Address varying knowledge levels", "Focus on youngest members", "Use technical language", "Ignore age differences"], answer: "Address varying knowledge levels" },
 
-  // Implicit Differentiation (5)
-  { q: "Find dy/dx for x³ + y³ = 6xy", options: ["(2y - x²)/(y² - 2x)", "(x² - 2y)/(2x - y²)", "2y/x²", "3x²/(3y²)"], answer: "(2y - x²)/(y² - 2x)" },
-  { q: "Find dy/dx for sin(xy) = x + y", options: ["(1 - y cos(xy))/(x cos(xy) - 1)", "(1 - cos(xy))/(cos(xy) - 1)", "cos(xy)/(1 - cos(xy))", "(y cos(xy) - 1)/(1 - x cos(xy))"], answer: "(1 - y cos(xy))/(x cos(xy) - 1)" },
-  { q: "Find dy/dx for e^(xy) = x + y", options: ["(1 - y e^(xy))/(x e^(xy) - 1)", "(1 - e^(xy))/(e^(xy) - 1)", "(y e^(xy) - 1)/(1 - x e^(xy))", "e^(xy)/(x+y)"], answer: "(1 - y e^(xy))/(x e^(xy) - 1)" },
-  { q: "Find dy/dx for ln(xy) = x² + y²", options: ["(2x²y - y)/(x - 2xy²)", "(2xy² - x)/(y - 2x²y)", "2x + 2y", "1/(x+y)"], answer: "(2x²y - y)/(x - 2xy²)" },
-  { q: "Find dy/dx for x sin y + y cos x = 1", options: ["(sin y - y sin x)/(x cos y + cos x)", "(y sin x - sin y)/(cos x + x cos y)", "(cos x - sin y)/(x cos y)", "sin y/(cos x)"], answer: "(sin y - y sin x)/(x cos y + cos x)" },
-
-  // Partial Fractions Integration (5)
-  { q: "Evaluate ∫ (3x + 2)/(x² + 3x + 2) dx", options: ["ln|(x+1)²/(x+2)| + C", "3ln|x+1| - ln|x+2| + C", "2ln|x+1| + ln|x+2| + C", "arctan(x+1) + C"], answer: "ln|(x+1)²/(x+2)| + C" },
-  { q: "Evaluate ∫ (x² + 3)/(x(x² + 1)) dx", options: ["3ln|x| + ln|x²+1| - arctanx + C", "ln|x| + 2arctanx + C", "3ln|x| + arctanx + C", "ln|x³+ x| + C"], answer: "3ln|x| + ln|x²+1| - arctanx + C" },
-  { q: "Evaluate ∫ (2x - 1)/(x² - 4) dx", options: ["ln|(x-2)³/(x+2)| + C", "2ln|x-2| + ln|x+2| + C", "ln|x²-4| + C", "arctan(x/2) + C"], answer: "ln|(x-2)³/(x+2)| + C" },
-  { q: "Evaluate ∫ (x³ + 2)/(x² - 1) dx", options: ["x²/2 + ln|(x-1)/(x+1)| + C", "x + ln|x²-1| + C", "x²/2 + 2ln|x-1| + C", "x + arctan x + C"], answer: "x²/2 + ln|(x-1)/(x+1)| + C" },
-  { q: "Evaluate ∫ dx/(x² + 4x + 3)", options: ["(1/2)ln|(x+1)/(x+3)| + C", "ln|x²+4x+3| + C", "arctan(x+2) + C", "1/(x+1)(x+3) + C"], answer: "(1/2)ln|(x+1)/(x+3)| + C" },
-
-  // Higher Order Derivatives (5)
-  { q: "Find d²y/dx² if y = ln(x² + 4)", options: ["2(4 - x²)/(x² + 4)²", "2x/(x²+4)", "2/(x²+4)", "(2x²-8)/(x²+4)²"], answer: "2(4 - x²)/(x² + 4)²" },
-  { q: "Find d³y/dx³ if y = sin(2x)", options: ["-8cos(2x)", "8sin(2x)", "-4cos(2x)", "4sin(2x)"], answer: "-8cos(2x)" },
-  { q: "Find d²y/dx² if x = cos t, y = sin t", options: ["-csc³t", "-sec³t", "cot t", "-tan t"], answer: "-csc³t" },
-  { q: "Find d²y/dx² if y = e^(2x) cos x", options: ["e^(2x)(3cos x - 4sin x)", "e^(2x)(4cos x - 3sin x)", "2e^(2x) cos x", "e^(2x)(cos x - 2sin x)"], answer: "e^(2x)(3cos x - 4sin x)" },
-  { q: "Find d⁴y/dx⁴ if y = x³ e^x", options: ["e^x(x³ + 12x² + 36x + 24)", "e^x(x³ + 9x² + 18x + 6)", "6e^x(x + 2)", "24e^x"], answer: "e^x(x³ + 12x² + 36x + 24)" },
-
-  // Trigonometric Substitution (5)
-  { q: "Evaluate ∫ dx/√(x² + 9)", options: ["ln|x + √(x²+9)| + C", "arcsin(x/3) + C", "(1/3)arctan(x/3) + C", "√(x²+9) + C"], answer: "ln|x + √(x²+9)| + C" },
-  { q: "Evaluate ∫ dx/(9 + x²)", options: ["(1/3)arctan(x/3) + C", "arctan(x/3) + C", "ln|9+x²| + C", "(1/9)arctan(x/9) + C"], answer: "(1/3)arctan(x/3) + C" },
-  { q: "Evaluate ∫ dx/√(4 - 9x²)", options: ["(1/3)arcsin(3x/2) + C", "arcsin(3x/2) + C", "(1/2)arcsin(2x/3) + C", "√(4-9x²) + C"], answer: "(1/3)arcsin(3x/2) + C" },
-  { q: "Evaluate ∫ dx/(x²√(x² - 4))", options: ["√(x²-4)/(4x) + C", "arcsec(x/2) + C", "ln|x + √(x²-4)| + C", "√(x²-4)/x + C"], answer: "√(x²-4)/(4x) + C" },
-  { q: "Evaluate ∫ √(x² - 9)/x dx", options: ["√(x²-9) - 3arcsec(x/3) + C", "x√(x²-9)/2 + C", "ln|x + √(x²-9)| + C", "√(x²-9) + arcsec(x/3) + C"], answer: "√(x²-9) - 3arcsec(x/3) + C" },
-
-  // Logarithmic Differentiation (5)
-  { q: "Find d/dx [x^(sinx)]", options: ["x^(sinx)(cosx lnx + sinx/x)", "x^(sinx) cosx", "sinx x^(sinx-1)", "x^(sinx) lnx"], answer: "x^(sinx)(cosx lnx + sinx/x)" },
-  { q: "Find d/dx [(sin x)^(cos x)]", options: ["(sin x)^(cos x)(-sin x ln(sin x) - cos²x/sin x)", "(sin x)^(cos x) cos x", "-cos x (sin x)^(cos x-1)", "(sin x)^(cos x) ln(sin x)"], answer: "(sin x)^(cos x)(-sin x ln(sin x) - cos²x/sin x)" },
-  { q: "Find d/dx [(x² + 1)^(x)]", options: ["(x²+1)^x(ln(x²+1) + 2x²/(x²+1))", "(x²+1)^x ln(x²+1)", "x(x²+1)^(x-1)", "2x(x²+1)^x"], answer: "(x²+1)^x(ln(x²+1) + 2x²/(x²+1))" },
-  { q: "Find d/dx [x^(1/x)]", options: ["x^(1/x)(1 - ln x)/x²", "x^(1/x)(ln x + 1)/x", "1/x^(1/x)", "ln(x^(1/x))"], answer: "x^(1/x)(1 - ln x)/x²" },
-  { q: "Find d/dx [(ln x)^x]", options: ["(ln x)^x(ln(ln x) + 1/ln x)", "(ln x)^x ln(ln x)", "x(ln x)^(x-1)/x", "(ln x)^x/x"], answer: "(ln x)^x(ln(ln x) + 1/ln x)" },
-
-  // Additional Definite Integrals (5)
-  { q: "Evaluate ∫₀^∞ e^(-3x) dx", options: ["1/3", "3", "∞", "0"], answer: "1/3" },
-  { q: "Evaluate ∫₋π^π x³ cosx dx", options: ["0", "2π³", "π⁴/2", "6π"], answer: "0" },
-  { q: "Evaluate ∫₀¹ (x + 1)/(x² + 3x + 2) dx", options: ["ln(4/3)", "ln(3/2)", "1/2", "ln2"], answer: "ln(4/3)" },
-  { q: "Evaluate ∫₂⁴ (x² - 1)/(x - 1) dx", options: ["14", "12", "10", "8"], answer: "14" },
-  { q: "Evaluate ∫₀^{2π} |sin x| dx", options: ["4", "2", "π", "2π"], answer: "4" },
-
-  // Final 5 to reach exactly 70
-  { q: "Evaluate ∫ sec⁴x dx", options: ["tan x + tan³x/3 + C", "sec³x/3 + C", "tan³x/3 + C", "sec x tan x + C"], answer: "tan x + tan³x/3 + C" },
-  { q: "Differentiate y = ln|sec x + tan x|", options: ["sec x", "tan x", "sec²x", "1/(sec x + tan x)"], answer: "sec x" },
-  { q: "Evaluate ∫ x√(x + 1) dx", options: ["2/5(x+1)^(5/2) - 2/3(x+1)^(3/2) + C", "x²/2√(x+1) + C", "2/3(x+1)^(3/2) + C", "√(x+1) + C"], answer: "2/5(x+1)^(5/2) - 2/3(x+1)^(3/2) + C" },
-  { q: "Find d/dx [x! (Gamma function derivative)", options: ["Γ(x)ψ(x)", "Γ(x)", "ψ(x)", "xΓ(x-1)"], answer: "Γ(x)ψ(x)" },
-  { q: "Evaluate ∫ dx/(1 + e^x)", options: ["x - ln(1 + e^x) + C", "ln(1 + e^x) + C", "arctan(e^x) + C", "e^x/(1+e^x) + C"], answer: "x - ln(1 + e^x) + C" }
+  // Science Writing - Proposals and Literature Reviews (15 questions)
+  { q: "What is the primary purpose of a research proposal?", options: ["Secure support and approval for research", "Publish findings", "Entertain readers", "Summarize completed work"], answer: "Secure support and approval for research" },
+  { q: "Which section is MOST critical in a research proposal?", options: ["Methodology", "Author biography", "Acknowledgements", "Personal opinions"], answer: "Methodology" },
+  { q: "What does a literature review primarily accomplish?", options: ["Synthesizes existing knowledge", "Presents new research findings", "Describes personal experiences", "Provides entertainment"], answer: "Synthesizes existing knowledge" },
+  { q: "Which element is ESSENTIAL in a good literature review?", options: ["Critical analysis of sources", "Lengthy quotations", "Personal anecdotes", "Unsupported opinions"], answer: "Critical analysis of sources" },
+  { q: "What is the purpose of 'gap analysis' in literature reviews?", options: ["Identify research opportunities", "Criticize previous researchers", "List all publications", "Show personal expertise"], answer: "Identify research opportunities" },
+  { q: "Which characteristic defines effective proposal writing?", options: ["Clarity and persuasiveness", "Technical complexity", "Lengthy descriptions", "Vague objectives"], answer: "Clarity and persuasiveness" },
+  { q: "What should a research question in a proposal be?", options: ["Specific and answerable", "Broad and philosophical", "Vague and open-ended", "Rhetorical"], answer: "Specific and answerable" },
+  { q: "Which is a common mistake in literature reviews?", options: ["Descriptive listing without synthesis", "Critical analysis", "Identifying gaps", "Thematic organization"], answer: "Descriptive listing without synthesis" },
+  { q: "What is the role of 'significance' section in proposals?", options: ["Explain research importance", "List references", "Describe methods", "Thank contributors"], answer: "Explain research importance" },
+  { q: "Which citation approach is preferred in scientific writing?", options: ["Consistent and accurate", "Inconsistent formatting", "Minimal citations", "Only self-citations"], answer: "Consistent and accurate" },
+  { q: "What does 'theoretical framework' provide in a proposal?", options: ["Conceptual foundation for research", "Personal opinions", "Entertaining stories", "Financial details"], answer: "Conceptual foundation for research" },
+  { q: "Which is key to effective proposal budgeting?", options: ["Realistic and justified costs", "Underestimating expenses", "Ignoring indirect costs", "Rounding numbers arbitrarily"], answer: "Realistic and justified costs" },
+  { q: "What distinguishes a systematic literature review?", options: ["Structured, comprehensive search strategy", "Personal selection of favorites", "Random article inclusion", "Opinion-based selection"], answer: "Structured, comprehensive search strategy" },
+  { q: "Which element demonstrates feasibility in proposals?", options: ["Realistic timeline and resources", "Ambitious unsupported claims", "Vague methodology", "Theoretical discussions only"], answer: "Realistic timeline and resources" },
+  { q: "What is the purpose of 'limitations' section in proposals?", options: ["Acknowledge and address potential weaknesses", "Hide research flaws", "Exaggerate capabilities", "Ignore constraints"], answer: "Acknowledge and address potential weaknesses" }
 ];
     // Build UI
   const container = document.getElementById('quizContainer');
