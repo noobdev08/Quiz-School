@@ -236,99 +236,63 @@
   <script>
     // Your exact 70-question array (word-for-word as provided)
    const questions = [
-  // Definition and Fundamentals (10 questions)
-  { q: "What is the primary goal of science communication?", options: ["To make scientific knowledge accessible to non-experts", "To publish research in academic journals", "To secure research funding", "To train future scientists"], answer: "To make scientific knowledge accessible to non-experts" },
-  { q: "Which term describes the process of translating complex scientific concepts for public understanding?", options: ["Knowledge translation", "Scientific simplification", "Expert mediation", "Technical dissemination"], answer: "Knowledge translation" },
-  { q: "What distinguishes science communication from scientific writing?", options: ["Focus on audience adaptation", "Use of technical terminology", "Emphasis on data analysis", "Requirement of peer review"], answer: "Focus on audience adaptation" },
-  { q: "Which element is MOST crucial in effective science communication?", options: ["Audience awareness", "Statistical rigor", "Length of presentation", "Number of citations"], answer: "Audience awareness" },
-  { q: "What does the 'deficit model' in science communication assume?", options: ["Public lacks knowledge that experts should provide", "Public has equal understanding as experts", "Science should remain within academic circles", "Communication should be bidirectional"], answer: "Public lacks knowledge that experts should provide" },
-  { q: "Which approach challenges the traditional deficit model?", options: ["Dialogue model", "Lecture model", "Publication model", "Technical model"], answer: "Dialogue model" },
-  { q: "What is a key ethical consideration in science communication?", options: ["Avoiding exaggeration of findings", "Using complex terminology", "Focusing only on positive results", "Limiting audience engagement"], answer: "Avoiding exaggeration of findings" },
-  { q: "Which skill is MOST important for a science communicator?", options: ["Ability to simplify complex ideas", "Expertise in multiple scientific fields", "Advanced statistical knowledge", "Laboratory technical skills"], answer: "Ability to simplify complex ideas" },
-  { q: "What does 'public understanding of science' primarily aim to achieve?", options: ["Scientific literacy among non-experts", "More scientific publications", "Increased research funding", "Technical specialization"], answer: "Scientific literacy among non-experts" },
-  { q: "Which historical event significantly increased public demand for science communication?", options: ["COVID-19 pandemic", "Discovery of DNA structure", "Moon landing", "Industrial Revolution"], answer: "COVID-19 pandemic" },
+  // Section 1: Global Oil & Gas Reserves
+  { q: "Which region has the largest oil reserves in the world?", options: ["North America", "Middle East", "CIS", "Africa"], answer: "Middle East" }, // B
+  { q: "Which region has the second largest natural gas reserves?", options: ["CIS", "Middle East", "North America", "Africa"], answer: "CIS" }, // A
+  { q: "Which country is part of South & Central America?", options: ["Nigeria", "Venezuela", "Saudi Arabia", "Russia"], answer: "Venezuela" }, // B
+  { q: "Which country is part of the CIS?", options: ["Kazakhstan", "Iran", "Nigeria", "India"], answer: "Kazakhstan" }, // A
+  { q: "Which region has the lowest oil reserves in 2024?", options: ["Europe", "Africa", "Asia Pacific", "North America"], answer: "Asia Pacific" }, // C
+  { q: "Which region had the largest increase in oil reserves from 2000 to 2024?", options: ["S & C America", "Middle East", "North America", "Europe"], answer: "S & C America" }, // A
+  { q: "Which region’s natural gas reserves decreased between 2020 and 2024?", options: ["Asia Pacific", "Africa", "Middle East", "North America"], answer: "Asia Pacific" }, // A
+  { q: "Which of these countries is in North America?", options: ["Mexico", "Brazil", "Iran", "Russia"], answer: "Mexico" }, // A
+  { q: "Which African country is a major oil producer?", options: ["Algeria", "Gabon", "Nigeria", "Tunisia"], answer: "Nigeria" }, // C
+  { q: "Which region produces less than 50 billion bbl of oil in 2024?", options: ["Asia Pacific", "Africa", "CIS", "Europe"], answer: "Asia Pacific" }, // A
+  { q: "Which region has the largest natural gas reserves in 2024?", options: ["Middle East", "CIS", "North America", "Africa"], answer: "Middle East" }, // A
+  { q: "Which country is part of Asia Pacific?", options: ["Australia", "Iran", "Brazil", "Nigeria"], answer: "Australia" }, // A
+  { q: "Which region is known for significant oil production in the Middle East?", options: ["Saudi Arabia", "Russia", "USA", "Brazil"], answer: "Saudi Arabia" }, // A
+  { q: "Which region had the highest increase in natural gas reserves from 2000 to 2024?", options: ["Middle East", "CIS", "Africa", "Europe"], answer: "Middle East" }, // A
+  { q: "Which country is part of Europe?", options: ["Denmark", "India", "Venezuela", "Nigeria"], answer: "Denmark" }, // A
 
-  // Technology Education vs Educational Technology (10 questions)
-  { q: "What is the primary focus of Technology Education?", options: ["Teaching about technology and its impacts", "Using technology to deliver education", "Developing new educational software", "Training technical specialists"], answer: "Teaching about technology and its impacts" },
-  { q: "Educational Technology primarily concerns:", options: ["Using tools to enhance learning", "Studying technology's social effects", "Engineering new devices", "Technical skill development"], answer: "Using tools to enhance learning" },
-  { q: "Which describes Technology Education?", options: ["Learning ABOUT technology", "Learning WITH technology", "Creating technology", "Selling technology"], answer: "Learning ABOUT technology" },
-  { q: "A course on 'The Impact of AI on Society' represents:", options: ["Technology Education", "Educational Technology", "Computer Science", "Engineering"], answer: "Technology Education" },
-  { q: "Using virtual reality for classroom instruction exemplifies:", options: ["Educational Technology", "Technology Education", "Digital literacy", "Technical training"], answer: "Educational Technology" },
-  { q: "What distinguishes Educational Technology from general technology use?", options: ["Purposeful integration for learning objectives", "Use of expensive equipment", "Focus on entertainment", "Technical complexity"], answer: "Purposeful integration for learning objectives" },
-  { q: "Which is a goal of Technology Education?", options: ["Critical thinking about technological impacts", "Programming proficiency", "Device operation skills", "Software development"], answer: "Critical thinking about technological impacts" },
-  { q: "Learning management systems like Moodle are examples of:", options: ["Educational Technology", "Technology Education", "Digital platforms", "Social media"], answer: "Educational Technology" },
-  { q: "Studying the ethical implications of genetic engineering falls under:", options: ["Technology Education", "Educational Technology", "Biology education", "Philosophy"], answer: "Technology Education" },
-  { q: "What is a common challenge in implementing Educational Technology?", options: ["Teacher training and support", "Student interest in technology", "Availability of devices", "Internet connectivity"], answer: "Teacher training and support" },
+  // Section 2: Nigerian Energy Distribution
+  { q: "What percentage of Nigeria's electricity comes from natural gas?", options: ["20–25%", "70–75%", "<5%", "<1%"], answer: "70–75%" }, // B
+  { q: "Which energy source contributes less than 5% to Nigeria's electricity?", options: ["Solar & Renewables", "Hydropower", "Coal", "Natural Gas"], answer: "Solar & Renewables" }, // A
+  { q: "Why was coal abandoned in Nigeria?", options: ["Low demand", "Economic, environmental, infrastructural reasons", "Renewable energy dominance", "No coal deposits"], answer: "Economic, environmental, infrastructural reasons" }, // B
+  { q: "Hydropower contributes approximately what percentage of Nigeria's electricity?", options: ["20–25%", "70–75%", "<5%", "<1%"], answer: "20–25%" }, // A
+  { q: "Which fossil fuel is the main source of electricity in Nigeria?", options: ["Coal", "Natural Gas", "Oil", "Hydropower"], answer: "Natural Gas" }, // B
+  { q: "Coal contributes less than what percent of electricity generation in Nigeria?", options: ["5%", "1%", "10%", "20%"], answer: "1%" }, // B
+  { q: "Nigeria generates approximately how many MWh of electricity?", options: ["5000 MWh", "10,000 MWh", "3000 MWh", "7000 MWh"], answer: "5000 MWh" }, // A
+  { q: "Which reason is NOT why coal was abandoned?", options: ["Economic", "Environmental", "Infrastructure", "Abundant oil discoveries"], answer: "Abundant oil discoveries" }, // D
+  { q: "What is the major fossil fuel source for power generation in Nigeria?", options: ["Coal", "Oil", "Natural Gas", "Hydropower"], answer: "Natural Gas" }, // C
+  { q: "Which renewable energy contributes least to Nigeria's power generation?", options: ["Solar & Renewables", "Hydropower", "Wind", "Biomass"], answer: "Solar & Renewables" }, // A
 
-  // Constructivism and Types (15 questions)
-  { q: "What is the core principle of constructivism?", options: ["Learners actively construct knowledge", "Knowledge is transmitted directly", "Learning is passive reception", "Information is absorbed automatically"], answer: "Learners actively construct knowledge" },
-  { q: "Which constructivist type emphasizes social interaction?", options: ["Social Constructivism", "Cognitive Constructivism", "Radical Constructivism", "Behavioral Constructivism"], answer: "Social Constructivism" },
-  { q: "Who is most associated with Social Constructivism?", options: ["Vygotsky", "Piaget", "Von Glasersfeld", "Skinner"], answer: "Vygotsky" },
-  { q: "Cognitive Constructivism focuses primarily on:", options: ["Individual mental processes", "Group learning dynamics", "Cultural influences", "Political contexts"], answer: "Individual mental processes" },
-  { q: "What does Radical Constructivism emphasize?", options: ["Personal knowledge construction", "Social validation of knowledge", "Cultural transmission", "Behavioral conditioning"], answer: "Personal knowledge construction" },
-  { q: "The 'Zone of Proximal Development' is key to:", options: ["Social Constructivism", "Cognitive Constructivism", "Radical Constructivism", "Behaviorism"], answer: "Social Constructivism" },
-  { q: "Which constructivist approach questions objective reality?", options: ["Radical Constructivism", "Social Constructivism", "Cognitive Constructivism", "Critical Constructivism"], answer: "Radical Constructivism" },
-  { q: "In science communication, constructivism suggests:", options: ["Audiences interpret based on prior knowledge", "Information transfers directly to audiences", "Communication should be one-directional", "Prior knowledge is irrelevant"], answer: "Audiences interpret based on prior knowledge" },
-  { q: "Scaffolding in learning relates to which constructivist type?", options: ["Social Constructivism", "Radical Constructivism", "Cognitive Constructivism", "Individual Constructivism"], answer: "Social Constructivism" },
-  { q: "Which statement aligns with Cognitive Constructivism?", options: ["Learning builds on existing mental models", "Knowledge is socially negotiated", "Reality is individually constructed", "Behavior determines learning"], answer: "Learning builds on existing mental models" },
-  { q: "What is a key implication of constructivism for science communicators?", options: ["Connect new information to existing knowledge", "Present information exactly as in journals", "Use maximum technical detail", "Avoid audience interaction"], answer: "Connect new information to existing knowledge" },
-  { q: "Which activity exemplifies Social Constructivism?", options: ["Group discussion and collaboration", "Individual reading", "Lecture without interaction", "Multiple-choice testing"], answer: "Group discussion and collaboration" },
-  { q: "Radical Constructivism is most concerned with:", options: ["Individual's experiential world", "Social consensus", "Cultural norms", "Objective truth"], answer: "Individual's experiential world" },
-  { q: "The concept of 'schemas' is central to:", options: ["Cognitive Constructivism", "Social Constructivism", "Radical Constructivism", "Behavioral Constructivism"], answer: "Cognitive Constructivism" },
-  { q: "Which teaching method LEAST aligns with constructivist principles?", options: ["Traditional lecture without interaction", "Problem-based learning", "Collaborative projects", "Inquiry-based activities"], answer: "Traditional lecture without interaction" },
+  // Section 3: Nigerian Oil Production
+  { q: "Which state produces the most oil in 2025?", options: ["Delta", "Rivers", "Akwa Ibom", "Bayelsa"], answer: "Akwa Ibom" }, // C
+  { q: "Which state produces the least oil in 2025?", options: ["Anambra", "Imo", "Edo", "Abia"], answer: "Anambra" }, // A
+  { q: "Which sedimentary basin is the largest in Nigeria?", options: ["Niger Delta", "Anambra", "Benue", "Chad"], answer: "Niger Delta" }, // A
+  { q: "Which basin is NOT a Nigerian sedimentary basin?", options: ["Sokoto", "Dahomey", "Colorado", "Bida"], answer: "Colorado" }, // C
+  { q: "Which offshore terminal is operated by Shell?", options: ["Bonga", "Erha", "Akpo", "Agbami"], answer: "Bonga" }, // A
+  { q: "Which onshore terminal is operated by Chevron?", options: ["Escravos", "Forcados", "Bonny", "Qua Iboe"], answer: "Escravos" }, // A
+  { q: "Which offshore terminal is operated by ExxonMobil?", options: ["Usan", "Akpo", "Agbami", "Egina"], answer: "Usan" }, // A
+  { q: "Which terminal is in Bayelsa state?", options: ["Brass", "Bonny", "Qua Iboe", "Escravos"], answer: "Brass" }, // A
+  { q: "Which company operates the Akpo offshore terminal?", options: ["Shell", "Total Energies", "Chevron", "ExxonMobil"], answer: "Total Energies" }, // B
+  { q: "Which offshore terminal is operated jointly by Shell and Renaissance?", options: ["EA Offshore", "Bonga", "Erha", "Agbami"], answer: "EA Offshore" }, // A
 
-  // Understanding Audience (10 questions)
-  { q: "What is the FIRST step in audience analysis?", options: ["Identify audience characteristics", "Prepare technical content", "Create visual aids", "Schedule presentation time"], answer: "Identify audience characteristics" },
-  { q: "Which factor is LEAST important in audience analysis?", options: ["Presenter's favorite color", "Audience's prior knowledge", "Cultural background", "Age range"], answer: "Presenter's favorite color" },
-  { q: "What does 'audience segmentation' involve?", options: ["Grouping audiences by characteristics", "Reducing audience size", "Simplifying message content", "Shortening presentation"], answer: "Grouping audiences by characteristics" },
-  { q: "Which audience type requires the most technical detail?", options: ["Expert peers", "General public", "School children", "Policy makers"], answer: "Expert peers" },
-  { q: "When communicating with policymakers, emphasis should be on:", options: ["Practical implications and recommendations", "Theoretical foundations", "Technical methodologies", "Historical context"], answer: "Practical implications and recommendations" },
-  { q: "What is a key consideration for communicating with children?", options: ["Use concrete examples and analogies", "Include complex statistics", "Use technical terminology", "Focus on abstract concepts"], answer: "Use concrete examples and analogies" },
-  { q: "Which strategy is MOST effective for diverse audiences?", options: ["Use multiple communication approaches", "Standardize one technical approach", "Focus on lowest common denominator", "Ignore audience differences"], answer: "Use multiple communication approaches" },
-  { q: "What does 'cultural competence' in science communication require?", options: ["Understanding audience's cultural background", "Using scientific jargon", "Ignoring cultural differences", "Promoting one cultural perspective"], answer: "Understanding audience's cultural background" },
-  { q: "Which tool is MOST useful for audience analysis?", options: ["Surveys and interviews", "Technical manuals", "Scientific journals", "Statistical software"], answer: "Surveys and interviews" },
-  { q: "What is a common mistake in audience assessment?", options: ["Assuming homogeneous understanding", "Considering educational background", "Accounting for age differences", "Recognizing cultural diversity"], answer: "Assuming homogeneous understanding" },
+  // Section 4: Petroleum & Industry Basics
+  { q: "Petroleum is formed primarily from:", options: ["Dead plants and animals", "Minerals", "Water", "Volcanic rocks"], answer: "Dead plants and animals" }, // A
+  { q: "Petroleum migrates through:", options: ["Cap rock", "Pore spaces in sedimentary rock", "Igneous rock", "Water channels"], answer: "Pore spaces in sedimentary rock" }, // B
+  { q: "The waxy substance formed before petroleum is:", options: ["Kerogen", "Oil shale", "Coal", "Bitumen"], answer: "Kerogen" }, // A
+  { q: "The process of transforming kerogen into petroleum is called:", options: ["Catagenesis", "Metamorphosis", "Sedimentation", "Distillation"], answer: "Catagenesis" }, // A
+  { q: "Which industry segment is responsible for exploration and production?", options: ["Upstream", "Midstream", "Downstream", "Distribution"], answer: "Upstream" }, // A
+  { q: "Which industry segment focuses on gathering and transportation?", options: ["Upstream", "Midstream", "Downstream", "Exploration"], answer: "Midstream" }, // B
+  { q: "Which industry segment handles refining and marketing?", options: ["Upstream", "Midstream", "Downstream", "Exploration"], answer: "Downstream" }, // C
+  { q: "What does E&P stand for?", options: ["Exploration & Production", "Energy & Petroleum", "Extraction & Processing", "Export & Pipeline"], answer: "Exploration & Production" }, // A
+  { q: "Petroleum literally means:", options: ["Rock oil", "Black gold", "Liquid energy", "Sedimentary oil"], answer: "Rock oil" }, // A
+  { q: "Which element is NOT commonly found in petroleum?", options: ["Vanadium", "Nickel", "Gold", "Sulfur"], answer: "Gold" }, // C
 
-  // Principles for Communicating Norms (10 questions)
-  { q: "What is the primary purpose of establishing communication norms?", options: ["Ensure clarity and mutual understanding", "Limit audience participation", "Increase technical complexity", "Shorten communication time"], answer: "Ensure clarity and mutual understanding" },
-  { q: "Which principle promotes effective science communication?", options: ["Transparency about limitations", "Exaggeration of results", "Use of exclusive jargon", "Avoiding audience questions"], answer: "Transparency about limitations" },
-  { q: "What does 'respect for audience intelligence' entail?", options: ["Avoiding condescension while simplifying", "Using maximum technical complexity", "Assuming complete ignorance", "Eliminating all technical terms"], answer: "Avoiding condescension while simplifying" },
-  { q: "Which communication norm addresses ethical responsibility?", options: ["Accuracy in representing findings", "Entertainment value", "Presentation length", "Visual appeal"], answer: "Accuracy in representing findings" },
-  { q: "What is the 'trustworthiness' principle in science communication?", options: ["Building credibility through honesty", "Maximizing technical details", "Using persuasive techniques", "Avoiding controversy"], answer: "Building credibility through honesty" },
-  { q: "Which practice violates good communication norms?", options: ["Overstating certainty of results", "Acknowledging uncertainty", "Citing sources properly", "Using appropriate analogies"], answer: "Overstating certainty of results" },
-  { q: "What does the 'accessibility' principle emphasize?", options: ["Making content understandable to target audience", "Using specialized terminology", "Restricting information access", "Focusing on expert audiences only"], answer: "Making content understandable to target audience" },
-  { q: "Which norm promotes inclusive science communication?", options: ["Considering diverse perspectives", "Using technical language exclusively", "Focusing on Western science only", "Ignoring cultural contexts"], answer: "Considering diverse perspectives" },
-  { q: "What is the purpose of 'feedback mechanisms' in communication norms?", options: ["Enable continuous improvement", "Limit audience interaction", "Reduce preparation time", "Standardize messages"], answer: "Enable continuous improvement" },
-  { q: "Which principle addresses power dynamics in science communication?", options: ["Recognizing expert-audience equity", "Maintaining expert authority", "Limiting audience participation", "Emphasizing technical superiority"], answer: "Recognizing expert-audience equity" },
-
-  // Identifying Audience Types (10 questions)
-  { q: "Which audience type has deep specialized knowledge?", options: ["Expert peers", "General public", "Students", "Policymakers"], answer: "Expert peers" },
-  { q: "What characterizes 'interested public' as an audience?", options: ["Some background knowledge and curiosity", "Technical expertise", "Complete unfamiliarity", "Decision-making authority"], answer: "Some background knowledge and curiosity" },
-  { q: "Which audience type needs practical applications emphasized?", options: ["Policymakers and practitioners", "Research scientists", "Young children", "Technical specialists"], answer: "Policymakers and practitioners" },
-  { q: "What is key when communicating with 'skeptical audiences'?", options: ["Address concerns with evidence", "Avoid controversial topics", "Use emotional appeals only", "Ignore opposing views"], answer: "Address concerns with evidence" },
-  { q: "Which describes a 'lay audience'?", options: ["Minimal technical background", "Expert knowledge", "Decision-making power", "Scientific training"], answer: "Minimal technical background" },
-  { q: "What is important when addressing 'international audiences'?", options: ["Cultural sensitivity and context", "Technical complexity", "Local references only", "Specialized jargon"], answer: "Cultural sensitivity and context" },
-  { q: "Which audience type requires the most context and background?", options: ["Complete novices", "Expert peers", "Technical staff", "Professional colleagues"], answer: "Complete novices" },
-  { q: "What characterizes 'hostile audiences'?", options: ["Pre-existing opposition to topic", "Neutral curiosity", "Expert knowledge", "Decision-making authority"], answer: "Pre-existing opposition to topic" },
-  { q: "Which strategy works BEST with 'time-pressed audiences'?", options: ["Key points first, details available later", "Comprehensive technical explanation", "Theoretical foundations", "Historical background"], answer: "Key points first, details available later" },
-  { q: "What is crucial for 'multi-generational audiences'?", options: ["Address varying knowledge levels", "Focus on youngest members", "Use technical language", "Ignore age differences"], answer: "Address varying knowledge levels" },
-
-  // Science Writing - Proposals and Literature Reviews (15 questions)
-  { q: "What is the primary purpose of a research proposal?", options: ["Secure support and approval for research", "Publish findings", "Entertain readers", "Summarize completed work"], answer: "Secure support and approval for research" },
-  { q: "Which section is MOST critical in a research proposal?", options: ["Methodology", "Author biography", "Acknowledgements", "Personal opinions"], answer: "Methodology" },
-  { q: "What does a literature review primarily accomplish?", options: ["Synthesizes existing knowledge", "Presents new research findings", "Describes personal experiences", "Provides entertainment"], answer: "Synthesizes existing knowledge" },
-  { q: "Which element is ESSENTIAL in a good literature review?", options: ["Critical analysis of sources", "Lengthy quotations", "Personal anecdotes", "Unsupported opinions"], answer: "Critical analysis of sources" },
-  { q: "What is the purpose of 'gap analysis' in literature reviews?", options: ["Identify research opportunities", "Criticize previous researchers", "List all publications", "Show personal expertise"], answer: "Identify research opportunities" },
-  { q: "Which characteristic defines effective proposal writing?", options: ["Clarity and persuasiveness", "Technical complexity", "Lengthy descriptions", "Vague objectives"], answer: "Clarity and persuasiveness" },
-  { q: "What should a research question in a proposal be?", options: ["Specific and answerable", "Broad and philosophical", "Vague and open-ended", "Rhetorical"], answer: "Specific and answerable" },
-  { q: "Which is a common mistake in literature reviews?", options: ["Descriptive listing without synthesis", "Critical analysis", "Identifying gaps", "Thematic organization"], answer: "Descriptive listing without synthesis" },
-  { q: "What is the role of 'significance' section in proposals?", options: ["Explain research importance", "List references", "Describe methods", "Thank contributors"], answer: "Explain research importance" },
-  { q: "Which citation approach is preferred in scientific writing?", options: ["Consistent and accurate", "Inconsistent formatting", "Minimal citations", "Only self-citations"], answer: "Consistent and accurate" },
-  { q: "What does 'theoretical framework' provide in a proposal?", options: ["Conceptual foundation for research", "Personal opinions", "Entertaining stories", "Financial details"], answer: "Conceptual foundation for research" },
-  { q: "Which is key to effective proposal budgeting?", options: ["Realistic and justified costs", "Underestimating expenses", "Ignoring indirect costs", "Rounding numbers arbitrarily"], answer: "Realistic and justified costs" },
-  { q: "What distinguishes a systematic literature review?", options: ["Structured, comprehensive search strategy", "Personal selection of favorites", "Random article inclusion", "Opinion-based selection"], answer: "Structured, comprehensive search strategy" },
-  { q: "Which element demonstrates feasibility in proposals?", options: ["Realistic timeline and resources", "Ambitious unsupported claims", "Vague methodology", "Theoretical discussions only"], answer: "Realistic timeline and resources" },
-  { q: "What is the purpose of 'limitations' section in proposals?", options: ["Acknowledge and address potential weaknesses", "Hide research flaws", "Exaggerate capabilities", "Ignore constraints"], answer: "Acknowledge and address potential weaknesses" }
+  // Section 5: Nigerian Oil History & Industry
+  { q: "First exploration in Nigeria started in which year?", options: ["1908", "1937", "1947", "1956"], answer: "1908" }, // A
+  { q: "First commercial oil well in Nigeria was discovered in:", options: ["Oloibiri", "Araromi", "Bayelsa", "Ondo"], answer: "Oloibiri" }, // A
+  { q: "Nigeria joined OPEC in:", options: ["1971", "1961", "1977", "]()
 ];
     // Build UI
   const container = document.getElementById('quizContainer');
@@ -501,3 +465,4 @@
 </body>
 
 </html>
+
