@@ -202,7 +202,7 @@
   <header>
     <h1>Noobie's Pre-Exam | CBT Test</h1>
     <div class="meta">
-  Intro to Petroleum Engineering | Objective Test — 70 Questions covering PEE102 • <strong>1 mark</strong> per correct answer
+  Business Intelligence and Analytics | Objective Test — 70 Questions covering CSC124 • <strong>1 mark</strong> per correct answer
 </div>
     <div class="meta">Total questions: <span id="totalQs">70</span></div>
   </header>
@@ -217,11 +217,11 @@
   <div id="result" aria-live="polite"></div>
 
   <div class="note" style="text-align:center; color:var(--muted); margin-top:12px;">
-    This quiz covers PEE102
+    This quiz covers CSC124
   </div>
 
   <footer style="text-align:center; color:var(--muted); font-size:13px; margin-top:28px;">
-    <p>PEE102 | Introduction to Petroleum Engineering | Original Idea by Jafaar</p>
+    <p>CSC124 | Business Intelligence and analytics | Original Idea by Jafaar</p>
     <p style="margin-top:20px; font-size:14px; color:gray; text-align:center;">
   🔄 This quiz will be updated daily with Computer Science courses and general courses (Maths, Physics, GST) useful for everyone.
     </p>
@@ -231,85 +231,109 @@
   <script>
     // Your exact 70-question array (word-for-word as provided)
    const questions = [
-  // Section 1: Global Oil & Gas Reserves
-  { q: "Which region has the largest oil reserves in the world?", options: ["North America", "Middle East", "CIS", "Africa"], answer: "Middle East" }, // B
-  { q: "Which region has the second largest natural gas reserves?", options: ["CIS", "Middle East", "North America", "Africa"], answer: "CIS" }, // A
-  { q: "Which country is part of South & Central America?", options: ["Nigeria", "Venezuela", "Saudi Arabia", "Russia"], answer: "Venezuela" }, // B
-  { q: "Which country is part of the CIS?", options: ["Kazakhstan", "Iran", "Nigeria", "India"], answer: "Kazakhstan" }, // A
-  { q: "Which region has the lowest oil reserves in 2024?", options: ["Europe", "Africa", "Asia Pacific", "North America"], answer: "Asia Pacific" }, // C
-  { q: "Which region had the largest increase in oil reserves from 2000 to 2024?", options: ["S & C America", "Middle East", "North America", "Europe"], answer: "S & C America" }, // A
-  { q: "Which region’s natural gas reserves decreased between 2020 and 2024?", options: ["Asia Pacific", "Africa", "Middle East", "North America"], answer: "Asia Pacific" }, // A
-  { q: "Which of these countries is in North America?", options: ["Mexico", "Brazil", "Iran", "Russia"], answer: "Mexico" }, // A
-  { q: "Which African country is a major oil producer?", options: ["Algeria", "Gabon", "Nigeria", "Tunisia"], answer: "Nigeria" }, // C
-  { q: "Which region produces less than 50 billion bbl of oil in 2024?", options: ["Asia Pacific", "Africa", "CIS", "Europe"], answer: "Asia Pacific" }, // A
-  { q: "Which region has the largest natural gas reserves in 2024?", options: ["Middle East", "CIS", "North America", "Africa"], answer: "Middle East" }, // A
-  { q: "Which country is part of Asia Pacific?", options: ["Australia", "Iran", "Brazil", "Nigeria"], answer: "Australia" }, // A
-  { q: "Which region is known for significant oil production in the Middle East?", options: ["Saudi Arabia", "Russia", "USA", "Brazil"], answer: "Saudi Arabia" }, // A
-  { q: "Which region had the highest increase in natural gas reserves from 2000 to 2024?", options: ["Middle East", "CIS", "Africa", "Europe"], answer: "Middle East" }, // A
-  { q: "Which country is part of Europe?", options: ["Denmark", "India", "Venezuela", "Nigeria"], answer: "Denmark" }, // A
+  // 1. BUSINESS INTELLIGENCE (BI) FUNDAMENTALS, COMPONENTS & USERS
+  { q: "According to the course content, what is the primary goal of Business Intelligence (BI)?", options: ["To store all corporate databases.", "To generate raw data for analysis.", "To develop new hardware infrastructure.", "To help organizations make more data-driven decisions."], answer: "To help organizations make more data-driven decisions." },
+  { q: "Business Intelligence (BI) combines all of the following EXCEPT:", options: ["Data mining.", "Data visualization.", "Data tools and infrastructure.", "Social media posting automation."], answer: "Social media posting automation." },
+  { q: "What distinguishes modern BI solutions from older ones?", options: ["They prioritize slower analysis.", "They rely on assumptions and gut feelings.", "They are only for large firms (enterprises).", "They prioritize flexible self-service analysis and speed to insight."], answer: "They prioritize flexible self-service analysis and speed to insight." },
+  { q: "In the context of BI implementation, what does OLTP stand for?", options: ["Online Language Transfer Protocol", "Offline Transaction Platform", "Online Logic Testing Procedure", "Online Transaction Processing"], answer: "Online Transaction Processing" },
+  { q: "Which BI user is described as a statistician who 'always needs to drill deep down into data' to get fresh insights?", options: ["The IT User", "The Head of the Company", "The Business User (Casual)", "The Professional Data Analyst"], answer: "The Professional Data Analyst" },
+  { q: "Which type of Business User has the capability of working with complex data sets?", options: ["The Casual business intelligence user", "The Power User", "The Head of the Company", "The IT User"], answer: "The Power User" },
+  { q: "Which step in the BI system implementation process involves cleaning and transforming raw data from corporate databases?", options: ["Step 1: Data extraction.", "Step 3: User query and analysis.", "Step 2: Data warehousing.", "Step 4: Report generation."], answer: "Step 2: Data warehousing." },
+  { q: "A primary advantage of a BI system is to help organizations achieve a bird's eye view through what typical features?", options: ["Spreadsheets and word documents.", "Server logs and transaction records.", "Dashboards and scorecards.", "Source code and algorithms."], answer: "Dashboards and scorecards." },
+  { q: "Which of the following is cited as a drawback or disadvantage of Business Intelligence systems?", options: ["It decreases operational efficiency.", "It is too simple to implement.", "It is a time-consuming implementation process.", "It limits the visibility of business processes."], answer: "It is a time-consuming implementation process." },
+  { q: "What is a query example executed in an OLAP system corresponding to a change in customer salary level in an OLTP system?", options: ["Increase customer credit limit.", "Update customer name.", "Can customer profile changes support higher product price.", "Calculate the new customer salary."], answer: "Can customer profile changes support higher product price." },
 
-  // Section 2: Nigerian Energy Distribution
-  { q: "What percentage of Nigeria's electricity comes from natural gas?", options: ["20–25%", "70–75%", "<5%", "<1%"], answer: "70–75%" }, // B
-  { q: "Which energy source contributes less than 5% to Nigeria's electricity?", options: ["Solar & Renewables", "Hydropower", "Coal", "Natural Gas"], answer: "Solar & Renewables" }, // A
-  { q: "Why was coal abandoned in Nigeria?", options: ["Low demand", "Economic, environmental, infrastructural reasons", "Renewable energy dominance", "No coal deposits"], answer: "Economic, environmental, infrastructural reasons" }, // B
-  { q: "Hydropower contributes approximately what percentage of Nigeria's electricity?", options: ["20–25%", "70–75%", "<5%", "<1%"], answer: "20–25%" }, // A
-  { q: "Which fossil fuel is the main source of electricity in Nigeria?", options: ["Coal", "Natural Gas", "Oil", "Hydropower"], answer: "Natural Gas" }, // B
-  { q: "Coal contributes less than what percent of electricity generation in Nigeria?", options: ["5%", "1%", "10%", "20%"], answer: "1%" }, // B
-  { q: "Nigeria generates approximately how many MWh of electricity?", options: ["5000 MWh", "10,000 MWh", "3000 MWh", "7000 MWh"], answer: "5000 MWh" }, // A
-  { q: "Which reason is NOT why coal was abandoned?", options: ["Economic", "Environmental", "Infrastructure", "Abundant oil discoveries"], answer: "Abundant oil discoveries" }, // D
-  { q: "What is the major fossil fuel source for power generation in Nigeria?", options: ["Coal", "Oil", "Natural Gas", "Hydropower"], answer: "Natural Gas" }, // C
-  { q: "Which renewable energy contributes least to Nigeria's power generation?", options: ["Solar & Renewables", "Hydropower", "Wind", "Biomass"], answer: "Solar & Renewables" }, // A
+  // 2. TYPES OF ANALYTICS & DATA SCIENCE
+  { q: "What is the primary function of **Descriptive Analytics**?", options: ["To predict future outcomes.", "To recommend a course of action.", "To determine what happened and why.", "To summarize existing data to understand what is going on."], answer: "To summarize existing data to understand what is going on." },
+  { q: "Which type of analytics is considered a sub-type of predictive analytics that is used to **recommend one or more courses of action**?", options: ["Descriptive Analytics", "Diagnostic Analytics", "Prescriptive Analytics", "Data Mining"], answer: "Prescriptive Analytics" },
+  { q: "The focus of **Diagnostic Analytics** is on past performance to determine:", options: ["What should be done next.", "What the budget will be next year.", "What happened and why.", "How to collect new data."], answer: "What happened and why." },
+  { q: "Data Science is considered an interdisciplinary field that is an amalgamation of different fields such as data manipulation, statistical analysis, Machine Learning, and:", options: ["Web Development.", "Financial Accounting.", "Data Visualization.", "Human Resources."], answer: "Data Visualization." },
+  { q: "Which term is defined as 'a body of knowledge consisting of statistical, mathematical and operations research techniques, and Artificial intelligence techniques'?", options: ["Data Warehousing", "Business Intelligence", "Analytics", "Data Manipulation"], answer: "Analytics" },
 
-  // Section 3: Nigerian Oil Production
-  { q: "Which state produces the most oil in 2025?", options: ["Delta", "Rivers", "Akwa Ibom", "Bayelsa"], answer: "Akwa Ibom" }, // C
-  { q: "Which state produces the least oil in 2025?", options: ["Anambra", "Imo", "Edo", "Abia"], answer: "Anambra" }, // A
-  { q: "Which sedimentary basin is the largest in Nigeria?", options: ["Niger Delta", "Anambra", "Benue", "Chad"], answer: "Niger Delta" }, // A
-  { q: "Which basin is NOT a Nigerian sedimentary basin?", options: ["Sokoto", "Dahomey", "Colorado", "Bida"], answer: "Colorado" }, // C
-  { q: "Which offshore terminal is operated by Shell?", options: ["Bonga", "Erha", "Akpo", "Agbami"], answer: "Bonga" }, // A
-  { q: "Which onshore terminal is operated by Chevron?", options: ["Escravos", "Forcados", "Bonny", "Qua Iboe"], answer: "Escravos" }, // A
-  { q: "Which offshore terminal is operated by ExxonMobil?", options: ["Usan", "Akpo", "Agbami", "Egina"], answer: "Usan" }, // A
-  { q: "Which terminal is in Bayelsa state?", options: ["Brass", "Bonny", "Qua Iboe", "Escravos"], answer: "Brass" }, // A
-  { q: "Which company operates the Akpo offshore terminal?", options: ["Shell", "Total Energies", "Chevron", "ExxonMobil"], answer: "Total Energies" }, // B
-  { q: "Which offshore terminal is operated jointly by Shell and Renaissance?", options: ["EA Offshore", "Bonga", "Erha", "Agbami"], answer: "EA Offshore" }, // A
+  // 3. DATA & INFORMATION PROCESSING (ETL, DATA MANIPULATION, PREPARATION)
+  { q: "The process of organizing information to make it readable and understandable, often using Data Manipulation Language (DML), is called:", options: ["Data Visualization", "Data Abstraction", "Data Manipulation", "Data Encoding"], answer: "Data Manipulation" },
+  { q: "Which is NOT an advantage Data Manipulation offers to businesses?", options: ["Cleansing unwanted data.", "Maintaining consistency across data.", "Reducing the data acquisition time frame.", "Helping prepare future forecasts."], answer: "Reducing the data acquisition time frame." },
+  { q: "What does ETL stand for in the context of data management processes?", options: ["Execute, Test, Launch", "Extract, Transform, Load", "Evaluate, Track, Link", "Explore, Test, Learn"], answer: "Extract, Transform, Load" },
+  { q: "What is the term for the act of cleaning and consolidating raw data prior to using it for business analysis?", options: ["Data Visualization", "Data Acquisition", "Data Exploration", "Data Preparation"], answer: "Data Preparation" },
+  { q: "Which of the following is a step in the data **cleansing** process?", options: ["Pivoting data orientation.", "Aggregating sales data.", "Converting date formats.", "Removing duplicates or outliers."], answer: "Removing duplicates or outliers." },
+  { q: "What is an example of data **transformation**?", options: ["Correcting entry errors.", "Masking sensitive information.", "Aggregating sales and performance data across time.", "Eliminating missing data."], answer: "Aggregating sales and performance data across time." },
+  { q: "In the data life cycle, which step immediately follows **data generation**?", options: ["It can be processed.", "It must be collected.", "It can be stored.", "It must be visualized."], answer: "It must be collected." },
+  { q: "The process of converting raw information (text, numbers, or symbols) into a graphic format to show logical correlations and define patterns is known as:", options: ["Data Transformation", "Data Reduction", "Data Visualization", "Data Cleansing"], answer: "Data Visualization" },
+  { q: "Which term refers to data that is **numeric** in nature?", options: ["Contextual data", "Qualitative data", "Quantitative data", "Processed data"], answer: "Quantitative data" },
+  { q: "Engineers and scientists perform data manipulation using a language capable of adding, deleting, or altering data, known as:", options: ["Data Query Language (DQL)", "Data Control Language (DCL)", "Data Definition Language (DDL)", "Data Manipulation Language (DML)"], answer: "Data Manipulation Language (DML)" },
 
-  // Section 4: Petroleum & Industry Basics
-  { q: "Petroleum is formed primarily from:", options: ["Dead plants and animals", "Minerals", "Water", "Volcanic rocks"], answer: "Dead plants and animals" }, // A
-  { q: "Petroleum migrates through:", options: ["Cap rock", "Pore spaces in sedimentary rock", "Igneous rock", "Water channels"], answer: "Pore spaces in sedimentary rock" }, // B
-  { q: "The waxy substance formed before petroleum is:", options: ["Kerogen", "Oil shale", "Coal", "Bitumen"], answer: "Kerogen" }, // A
-  { q: "The process of transforming kerogen into petroleum is called:", options: ["Catagenesis", "Metamorphosis", "Sedimentation", "Distillation"], answer: "Catagenesis" }, // A
-  { q: "Which industry segment is responsible for exploration and production?", options: ["Upstream", "Midstream", "Downstream", "Distribution"], answer: "Upstream" }, // A
-  { q: "Which industry segment focuses on gathering and transportation?", options: ["Upstream", "Midstream", "Downstream", "Exploration"], answer: "Midstream" }, // B
-  { q: "Which industry segment handles refining and marketing?", options: ["Upstream", "Midstream", "Downstream", "Exploration"], answer: "Downstream" }, // C
-  { q: "What does E&P stand for?", options: ["Exploration & Production", "Energy & Petroleum", "Extraction & Processing", "Export & Pipeline"], answer: "Exploration & Production" }, // A
-  { q: "Petroleum literally means:", options: ["Rock oil", "Black gold", "Liquid energy", "Sedimentary oil"], answer: "Rock oil" }, // A
-  { q: "Which element is NOT commonly found in petroleum?", options: ["Vanadium", "Nickel", "Gold", "Sulfur"], answer: "Gold" }, // C
+  // 4. DATA COLLECTION & KDD
+  { q: "Data collected **directly from users** by your organization is known as:", options: ["Third-party data", "Second-party data", "First-party data", "External data"], answer: "First-party data" },
+  { q: "Data that has been **aggregated and rented or sold by organizations that don't have a connection to your company** is called:", options: ["Transactional data", "Third-party data", "First-party data", "Direct data"], answer: "Third-party data" },
+  { q: "Which data collection method involves the risk of **subject bias**, where subjects' answers may be skewed toward what seems socially acceptable?", options: ["Transactional Tracking", "Observation", "Surveys", "Online Tracking"], answer: "Surveys" },
+  { q: "Which data collection method is most useful for gathering **behavioral data** by tracking users' online activities across websites?", options: ["Interviews", "Transactional Tracking", "Forms", "Online Tracking (Pixels and Cookies)"], answer: "Online Tracking (Pixels and Cookies)" },
+  { q: "In the context of data collection, a **Focus Group** typically involves:", options: ["Tracking a single customer's transactions.", "Collecting data through a digital questionnaire.", "Observing candid real-time user experience.", "Talking to several people face-to-face about a specific topic."], answer: "Talking to several people face-to-face about a specific topic." },
+  { q: "The course content lists **Knowledge Discoveries in Data (KDD) models** as part of the contents. KDD is often used interchangeably with:", options: ["Data Warehousing", "Data Cleaning", "Data Mining", "Data Visualization"], answer: "Data Mining" },
+  { q: "Which of the following is a key step in the systematic approach to business problem-solving?", options: ["Ignoring the problem details.", "Assuming the solution first.", "Evaluating solutions and making a firm decision.", "Immediately implementing the first solution that comes to mind."], answer: "Evaluating solutions and making a firm decision." },
+  { q: "What are **Adaptive-Boost** and **XGBoost** listed as examples of in the course contents?", options: ["Data Visualization Tools", "BI Architectures", "Data Reduction Techniques", "Statistical Hypotheses"], answer: "Data Reduction Techniques" },
+  { q: "The course contents explicitly list which of the following predictive data analysis techniques?", options: ["Cluster Analysis", "Time Series Forecasting", "Logistic regression", "Support Vector Machines"], answer: "Logistic regression" },
 
-  // Section 5: Nigerian Oil History & Industry
-  { q: "First exploration in Nigeria started in which year?", options: ["1908", "1937", "1947", "1956"], answer: "1908" }, // A
-  { q: "First commercial oil well in Nigeria was discovered in:", options: ["Oloibiri", "Araromi", "Bayelsa", "Ondo"], answer: "Oloibiri" }, // A
-  { q: "Nigeria joined OPEC in:", options: ["1971", "1961", "1977", "1980"], answer: "1971" }, // A
-  { q: "NNPC was established in:", options: ["1977", "1965", "1980", "1970"], answer: "1977" }, // A
-  { q: "Which company first exported oil from Nigeria?", options: ["Shell", "Mobil", "Chevron", "Agip"], answer: "Shell" }, // A
-  { q: "How much oil was produced daily from the first commercial well?", options: ["5100 bpd", "1000 bpd", "20000 bpd", "7500 bpd"], answer: "5100 bpd" }, // A
-  { q: "Which companies joined Shell in 1961 for exploration?", options: ["Mobil, Agip, Elf, Texaco, Chevron", "Exxon, Total, Agip, Chevron", "Chevron, Total, Elf", "Mobil, Exxon, Total"], answer: "Mobil, Agip, Elf, Texaco, Chevron" }, // A
-  { q: "After the Biafran war, oil prices in Nigeria:", options: ["Increased", "Decreased", "Remained the same", "Fluctuated minimally"], answer: "Increased" }, // A
-  { q: "Oil & gas account for approximately what percentage of Nigeria’s revenue?", options: ["60–80%", "30–40%", "40–50%", "50–60%"], answer: "60–80%" }, // A
-  { q: "Nigeria’s proven oil reserve is approximately:", options: ["37.5 billion bbl", "45 billion bbl", "25 billion bbl", "30 billion bbl"], answer: "37.5 billion bbl" }, // A
-  { q: "Nigeria produces approximately how many barrels per day?", options: ["1.5 million bpd", "2 million bpd", "750,000 bpd", "3 million bpd"], answer: "1.5 million bpd" }, // A
-  { q: "Which traditional sector has been displaced by oil in Nigeria?", options: ["Agriculture", "Fishing", "Mining", "Trade"], answer: "Agriculture" }, // A
-  { q: "Which foreign company entered Nigeria after concession rights were extended?", options: ["Mobil", "Chevron", "Exxon", "All of the above"], answer: "All of the above" }, // D
-  { q: "What event in 1939 interrupted oil exploration in Nigeria?", options: ["World War II", "World War I", "Biafran War", "Civil unrest"], answer: "World War II" }, // A
-  { q: "Which company originally held sole concession rights before 1959?", options: ["Shell", "Chevron", "Mobil", "Agip"], answer: "Shell" }, // A
-  { q: "The first exploration by Shell D’Arcy began in:", options: ["1937", "1947", "1956", "1961"], answer: "1937" }, // A
-  { q: "Which state is NOT among top oil producers in Nigeria?", options: ["Kano", "Lagos", "Ondo", "Bayelsa"], answer: "Kano" }, // D
-  { q: "Which Nigerian sedimentary basin is onshore?", options: ["Anambra Basin", "Niger Delta Basin", "Chad Basin", "All of the above"], answer: "All of the above" }, // D
-  { q: "Which is a deepwater offshore oil terminal?", options: ["Agbami", "Forcados", "Escravos", "Brass"], answer: "Agbami" }, // A
-  { q: "Which company operates the Egina Deepwater field?", options: ["Total Energies", "Shell", "Chevron", "ExxonMobil"], answer: "Total Energies" }, // A
-  { q: "Which onshore terminal is operated by Shell?", options: ["Forcados", "Escravos", "Bonny", "Brass"], answer: "Forcados" }, // A
-  { q: "The Niger Delta basin is important because of:", options: ["Size, reserves, production", "Tourism", "Agriculture", "Mining"], answer: "Size, reserves, production" }, // A
-  { q: "Which basin is located in northern Nigeria?", options: ["Chad Basin", "Benue Basin", "Sokoto Basin", "All of the above"], answer: "All of the above" }, // D
-  { q: "Petroleum reservoirs are trapped under:", options: ["Cap rock", "Sandstone", "Clay", "Basalt"], answer: "Cap rock" }, // A
-  { q: "Where is the Escravos terminal located?", options: ["Delta State", "Rivers State", "Bayelsa State", "Akwa Ibom State"], answer: "Delta State" },
+  // 5. PREDICTIVE MODELING & HYPOTHESIS TESTING
+  { q: "Which type of hypothesis is the main driving force for hypothesis testing, stating that there **is a relationship** between two variables?", options: ["The Null Hypothesis ($\text{H}_0$)", "The Non-Directional Hypothesis", "The Statistical Hypothesis", "The Alternative Hypothesis ($\text{H}_1$ / $\text{H}_a$ )"], answer: "The Alternative Hypothesis ($\text{H}_1$ / $\text{H}_a$ )" },
+  { q: "The **Null Hypothesis** ($\text{H}_0$) implies that the effect of one variable on the other is solely due to:", options: ["Empirical cause.", "Statistical bias.", "Chance.", "Alternative causation."], answer: "Chance." },
+  { q: "A hypothesis that asserts there is a relationship between two variables but **does not recognize the direction of effect** is called a:", options: ["Directional Hypothesis", "Statistical Hypothesis", "Non-Directional Hypothesis", "Null Hypothesis"], answer: "Non-Directional Hypothesis" },
+  { q: "Which type of hypothesis **asserts the direction of effect** of the relationship that exists between two variables (e.g., Variable A affects Variable B)?", options: ["Alternative Hypothesis", "Null Hypothesis", "Directional Hypothesis", "Non-Directional Hypothesis"], answer: "Directional Hypothesis" },
+  { q: "What is the **first step** in the seven-step process of performing hypothesis testing?", options: ["State the decision rule.", "Use the sample data to calculate the test statistic.", "Specify the null hypothesis and the alternative hypothesis.", "Determine the appropriate level of significance."], answer: "Specify the null hypothesis and the alternative hypothesis" },
+  { q: "In the hypothesis testing example provided, the Null Hypothesis ($\text{H}_0$) for the food lab analysis states that the mean value ($\bar{x}$) is:", options: ["Significantly larger than 250 mg/kg.", "Not equal to 250 mg/kg.", "Equal to 274 mg/kg.", "Equal to 250 mg/kg."], answer: "Equal to 250 mg/kg." },
+  { q: "The goal of predictive data analysis techniques is to: (Select the most accurate definition based on course content)", options: ["To describe what has happened in the past.", "To determine why something happened.", "To recommend the best course of action.", "To predict the possible outcome using statistical models and machine learning."], answer: "To predict the possible outcome using statistical models and machine learning." },
+  { q: "What step in the analytical data-driven decision-making process immediately follows **pre-processing the data** (for issues such as missing and incorrect data)?", options: ["Build analytical models.", "Implement solution/decision.", "Divide the data sets into training and validation subsets.", "Identify the problem or opportunity."], answer: "Divide the data sets into training and validation subsets." },
+  { q: "After dividing the data sets into training and validation subsets, what is the next step in the analytical data-driven decision-making process?", options: ["Identify the sources of data.", "Build analytical models and identify the best model.", "Implement the solution.", "Pre-process the data."], answer: "Build analytical models and identify the best model." },
+  { q: "What is the primary role of the validation data set in the analytical decision process?", options: ["To clean and organize the raw data.", "To prepare future forecasts.", "To use for initial model training.", "To identify the best model using model performance."], answer: "To identify the best model using model performance." },
+
+  // 6. DECISION MODELS & OPTIMIZATION
+  { q: "A model that is an **abstraction or representation of a real system, idea, or object** is defined as a(n):", options: ["Decision Variable", "Optimal Solution", "Assumption", "Model"], answer: "Model" },
+  { q: "A Decision Model is a logical or mathematical representation of a problem or business situation used to:", options: ["Store all corporate data.", "Automatically execute all business transactions.", "Understand, analyze, or facilitate making a decision.", "Build new hardware infrastructure."], answer: "Understand, analyze, or facilitate making a decision." },
+  { q: "Which of the following is considered **Data** input in a decision model, assumed to be constant for purposes of the model?", options: ["Customer demand", "Production quantities", "Investment returns", "Costs (e.g., machine capacities)"], answer: "Costs (e.g., machine capacities)" },
+  { q: "Which of the following is an **Uncontrollable Variable** input in a decision model?", options: ["Staffing levels", "Production quantities", "Inflation rates", "Investment allocations"], answer: "Inflation rates" },
+  { q: "Which of the following is a **Decision Variable** input in a decision model, which is controllable and can be selected at the discretion of the decision maker?", options: ["Customer demand", "Production quantities", "Intercity distances", "Fixed cost (F)"], answer: "Production quantities" },
+  { q: "In the total cost model, $\text{TC} = \text{F} + \text{VQ}$, what does the symbol **V** represent?", options: ["Total cost", "Fixed cost", "Quantity produced", "Unit variable cost"], answer: "Unit variable cost" },
+  { q: "In the total cost model, $\text{TC} = \text{F} + \text{VQ}$, the uncontrollable variable would typically be represented by which of the following quantities (although not explicitly defined as such in the formula)?", options: ["TC", "F", "Q", "V"], answer: "Q" }, // Assuming Q (quantity produced/demand) is the one that often relates to uncontrollable *demand*
+  { q: "The primary purpose of a **prescriptive decision model** is to:", options: ["Describe what has happened.", "Predict future outcomes.", "Identify the best solution to a decision problem.", "Cleanse and prepare raw data."], answer: "Identify the best solution to a decision problem." },
+  { q: "The process of finding a set of values for decision variables that minimize or maximize some quantity of interest (like profit or cost) is called:", options: ["Prescription", "Modeling", "Optimization", "Abstraction"], answer: "Optimization" },
+  { q: "The quantity of interest that is minimized or maximized in an optimization problem (e.g., profit, revenue, cost) is called the:", options: ["Decision Variable", "Uncontrollable Variable", "Objective Function", "Optimal Solution"], answer: "Objective Function" },
+  { q: "A set of decision variables that optimizes the objective function is called a(n):", options: ["Deterministic Model", "Stochastic Model", "Optimal Solution", "Decision Matrix"], answer: "Optimal Solution" },
+  { q: "A prescriptive decision model in which **all model input information is either known or assumed to be known with certainty** is a:", options: ["Stochastic Model", "Probabilistic Model", "Deterministic Model", "Uncertain Model"], answer: "Deterministic Model" },
+  { q: "A prescriptive decision model in which **some of the model input information is uncertain** is a:", options: ["Deterministic Model", "Certainty Model", "Stochastic Model", "Known Model"], answer: "Stochastic Model" },
+  { q: "**Uncertainty** is defined as imperfect knowledge of what will happen, while **Risk** is associated with:", options: ["Imperfect knowledge of what will happen.", "The problem definition and scope.", "The cost of model implementation.", "The consequences and likelihood of what might happen."], answer: "The consequences and likelihood of what might happen." },
+
+  // 7. MIXED QUESTIONS (COURSE SCOPE, PROBLEM SOLVING, ETC.)
+  { q: "The Senate-approved relevance for the FUPRE-CSC 124 course emphasizes which sector for demonstrating knowledge discovery in data models?", options: ["Banking and Finance", "Academia and Research", "Oil and Gas Sector", "Retail and E-commerce"], answer: "Oil and Gas Sector" },
+  { q: "Which learning outcome relates to assessing the effectiveness of a common data analysis technique?", options: ["Demonstrate knowledge discovery in data model as active ingredient for business practices.", "Discuss the various strategies for Business intelligence and management approaches.", "Understand the nature and structure of data predictive models.", "Understand parameters for successful performance of data mining approaches."], answer: "Understand parameters for successful performance of data mining approaches." },
+  { q: "What type of data is collected when data is shared by another organization about its customers (or its first-party data)?", options: ["Third-party data", "First-party data", "Secondary data", "Second-party data"], answer: "Second-party data" },
+  { q: "When using surveys, what type of bias occurs when it is easy to accidentally write questions with a biased lean, swaying the subject's answer?", options: ["Subject bias", "Collection bias", "Selection bias", "Observer bias"], answer: "Collection bias" },
+  { q: "In the data life cycle, which step immediately follows data collection?", options: ["It can be generated.", "It can be processed.", "It must be visualized.", "It is stored."], answer: "It can be processed." },
+  { q: "What two statistical measures are often visually represented to understand a dataset's distribution and relationship between variables?", options: ["Mean and Mode", "Range and Median", "Distribution and relationship", "Acquisition and Exploration"], answer: "Distribution and relationship" },
+  { q: "What is the first step in the four-step method for business problem-solving?", options: ["Creatively brainstorm solutions.", "Evaluate solutions and make a decision.", "Take action and implement the solution.", "Identify the Details of the Problem."], answer: "Identify the Details of the Problem." },
+  { q: "What are the two types of research data mentioned in the context of data collection?", options: ["Primary and Secondary", "Cleaned and Uncleaned", "Internal and External", "Qualitative and Quantitative"], answer: "Qualitative and Quantitative" },
+  { q: "The objective of the course includes preparing students to find a place in what specific area of corporate responsibility?", options: ["Customer Relationship Management (CRM)", "Supply Chain Management (SCM)", "Waste Management", "Financial Auditing"], answer: "Waste Management" },
+  { q: "The use of BI tools frees which group of staff from the task of generating analytical reports for the departments?", options: ["Branch Managers", "Head of the Company (CEO)", "Information Technology staff", "Professional Data Analysts"], answer: "Information Technology staff" },
+
+  // 8. ADDITIONAL QUESTIONS TO REACH 70
+  { q: "What is the name of the process by which a hotel owner analyzes trends year by year, month by month, and day by day to offer room rental discounts?", options: ["Data Transformation", "Online Transaction Processing (OLTP)", "BI Analytical Applications", "Hypothesis Testing"], answer: "BI Analytical Applications" },
+  { q: "The complexity in the implementation of what system is cited as a drawback of Business Intelligence?", options: ["OLTP systems", "BI Architectures", "Datawarehousing", "Data Manipulation Language"], answer: "Datawarehousing" },
+  { q: "In the context of problem-solving, what is the crucial step that must be completed before developing a variety of possible solutions?", options: ["Prioritize the problem based on size.", "Plan and implement the solution.", "Complete a root-cause analysis.", "Evaluate possible solutions."], answer: "Complete a root-cause analysis." },
+  { q: "What technique is used in data manipulation to help businesses prepare future forecasts, especially in financial data analysis?", options: ["Cleansing", "Consistency", "Forecasting", "Usability"], answer: "Forecasting" },
+  { q: "Which tool is mentioned as an ideal vehicle for implementing decision models due to its versatility in managing data, evaluating different scenarios, and presenting results?", options: ["Databases (e.g., SQL)", "Spreadsheets", "Data Mining Software", "ETL Tools"], answer: "Spreadsheets" },
+  { q: "When modeling, what term refers to making a model able to be easily analyzed or solved?", options: ["Optimization", "Tractable", "Deterministic", "Stochastic"], answer: "Tractable" },
+  { q: "What principle suggests that demand for a product is negatively related to its price (i.e., as prices increase, demand falls)?", options: ["The Law of Optimization", "Economic theory", "The Law of Uncontrollable Variables", "The Cost Function"], answer: "Economic theory" },
+  { q: "Which BI capability focuses on creating **Key Performance Indicators (KPI)** based on historic data?", options: ["Measurement", "Identify and set benchmarks", "Data Visualization", "Operational Efficiency"], answer: "Measurement" },
+  { q: "Which social media activity is listed as an accessible way to track data about an audience's interests and motivations?", options: ["Creating paid advertisements.", "Developing new algorithms.", "Monitoring follower engagement.", "Setting up a private chat group."], answer: "Monitoring follower engagement." },
+  { q: "When using online forms for data collection, what type of data is most commonly gathered?", options: ["Transactional data", "Demographic data or contact information", "Behavioral data (pixels)", "Candid observation data"], answer: "Demographic data or contact information" },
+  { q: "The process of collecting data from each purchase a customer makes is known as:", options: ["Social Media Monitoring", "Transactional Tracking", "Surveys", "Interviews and Focus Groups"], answer: "Transactional Tracking" },
+  { q: "What is the final step in the four-step business problem-solving process?", options: ["Creatively Brainstorm Solutions", "Identify the Details of the Problem", "Evaluate Solutions and Make a Decision", "Take Action (Plan and implement the solution)"], answer: "Take Action (Plan and implement the solution)" },
+  { q: "In the course contents, **Classification Models** are listed under which major topic?", options: ["Data Gathering", "Data Reduction", "Predictive Data Analysis", "BI Architectures"], answer: "Predictive Data Analysis" },
+  { q: "What is the typical output of Diagnostic Analytics?", options: ["A detailed root-cause analysis report.", "An Analytic Dashboard.", "A financial forecast model.", "A written or verbal description of a problem."], answer: "An Analytic Dashboard." },
+  { q: "One of the learning outcomes is to demonstrate knowledge discovery in data models, specifically as an active ingredient for business practices in which type of company?", options: ["SME (Small and Medium Enterprises)", "Start-ups", "Multinationals", "Government Agencies"], answer: "Multinationals" },
+  { q: "Which area is listed under the course contents that focuses on the graphical representation of data?", options: ["Data Reduction", "Model Validation", "Data Presentation and Visualization with Python", "Market Basket Analysis"], answer: "Data Presentation and Visualization with Python" },
+  { q: "The course states that a major advantage of BI systems is to 'Fix Accountability'. This means there must be someone who should own accountability and ownership for the organization's performance against its set:", options: ["KPIs", "Goals", "Architectures", "Data"], answer: "Goals" },
+  { q: "In a Decision Model, the fixed cost (F) is an example of what type of input?", options: ["Decision Variable", "Uncontrollable Variable", "Data", "Objective Function"], answer: "Data" },
+  { q: "Which of the seven steps of hypothesis testing occurs immediately after 'State the decision rule'?", options: ["Specify the null hypothesis and the alternative hypothesis.", "Use the sample data to calculate the test statistic.", "Determine the level of significance.", "Interpret the decision in the context of the original question."], answer: "Use the sample data to calculate the test statistic." },
+  { q: "The course covers the use of some BI system and platforms. What is the process that converts raw data into meaningful information that drives profitable business actions?", options: ["Analytics", "Data Manipulation", "Business Intelligence", "Hypothesis Testing"], answer: "Business Intelligence" }
 ];
     
   const container = document.getElementById('quizContainer');
@@ -476,5 +500,6 @@
 </body>
 
 </html>
+
 
 
