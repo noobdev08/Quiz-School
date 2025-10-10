@@ -5,6 +5,17 @@ Made with plain **HTML**, **CSS**, and **JavaScript** — no frameworks, no back
 
 ---
 
+## 📝 Background
+
+Quiz-School started as a partially AI-generated project created by a friend. The initial version had some bugs and an unfinished UI, so I took over to debug, refine, and deploy it.  
+
+This allowed me to:
+- Understand and work with unfamiliar code.
+- Improve the UI and interactivity using AI-assisted suggestions.
+- Deploy the project so it could be used by coursemates.
+
+This project showcases my **problem-solving skills, adaptability, and ability to transform a rough starter into a fully functional app**.
+
 ## 🚀 Features
 - 🧠 Multiple-choice quiz format  
 - ⏱️ Real-time score tracking  
